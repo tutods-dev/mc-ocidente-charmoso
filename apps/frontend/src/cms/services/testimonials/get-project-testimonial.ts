@@ -1,0 +1,18 @@
+import { client } from '@/cms';
+import { getProjectTestimonialQuery } from '@/cms/queries';
+import type { GetProjectTestimonialQueryResult } from '@/shared/types';
+import { cache } from '@solidjs/router';
+
+/**
+ * Service to retrive the testimonial for a specific project.
+ * @param slug Project slug
+ */
+const getProjectTestimonial = cache(async (slug: string) => {
+  'use server';
+
+  return client.fetch<GetProjectTestimonialQueryResult>(getProjectTestimonialQuery, {
+    slug,
+  });
+}, 'cta-settings');
+
+export { getProjectTestimonial };

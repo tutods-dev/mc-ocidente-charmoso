@@ -1,0 +1,33 @@
+{
+  "name": "mc-ocidente-charmoso",
+  "private": true,
+  "version": "1.0.0",
+  "author": {
+    "name": "Daniel Sousa @TutoDS",
+    "url": "https://github.com/tutods"
+  },
+  "license": "UNLICENSED",
+  "packageManager": "pnpm@9.9.0",
+  "scripts": {
+    "dev": "doppler run -- sanity dev",
+    "start": "doppler run -- sanity start",
+    "build": "doppler run -- sanity build",
+    "deploy": "doppler run -- sanity deploy",
+    "schema:generate": "doppler run -- sanity schema extract --enforce-required-fields"
+  },
+  "keywords": ["sanity", "cms"],
+  "dependencies": {
+    "@sanity/icons": "^3.3.1",
+    "@sanity/locale-pt-pt": "^1.1.6",
+    "@sanity/vision": "^3.52.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sanity": "^3.52.0",
+    "styled-components": "^6.1.12"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.25",
+    "typescript": "^5.5.3",
+    "vite-tsconfig-paths": "^5.0.1"
+  }
+}

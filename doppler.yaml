@@ -1,0 +1,7 @@
+setup:
+  - project: mc-ocidente-charmoso
+    config: dev_frontend
+    path: apps/frontend/
+  - project: mc-ocidente-charmoso
+    config: dev_studio
+    path: apps/studio/
