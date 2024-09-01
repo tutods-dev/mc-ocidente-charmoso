@@ -1,12 +1,14 @@
 import { cache } from '@solidjs/router';
 import {
   client,
+  getPaginatedProjectsQuery,
   getPagination,
   getProjectsQuery,
   getTotalOfProjectsFromServiceQuery,
   getTotalOfProjectsQuery,
 } from '~/cms';
-import type { ProjectCard } from '~/shared/types';
+import { DEFAULT_PAGINATION_OFFSET } from '~/shared/constants';
+import type { PaginatedProjects, ProjectCard } from '~/shared/types';
 
 /**
  * Service to retrieve the total of projects.
@@ -46,4 +48,27 @@ const getProjects = cache(async (page = 1): Promise<ProjectCard[]> => {
   }
 }, 'projects');
 
-export { getProjects, getTotalOfProjects };
+/**
+ * Service to retrieve paginated projects, returning the total of projects and the list of projects for the current page.
+ * @param page Page number
+ * @param offset Number of results per page
+ */
+const getPaginatedProjects = cache<
+  (page?: number, offset?: number) => Promise<PaginatedProjects>
+>(async (page = 1, offset = DEFAULT_PAGINATION_OFFSET) => {
+  try {
+    const { start, end } = getPagination(page, offset);
+
+    return client.fetch<PaginatedProjects>(getPaginatedProjectsQuery, {
+      start,
+      end,
+    });
+  } catch {
+    return {
+      total: 0,
+      data: [],
+    };
+  }
+}, 'paginated-projects');
+
+export { getProjects, getTotalOfProjects, getPaginatedProjects };

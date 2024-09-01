@@ -7,3 +7,4 @@
 export * from './blocks';
 export * from './portfolio';
 export * from './singletons';
+export * from './paginated-results.types';

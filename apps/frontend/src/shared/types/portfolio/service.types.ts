@@ -6,6 +6,6 @@ type Service = Omit<ServiceSchema, 'image' | 'slug'> & {
   image: Image;
 };
 
-type ServiceCard = Pick<Service, '_id' | 'title' | 'description' | 'slug' | 'image'>;
+type ServiceCard = Pick<Service, 'title' | 'description' | 'slug' | 'image'>;
 
 export type { Service, ServiceCard };

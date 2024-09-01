@@ -12,7 +12,7 @@ function TestimonialCard(rawProps: Props) {
   });
   const [testimonialProps, styleProps] = splitProps(
     props,
-    ['_id', 'client', 'content', 'url'],
+    ['client', 'content', 'url'],
     ['class'],
   );
 

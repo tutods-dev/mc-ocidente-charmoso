@@ -36,8 +36,21 @@ const getProjectsQuery = `
     }
 `;
 
+/**
+ * Query to retrieve paginated projects, with the number of projects available.
+ * @param `$start` Offset (how many results should skip)
+ * @param `$end` Limit
+ */
+const getPaginatedProjectsQuery = `
+  {
+    "total": ${getTotalOfProjectsQuery},
+    "data": ${getProjectsQuery}
+  }
+`;
+
 export {
   getProjectsQuery,
+  getPaginatedProjectsQuery,
   getTotalOfProjectsQuery,
   getTotalOfProjectsFromServiceQuery,
 };

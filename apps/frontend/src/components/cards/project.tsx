@@ -14,7 +14,7 @@ function ProjectCard(rawProps: Props) {
   });
   const [projectProps, styleProps, otherProps] = splitProps(
     props,
-    ['thumbnail', '_id', 'slug', 'headline', 'services', 'title'],
+    ['thumbnail', 'slug', 'headline', 'services', 'title'],
     ['class'],
   );
 

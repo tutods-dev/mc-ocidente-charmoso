@@ -1,4 +1,10 @@
-import type { Gallery, Image, ServiceCard, VideoUrlWithCover } from '~/shared/types';
+import type {
+  Gallery,
+  Image,
+  PaginatedResults,
+  ServiceCard,
+  VideoUrlWithCover,
+} from '~/shared/types';
 import type { Project as ProjectSchema } from '~/shared/types/sanity.types';
 
 type Project = Omit<
@@ -14,7 +20,9 @@ type Project = Omit<
 
 type ProjectCard = Pick<
   Project,
-  '_id' | 'title' | 'headline' | 'slug' | 'thumbnail' | 'services'
+  'title' | 'headline' | 'slug' | 'thumbnail' | 'services'
 >;
 
-export type { Project, ProjectCard };
+type PaginatedProjects = PaginatedResults<ProjectCard[]>;
+
+export type { Project, ProjectCard, PaginatedProjects };

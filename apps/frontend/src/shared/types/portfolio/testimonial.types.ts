@@ -5,6 +5,6 @@ type Testimonial = Omit<TestimonialType, 'project'> & {
   project?: ProjectCard;
 };
 
-type TestimonialCard = Pick<Testimonial, '_id' | 'client' | 'content' | 'url'>;
+type TestimonialCard = Pick<Testimonial, 'client' | 'content' | 'url'>;
 
 export type { Testimonial, TestimonialCard };

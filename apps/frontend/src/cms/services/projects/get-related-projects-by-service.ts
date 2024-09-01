@@ -3,10 +3,10 @@ import { client } from '~/cms';
 import { getRelatedProjectsByServiceQuery } from '~/cms/queries';
 import type { Image, Project, Service } from '~/shared/types';
 
-type RelatedProjectsByService = Pick<Project, '_id' | 'slug'> &
+type RelatedProjectsByService = Pick<Project, 'slug'> &
   {
     thumbnail: Image;
-    services: Pick<Service, '_id' | 'slug' | 'title'>[];
+    services: Pick<Service, 'slug' | 'title'>[];
   }[];
 
 /**
