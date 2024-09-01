@@ -28,7 +28,7 @@
     "@unpic/solid": "^0.0.49",
     "embla-carousel-solid": "^8.2.0",
     "groq": "^3.52.0",
-    "solid-js": "^1.8.17",
+    "solid-js": "^1.8.22",
     "tailwind-variants": "^0.2.1",
     "tailwindcss-animate": "^1.0.7",
     "vinxi": "^0.4.0"
