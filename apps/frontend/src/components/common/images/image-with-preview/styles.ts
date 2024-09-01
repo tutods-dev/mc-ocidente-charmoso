@@ -27,10 +27,9 @@ const figureCaptionStyles = clsx([
  * Styles for preview.
  */
 const previewFigureStyles = clsx([
-  'fixed top-1/2 left-1/2 z-50',
-  '-translate-x-1/2 -translate-y-1/2',
-  'flex flex-col gap-4',
-  'size-auto max-h-[75vh] max-w-[85vw]',
+  '-translate-y-1/2 -translate-x-1/2 fixed top-1/2 left-1/2 z-50',
+  'px-4 py-4',
+  'flex items-center justify-center gap-4',
   'data-[closed]:fade-out-0 data-[expanded]:fade-in-0 data-[closed]:zoom-out-95 data-[expanded]:zoom-in-95 data-[closed]:slide-out-to-left-1/2 data-[closed]:slide-out-to-top-[48%] data-[expanded]:slide-in-from-left-1/2 data-[expanded]:slide-in-from-top-[48%] duration-200 data-[closed]:animate-out data-[expanded]:animate-in',
 ]);
 
@@ -38,7 +37,7 @@ const previewFigureStyles = clsx([
  * Styles for the close previe button.
  */
 const closePreviewStyles = clsx([
-  'absolute top-2 right-2',
+  'absolute top-6 right-6',
   'flex items-center justify-center',
   'size-8 rounded-full',
   'bg-gray-500/40 text-gray-100 hover:bg-gray-950/50 hover:text-white',

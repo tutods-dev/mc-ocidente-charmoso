@@ -1,8 +1,9 @@
 import { For, Show } from 'solid-js';
 import { twMerge } from 'tailwind-merge';
-import type { GetProjectQueryResult } from '~/shared/types';
+import { Separator } from '~/components/ui';
+import type { Project } from '~/shared/types';
 
-type Props = Pick<NonNullable<GetProjectQueryResult>, 'local' | 'date' | 'services'>;
+type Props = Pick<NonNullable<Project>, 'local' | 'date' | 'services'>;
 
 function ProjectDetailsSection({ local, date, services }: Props) {
   return (
@@ -10,13 +11,13 @@ function ProjectDetailsSection({ local, date, services }: Props) {
       <Show when={services}>
         <li
           class={twMerge(
-            'flex items-center gap-2 border-b border-b-gray-300 px-1 pt-6 pb-4 first:pt-2',
+            'flex flex-col px-1 pt-2 pb-4 md:flex-row md:items-center md:gap-2',
           )}
         >
           <span class={'flex-1 font-semibold font-serif text-gray-800 text-lg'}>
             Serviços realizados
           </span>
-          <span class={'flex-1 break-words text-right text-gray-600'}>
+          <span class={'flex-1 break-words text-gray-600 md:text-right'}>
             <For each={services}>
               {(service, index) => (
                 <>
@@ -34,37 +35,42 @@ function ProjectDetailsSection({ local, date, services }: Props) {
             </For>
           </span>
         </li>
+        <Separator />
       </Show>
 
       <Show when={local}>
         <li
           class={twMerge(
-            'flex items-center gap-2 border-b border-b-gray-300 px-1 pt-6 pb-4 first:pt-2',
+            'flex flex-col px-1 py-4 md:flex-row md:items-center md:gap-2',
           )}
         >
           <span class={'flex-1 font-semibold font-serif text-gray-800 text-lg'}>
             Local
           </span>
-          <span class={'flex-1 text-right text-gray-600'}>{local}</span>
+          <span class={'flex-1 text-gray-600 md:text-right'}>{local}</span>
         </li>
+        <Separator />
       </Show>
 
       <Show when={date} keyed={true}>
         {(projectDate) => (
-          <li
-            class={twMerge(
-              'flex items-center gap-2 border-b border-b-gray-300 px-1 pt-6 pb-4 first:pt-2',
-            )}
-          >
-            <span class={'flex-1 font-semibold font-serif text-gray-800 text-lg'}>
-              Data
-            </span>
-            <span class={'flex-1 text-right text-gray-600'}>
-              {new Date(projectDate).toLocaleDateString('pt-PT', {
-                dateStyle: 'long',
-              })}
-            </span>
-          </li>
+          <>
+            <li
+              class={twMerge(
+                'flex flex-col px-1 py-4 md:flex-row md:items-center md:gap-2',
+              )}
+            >
+              <span class={'flex-1 font-semibold font-serif text-gray-800 text-lg'}>
+                Data
+              </span>
+              <span class={'flex-1 text-gray-600 md:text-right'}>
+                {new Date(projectDate).toLocaleDateString('pt-PT', {
+                  dateStyle: 'long',
+                })}
+              </span>
+            </li>
+            <Separator />
+          </>
         )}
       </Show>
     </ul>

@@ -1,5 +1,5 @@
 import { createAsync, useParams } from '@solidjs/router';
-import { For, Show, createSignal } from 'solid-js';
+import { For, Show } from 'solid-js';
 
 import { PortableText } from '@portabletext/solid';
 import { components, getProject, urlFor } from '~/cms';
@@ -7,11 +7,9 @@ import { ImageWithPreview } from '~/components/common';
 import { ProjectTestimonialSection } from '~/components/views/project';
 import { ProjectDetailsSection } from '~/components/views/project/details';
 import { cn } from '~/shared/utils';
+import { getBlurHashImage } from '~/shared/utils/images';
 
 export default function ProjectDetails() {
-  // Signal to expand or collapse the content
-  const [isExpanded, setIsExpanded] = createSignal(false);
-
   // Hooks
   const params = useParams<{ slug: string }>();
 
@@ -37,7 +35,10 @@ export default function ProjectDetails() {
                     <ImageWithPreview
                       src={urlFor(image).url()}
                       alt={image.alt}
-                      classNames={{
+                      blurHash={getBlurHashImage(image)}
+                      width={image.asset.metadata?.dimensions?.width}
+                      height={image.asset.metadata?.dimensions?.height}
+                      classList={{
                         image: 'aspect-square',
                         figure: 'rounded-sm',
                       }}
@@ -59,12 +60,7 @@ export default function ProjectDetails() {
                         'relative my-4 cursor-pointer',
                         'overflow-y-hidden',
                         'transition duration-300 ease-in-out',
-                        {
-                          'max-h-[300px] after:absolute after:right-0 after:bottom-0 after:left-0 after:h-24 after:bg-gradient-to-b after:from-transparent after:to-gray-50/90 after:content-[""]':
-                            !isExpanded() && content.length > 3,
-                        },
                       ])}
-                      onClick={() => setIsExpanded((prev) => !prev)}
                     >
                       <PortableText components={components} value={content} />
                     </div>

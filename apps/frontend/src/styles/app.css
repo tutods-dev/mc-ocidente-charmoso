@@ -70,7 +70,42 @@
   * {
     @apply border-border;
   }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+
+  * {
+    @apply box-border;
+  }
+
+  /* Default styles for buttons and links */
+  a,
+  button {
+    @apply cursor-pointer;
+  }
+
+  /* Default styles for H1 titles */
+  h1 {
+    @apply text-4xl tracking-tight sm:text-6xl;
+  }
+
+  /* Default styles for H2 titles */
+  h2 {
+    @apply text-2xl tracking-tight sm:text-4xl;
+  }
+
+  /* Default styles for H3 titles */
+  h3 {
+    @apply text-xl tracking-tight sm:text-2xl;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
   }
 }
