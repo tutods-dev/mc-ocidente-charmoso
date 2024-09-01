@@ -64,7 +64,7 @@ importers:
         version: 0.14.3(solid-js@1.8.22)
       '@solidjs/start':
         specifier: ^1.0.6
-        version: 1.0.6(rollup@4.18.0)(solid-js@1.8.22)(vinxi@0.4.1(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1))(vite@5.3.1(@types/node@20.14.3)(terser@5.31.1))
+        version: 1.0.6(rollup@4.18.0)(solid-js@1.8.22)(vinxi@0.4.2(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1))(vite@5.3.1(@types/node@20.14.3)(terser@5.31.1))
       '@tanstack/solid-form':
         specifier: ^0.30.0
         version: 0.30.0(solid-js@1.8.22)
@@ -90,8 +90,8 @@ importers:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@3.4.10)
       vinxi:
-        specifier: ^0.4.0
-        version: 0.4.1(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1)
+        specifier: ^0.4.2
+        version: 0.4.2(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1)
     devDependencies:
       '@portabletext/types':
         specifier: ^2.0.13
@@ -2658,11 +2658,6 @@ packages:
   browserify-zlib@0.1.4:
     resolution: {integrity: sha512-19OEpq7vWgsH6WkvkBJQDFvJS1uPcbFOQ4v9CU839dO+ZZXUZO6XpE6hNCqvlIIj+4fZvRiJ6DsAQ382GwiyTQ==}
 
-  browserslist@4.23.1:
-    resolution: {integrity: sha512-TUfofFo/KsK/bWZ9TWQ5O26tsWW4Uhmt8IYklbnUa70udB6P2wA7w7o4PY4muaEPBQaAX+CEnmmIA41NVHtPVw==}
-    engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
-    hasBin: true
-
   browserslist@4.23.3:
     resolution: {integrity: sha512-btwCFJVjI4YWDNfau8RhZ+B1Q/VLoUITrm3RlP6y1tYGWIOa+InuYiRGXUBXo8nA1qKmHMyLB/iVQg5TT4eFoA==}
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
@@ -2734,9 +2729,6 @@ packages:
 
   camelize@1.0.1:
     resolution: {integrity: sha512-dU+Tx2fsypxTgtLoE36npi3UqcjSSMNYfkqgmoEhtZrraP5VWq0K7FkWVTYa8eMPtnU/G2txVsfdCJTn9uzpuQ==}
-
-  caniuse-lite@1.0.30001636:
-    resolution: {integrity: sha512-bMg2vmr8XBsbL6Lr0UHXy/21m84FTxDLWn2FSqMd5PrlbMxwJlQnC2YWYxVgp66PZE+BBNF2jYQUBKCo1FDeZg==}
 
   caniuse-lite@1.0.30001655:
     resolution: {integrity: sha512-jRGVy3iSGO5Uutn2owlb5gR6qsGngTw9ZTb4ali9f3glshcNmJ2noam4Mo9zia5P9Dk3jNNydy7vQjuE5dQmfg==}
@@ -3237,9 +3229,6 @@ packages:
 
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
-
-  electron-to-chromium@1.4.803:
-    resolution: {integrity: sha512-61H9mLzGOCLLVsnLiRzCbc63uldP0AniRYPV3hbGVtONA1pI7qSGILdbofR7A8TMbOypDocEAjH/e+9k1QIe3g==}
 
   electron-to-chromium@1.5.13:
     resolution: {integrity: sha512-lbBcvtIJ4J6sS4tb5TLp1b4LyfCdMkwStzXPyAgVgTRAsep4bvrAGaBOP7ZJtQMNJpSQ9SqG4brWOroNaQtm7Q==}
@@ -4438,9 +4427,6 @@ packages:
 
   node-machine-id@1.1.12:
     resolution: {integrity: sha512-QNABxbrPa3qEIfrE6GOJ7BYIuignnJw7iQ2YPbc3Nla1HzRJjXzZOiikfF8m7eAMfichLt3M4VgLOetqgDmgGQ==}
-
-  node-releases@2.0.14:
-    resolution: {integrity: sha512-y10wOWt8yZpqXmOgRo77WaHEmhYQYGNA6y421PKsKYWEK8aW+cqAphborZDhqfyKrbZEN92CN1X2KbafY2s7Yw==}
 
   node-releases@2.0.18:
     resolution: {integrity: sha512-d9VeXT4SJ7ZeOqGX6R5EM022wpL+eWPooLI+5UpWn2jCT1aosUQEhQP214x33Wkwx3JQMvIm+tIoVOdodFS40g==}
@@ -5762,12 +5748,6 @@ packages:
   unwasm@0.3.9:
     resolution: {integrity: sha512-LDxTx/2DkFURUd+BU1vUsF/moj0JsoTvl+2tcg2AUOiEzVturhGGx17/IMgGvKUYdZwr33EJHtChCJuhu9Ouvg==}
 
-  update-browserslist-db@1.0.16:
-    resolution: {integrity: sha512-KVbTxlBYlckhF5wgfyZXTWnMn7MMZjMu9XG8bPlliUOP9ThaF4QnhP8qrjrH7DRzHfSk0oQv1wToW+iA5GajEQ==}
-    hasBin: true
-    peerDependencies:
-      browserslist: '>= 4.21.0'
-
   update-browserslist-db@1.1.0:
     resolution: {integrity: sha512-EdRAaAyk2cUE1wOf2DkEhzxqOQvFOoRJFNS6NeyJ01Gp2beMRpBAINjM2iDXE3KCuKhwnvHIQCJm6ThL2Z+HzQ==}
     hasBin: true
@@ -5846,8 +5826,8 @@ packages:
   validate-npm-package-name@3.0.0:
     resolution: {integrity: sha512-M6w37eVCMMouJ9V/sdPGnC5H4uDr73/+xdq0FBLO3TFFX1+7wiUY6Es328NN+y43tmY+doUdN9g9J21vqB7iLw==}
 
-  vinxi@0.4.1:
-    resolution: {integrity: sha512-WGEYqIuJ2/P3sBoSVKsGvp/UKpW4wVSaAFdA18gthyMCEExN6nVteoA+Rv1wQFLKXTVL9JRpeGJjcLzcRRgGCA==}
+  vinxi@0.4.2:
+    resolution: {integrity: sha512-BbvIum9BLUQ22O/lU1RX0+aKNMXXcl58hofNoWFnFcKkm+efgVsHiD2d7HG3w8QLdb2Asdhmz5/ZzI1Y3zTBXw==}
     hasBin: true
 
   vite-plugin-inspect@0.7.42:
@@ -6161,7 +6141,7 @@ snapshots:
     dependencies:
       '@babel/compat-data': 7.24.7
       '@babel/helper-validator-option': 7.24.7
-      browserslist: 4.23.1
+      browserslist: 4.23.3
       lru-cache: 5.1.1
       semver: 6.3.1
 
@@ -8431,11 +8411,11 @@ snapshots:
     dependencies:
       solid-js: 1.8.22
 
-  '@solidjs/start@1.0.6(rollup@4.18.0)(solid-js@1.8.22)(vinxi@0.4.1(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1))(vite@5.3.1(@types/node@20.14.3)(terser@5.31.1))':
+  '@solidjs/start@1.0.6(rollup@4.18.0)(solid-js@1.8.22)(vinxi@0.4.2(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1))(vite@5.3.1(@types/node@20.14.3)(terser@5.31.1))':
     dependencies:
-      '@vinxi/plugin-directives': 0.4.1(vinxi@0.4.1(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1))
-      '@vinxi/server-components': 0.4.1(vinxi@0.4.1(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1))
-      '@vinxi/server-functions': 0.4.1(vinxi@0.4.1(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1))
+      '@vinxi/plugin-directives': 0.4.1(vinxi@0.4.2(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1))
+      '@vinxi/server-components': 0.4.1(vinxi@0.4.2(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1))
+      '@vinxi/server-functions': 0.4.1(vinxi@0.4.2(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1))
       defu: 6.1.4
       error-stack-parser: 2.1.4
       glob: 10.4.1
@@ -8683,7 +8663,7 @@ snapshots:
     transitivePeerDependencies:
       - uWebSockets.js
 
-  '@vinxi/plugin-directives@0.4.1(vinxi@0.4.1(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1))':
+  '@vinxi/plugin-directives@0.4.1(vinxi@0.4.2(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1))':
     dependencies:
       '@babel/parser': 7.24.7
       acorn: 8.12.0
@@ -8694,29 +8674,29 @@ snapshots:
       magicast: 0.2.11
       recast: 0.23.9
       tslib: 2.6.3
-      vinxi: 0.4.1(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1)
+      vinxi: 0.4.2(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1)
 
-  '@vinxi/server-components@0.4.1(vinxi@0.4.1(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1))':
+  '@vinxi/server-components@0.4.1(vinxi@0.4.2(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1))':
     dependencies:
-      '@vinxi/plugin-directives': 0.4.1(vinxi@0.4.1(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1))
+      '@vinxi/plugin-directives': 0.4.1(vinxi@0.4.2(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1))
       acorn: 8.12.0
       acorn-loose: 8.4.0
       acorn-typescript: 1.4.13(acorn@8.12.0)
       astring: 1.8.6
       magicast: 0.2.11
       recast: 0.23.9
-      vinxi: 0.4.1(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1)
+      vinxi: 0.4.2(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1)
 
-  '@vinxi/server-functions@0.4.1(vinxi@0.4.1(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1))':
+  '@vinxi/server-functions@0.4.1(vinxi@0.4.2(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1))':
     dependencies:
-      '@vinxi/plugin-directives': 0.4.1(vinxi@0.4.1(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1))
+      '@vinxi/plugin-directives': 0.4.1(vinxi@0.4.2(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1))
       acorn: 8.12.0
       acorn-loose: 8.4.0
       acorn-typescript: 1.4.13(acorn@8.12.0)
       astring: 1.8.6
       magicast: 0.2.11
       recast: 0.23.9
-      vinxi: 0.4.1(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1)
+      vinxi: 0.4.2(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1)
 
   '@vitejs/plugin-react@4.3.1(vite@4.5.3(@types/node@20.14.3)(terser@5.31.1))':
     dependencies:
@@ -8973,13 +8953,6 @@ snapshots:
     dependencies:
       pako: 0.2.9
 
-  browserslist@4.23.1:
-    dependencies:
-      caniuse-lite: 1.0.30001636
-      electron-to-chromium: 1.4.803
-      node-releases: 2.0.14
-      update-browserslist-db: 1.0.16(browserslist@4.23.1)
-
   browserslist@4.23.3:
     dependencies:
       caniuse-lite: 1.0.30001655
@@ -9050,8 +9023,6 @@ snapshots:
   camelcase@7.0.1: {}
 
   camelize@1.0.1: {}
-
-  caniuse-lite@1.0.30001636: {}
 
   caniuse-lite@1.0.30001655: {}
 
@@ -9246,7 +9217,7 @@ snapshots:
 
   core-js-compat@3.37.1:
     dependencies:
-      browserslist: 4.23.1
+      browserslist: 4.23.3
 
   core-util-is@1.0.3: {}
 
@@ -9519,8 +9490,6 @@ snapshots:
   eastasianwidth@0.2.0: {}
 
   ee-first@1.1.1: {}
-
-  electron-to-chromium@1.4.803: {}
 
   electron-to-chromium@1.5.13: {}
 
@@ -10832,8 +10801,6 @@ snapshots:
       he: 1.2.0
 
   node-machine-id@1.1.12: {}
-
-  node-releases@2.0.14: {}
 
   node-releases@2.0.18: {}
 
@@ -12307,12 +12274,6 @@ snapshots:
       pkg-types: 1.1.1
       unplugin: 1.10.1
 
-  update-browserslist-db@1.0.16(browserslist@4.23.1):
-    dependencies:
-      browserslist: 4.23.1
-      escalade: 3.1.2
-      picocolors: 1.0.1
-
   update-browserslist-db@1.1.0(browserslist@4.23.3):
     dependencies:
       browserslist: 4.23.3
@@ -12380,7 +12341,7 @@ snapshots:
     dependencies:
       builtins: 1.0.3
 
-  vinxi@0.4.1(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1):
+  vinxi@0.4.2(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1):
     dependencies:
       '@babel/core': 7.24.7
       '@babel/plugin-syntax-jsx': 7.24.7(@babel/core@7.24.7)
