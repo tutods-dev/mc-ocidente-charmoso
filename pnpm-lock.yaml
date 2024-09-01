@@ -98,7 +98,7 @@ importers:
         version: 2.0.13
       autoprefixer:
         specifier: ^10.4.20
-        version: 10.4.20(postcss@8.4.39)
+        version: 10.4.20(postcss@8.4.42)
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0
@@ -121,8 +121,8 @@ importers:
         specifier: ^3.3.1
         version: 3.3.1(react@18.3.1)
       '@sanity/locale-pt-pt':
-        specifier: ^1.1.6
-        version: 1.1.6(sanity@3.52.0(@types/node@20.14.3)(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.31.1))
+        specifier: ^1.1.9
+        version: 1.1.9(sanity@3.52.0(@types/node@20.14.3)(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.31.1))
       '@sanity/vision':
         specifier: ^3.52.0
         version: 3.52.0(@babel/runtime@7.24.7)(@codemirror/lint@6.8.0)(@codemirror/theme-one-dark@6.1.2)(@lezer/common@1.2.1)(codemirror@6.0.1(@lezer/common@1.2.1))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
@@ -2017,8 +2017,8 @@ packages:
       react-dom: ^18.3 || >=19.0.0-rc
       react-is: ^18.3 || >=19.0.0-rc
 
-  '@sanity/locale-pt-pt@1.1.6':
-    resolution: {integrity: sha512-umszBS8IFEpvMVBtMcAHUPa3EUhZKN7L5vHGCdUAbjCDwbWW/P3sf41XFjuBLLnDXl/ihFuKScRLQc7g0RgLkg==}
+  '@sanity/locale-pt-pt@1.1.9':
+    resolution: {integrity: sha512-58OvGUWI8W079Lu9VFGN7N3viXThr2xvMiMT3B0Rizv7jKhorbYGd/zRHFvdXtyjka21n5aPqGzcJiuzWSpHjg==}
     peerDependencies:
       sanity: ^3.22.0
 
@@ -8058,7 +8058,7 @@ snapshots:
     transitivePeerDependencies:
       - styled-components
 
-  '@sanity/locale-pt-pt@1.1.6(sanity@3.52.0(@types/node@20.14.3)(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.31.1))':
+  '@sanity/locale-pt-pt@1.1.9(sanity@3.52.0(@types/node@20.14.3)(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.31.1))':
     dependencies:
       sanity: 3.52.0(@types/node@20.14.3)(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.31.1)
 
@@ -8797,7 +8797,7 @@ snapshots:
 
   asynckit@0.4.0: {}
 
-  autoprefixer@10.4.20(postcss@8.4.39):
+  autoprefixer@10.4.20(postcss@8.4.42):
     dependencies:
       browserslist: 4.23.3
       caniuse-lite: 1.0.30001655
