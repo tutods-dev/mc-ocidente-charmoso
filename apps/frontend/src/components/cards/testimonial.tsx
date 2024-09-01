@@ -1,6 +1,6 @@
-import type { GetProjectTestimonialQueryResult } from '@/shared/types';
-import { cn } from '@/shared/utils';
 import { type JSX, Show } from 'solid-js';
+import type { GetProjectTestimonialQueryResult } from '~/shared/types';
+import { cn } from '~/shared/utils';
 
 type Props = NonNullable<GetProjectTestimonialQueryResult> &
   Pick<JSX.BlockquoteHTMLAttributes<HTMLElement>, 'class'>;

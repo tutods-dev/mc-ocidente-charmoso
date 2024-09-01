@@ -1,6 +1,6 @@
-import type { GetProjectQueryResult } from '@/shared/types';
 import { For, Show } from 'solid-js';
 import { twMerge } from 'tailwind-merge';
+import type { GetProjectQueryResult } from '~/shared/types';
 
 type Props = Pick<NonNullable<GetProjectQueryResult>, 'local' | 'date' | 'services'>;
 

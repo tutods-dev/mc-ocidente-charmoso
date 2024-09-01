@@ -4,4 +4,6 @@
 // export * from './testimonial';
 // export * from './settings';
 // export * from './blocks';
-export * from './sanity.types';
+export * from './blocks';
+export * from './portfolio';
+export * from './singletons';

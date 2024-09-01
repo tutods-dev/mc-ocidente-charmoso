@@ -1,12 +1,10 @@
-import groq from 'groq';
-
 /**
  * Query to retrieve all the higlighted projetos.
  * @description The purpose of this query is retrieve all the posts marked as highlighted.
  * @param `$start` Offset (how many results should skip).
  * @param `$end` Limit (how much results retrieve)
  */
-const getHighlightedProjectsQuery = groq`
+const getHighlightedProjectsQuery = `
     *[_type == 'project' && isHighlighted == true] [$start...$end] | order(_createdAt desc) {
         title,
         "slug": slug.current,
@@ -29,7 +27,7 @@ const getHighlightedProjectsQuery = groq`
  * @param `$start` Offset (how many results should skip).
  * @param `$end` Limit (how much results retrieve)
  */
-const getHightlightedProjectsFromServiceQuery = groq`
+const getHightlightedProjectsFromServiceQuery = `
     *[_type == 'project' && isHighlighted == true && $serviceSlug in services[]->slug.current] [$start...$end] | order(_createdAt desc) {
         title,
         "slug": slug.current,

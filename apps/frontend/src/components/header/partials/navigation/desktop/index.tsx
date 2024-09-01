@@ -1,7 +1,7 @@
-import { MENU_ITEMS } from '@/shared/constants/menu';
 import { useLocation } from '@solidjs/router';
 import { For } from 'solid-js';
 import { twMerge } from 'tailwind-merge';
+import { MENU_ITEMS } from '~/shared/constants/menu';
 import { navigatioItemVariants } from './styles';
 
 type NavigationProps = {

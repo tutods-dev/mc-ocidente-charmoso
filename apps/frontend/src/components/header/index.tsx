@@ -1,10 +1,10 @@
-import { headerContainerVariants, headerVariants } from '@/components/header/styles';
-import { SOLID_HEADER_PATHS } from '@/shared/constants/header';
-import { useDeviceType } from '@/shared/hooks/use-device-type';
 import { useWindowScrollPosition } from '@solid-primitives/scroll';
 import { useLocation } from '@solidjs/router';
 import { Match, Switch, createMemo } from 'solid-js';
 import { twMerge } from 'tailwind-merge';
+import { headerContainerVariants, headerVariants } from '~/components/header/styles';
+import { SOLID_HEADER_PATHS } from '~/shared/constants/header';
+import { useDeviceType } from '~/shared/hooks/use-device-type';
 import { MobileNavigation, Navigation } from './partials/navigation';
 
 type HeaderProps = {

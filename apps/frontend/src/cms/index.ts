@@ -1,6 +1,6 @@
 import { createClient } from '@sanity/client';
 
-import { env } from '@/shared/utils/env';
+import { env } from '~/shared/utils/env';
 
 /**
  * Sanity CMS client.

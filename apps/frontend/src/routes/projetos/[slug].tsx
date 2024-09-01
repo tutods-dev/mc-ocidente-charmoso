@@ -1,12 +1,12 @@
 import { createAsync, useParams } from '@solidjs/router';
 import { For, Show, createSignal } from 'solid-js';
 
-import { components, getProject, urlFor } from '@/cms';
-import { ImageWithPreview } from '@/components/common';
-import { ProjectTestimonialSection } from '@/components/views/project';
-import { ProjectDetailsSection } from '@/components/views/project/details';
-import { cn } from '@/shared/utils';
 import { PortableText } from '@portabletext/solid';
+import { components, getProject, urlFor } from '~/cms';
+import { ImageWithPreview } from '~/components/common';
+import { ProjectTestimonialSection } from '~/components/views/project';
+import { ProjectDetailsSection } from '~/components/views/project/details';
+import { cn } from '~/shared/utils';
 
 export default function ProjectDetails() {
   // Signal to expand or collapse the content

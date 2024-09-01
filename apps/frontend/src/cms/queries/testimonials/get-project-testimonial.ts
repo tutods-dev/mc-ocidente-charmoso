@@ -1,9 +1,7 @@
-import groq from 'groq';
-
 /**
  * Query to retrieve a testimonial from a specific project.
  */
-const getProjectTestimonialQuery = groq`
+const getProjectTestimonialQuery = `
     *[_type == "testimonial" && project->slug.current == $slug] [0] {
       _id,
       client,

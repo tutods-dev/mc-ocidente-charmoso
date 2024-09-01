@@ -1,9 +1,7 @@
-import groq from 'groq';
-
 /**
  * Query to retrieve the total of projects.
  */
-const getTotalOfProjectsQuery = groq`
+const getTotalOfProjectsQuery = `
   count(*[_type == 'project'])
 `;
 
@@ -11,7 +9,7 @@ const getTotalOfProjectsQuery = groq`
  * Query to retrieve the total of projects from a specific service.
  * @param `$serviceSlug` Service slug
  */
-const getTotalOfProjectsFromServiceQuery = groq`
+const getTotalOfProjectsFromServiceQuery = `
   count(*[_type == 'project' && $serviceSlug in services[]->slug.current])
 `;
 
@@ -20,7 +18,7 @@ const getTotalOfProjectsFromServiceQuery = groq`
  * @param `$start` Offset (how many results should skip).
  * @param `$end` Limit (how much results retrieve)
  */
-const getProjectsQuery = groq`
+const getProjectsQuery = `
     *[_type == "project"] | order(_createdAt desc) [$start...$end] {
       _id,
       title,

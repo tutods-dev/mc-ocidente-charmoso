@@ -1,4 +1,4 @@
-import { DEFAULT_PAGINATION_OFFSET } from '@/shared/constants';
+import { DEFAULT_PAGINATION_OFFSET } from '~/shared/constants';
 
 /**
  * Callback function to calculate `start` and `end` values for Sanity queries.

@@ -1,7 +1,7 @@
-import { client } from '@/cms';
-import { getProjectTestimonialQuery } from '@/cms/queries';
-import type { GetProjectTestimonialQueryResult } from '@/shared/types';
 import { cache } from '@solidjs/router';
+import { client } from '~/cms';
+import { getProjectTestimonialQuery } from '~/cms/queries';
+import type { GetProjectTestimonialQueryResult } from '~/shared/types';
 
 /**
  * Service to retrive the testimonial for a specific project.

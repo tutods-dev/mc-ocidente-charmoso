@@ -1,7 +1,7 @@
-import { getProjectTestimonial } from '@/cms/services/testimonials/get-project-testimonial';
-import { TestimonialCard } from '@/components/cards';
 import { createAsync } from '@solidjs/router';
 import { Show } from 'solid-js';
+import { getProjectTestimonial } from '~/cms/services/testimonials/get-project-testimonial';
+import { TestimonialCard } from '~/components/cards';
 
 type Props = {
   /**

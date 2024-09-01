@@ -1,14 +1,11 @@
-import { client } from '@/cms';
-import { getRelatedProjectsByServiceQuery } from '@/cms/queries';
-import type { Project, Service } from '@/shared/types';
-import type { SanityAssetDocument } from '@sanity/client';
 import { cache } from '@solidjs/router';
+import { client } from '~/cms';
+import { getRelatedProjectsByServiceQuery } from '~/cms/queries';
+import type { Image, Project, Service } from '~/shared/types';
 
 type RelatedProjectsByService = Pick<Project, '_id' | 'slug'> &
   {
-    thumbnail: Omit<Project['thumbnail'], 'asset'> & {
-      asset: SanityAssetDocument;
-    };
+    thumbnail: Image;
     services: Pick<Service, '_id' | 'slug' | 'title'>[];
   }[];
 

@@ -1,4 +1,3 @@
-import { cn } from '@/libs/cn';
 import type {
   AccordionContentProps,
   AccordionItemProps,
@@ -7,6 +6,7 @@ import type {
 import { Accordion as AccordionPrimitive } from '@kobalte/core/accordion';
 import type { PolymorphicProps } from '@kobalte/core/polymorphic';
 import { type ParentProps, type ValidComponent, splitProps } from 'solid-js';
+import { cn } from '~/libs/cn';
 
 export const Accordion = AccordionPrimitive;
 

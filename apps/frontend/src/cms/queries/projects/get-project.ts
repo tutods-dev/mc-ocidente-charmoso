@@ -1,10 +1,8 @@
-import groq from 'groq';
-
 /**
  * Query to treive a specific project by slug.
  * @param `$slug` Project slug
  */
-const getProjectQuery = groq`
+const getProjectQuery = `
     *[_type == "project" && slug.current == $slug] [0] {
       ...,
       "slug": slug.current,

@@ -1,10 +1,8 @@
-import groq from 'groq';
-
 /**
  * Query to retrieve all settings.
  * @description This query is focused on retrive all the existing settings on the dataset.
  */
-const getAllSettingsQuery = groq`
+const getAllSettingsQuery = `
     *[_type == "settings"] [0] {
         ...,
         "thumbnail": {
@@ -19,7 +17,7 @@ const getAllSettingsQuery = groq`
 /**
  * Query to retrieve settings used for SEO purposes.
  */
-const getSeoSettingsQuery = groq`
+const getSeoSettingsQuery = `
     *[_type == "settings"] [0] {
         title,
         description,
@@ -33,7 +31,7 @@ const getSeoSettingsQuery = groq`
 /**
  * Query to retrive CTA settings only.
  */
-const getCtaSettingsQuery = groq`
+const getCtaSettingsQuery = `
     *[_type == "settings"] [0] {
         ...cta,
         "points": cta.points

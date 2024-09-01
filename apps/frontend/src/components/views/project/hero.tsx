@@ -1,7 +1,7 @@
-import { urlFor } from '@/cms';
-import type { GetProjectQueryResult } from '@/shared/types';
-import { cn } from '@/shared/utils';
 import { Show } from 'solid-js';
+import { urlFor } from '~/cms';
+import type { GetProjectQueryResult } from '~/shared/types';
+import { cn } from '~/shared/utils';
 
 type Props = Pick<
   NonNullable<GetProjectQueryResult>,

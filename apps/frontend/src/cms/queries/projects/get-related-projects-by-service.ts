@@ -1,5 +1,3 @@
-import groq from 'groq';
-
 /**
  * Query to retriveve related
  * @param `$slug` Project slug to exclude from the search
@@ -7,7 +5,7 @@ import groq from 'groq';
  * @param `$start` Offset (how many results should skip)
  * @param `$end` Limit (how much results retrieve)
  */
-const getRelatedProjectsByServiceQuery = groq`
+const getRelatedProjectsByServiceQuery = `
     *[_type == "project" && slug.current != $slug && array::intersects(services[]->slug.current, $serviceSlugs)] [$start...$end] | order(_createdAt desc) {
         _id,
         "slug": slug.current,

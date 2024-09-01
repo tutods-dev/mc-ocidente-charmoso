@@ -1,7 +1,7 @@
-import { getCtaSettings } from '@/cms/services/singletons/get-settings';
-import { EXCLUDED_PATHS_TO_SHOW_CTA } from '@/shared/constants';
 import { createAsync, useLocation } from '@solidjs/router';
 import { For, Show, Suspense, createMemo } from 'solid-js';
+import { getCtaSettings } from '~/cms/services/singletons/get-settings';
+import { EXCLUDED_PATHS_TO_SHOW_CTA } from '~/shared/constants';
 
 function CtaSection() {
   // Get location and pathname

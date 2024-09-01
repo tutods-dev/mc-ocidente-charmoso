@@ -1,7 +1,7 @@
-import { getProjects } from '@/cms/services/projects/get-projects';
-import { ProjectCard } from '@/components/cards/project';
 import { createAsync } from '@solidjs/router';
 import { For, Show } from 'solid-js';
+import { getProjects } from '~/cms/services/projects/get-projects';
+import { ProjectCard } from '~/components/cards/project';
 
 export default function Projects() {
   // const [searchParams, setSearchParams] = useSearchParams();
