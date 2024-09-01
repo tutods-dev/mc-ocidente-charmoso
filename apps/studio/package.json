@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@types/react": "^18.0.25",
-    "typescript": "^5.5.3",
+    "typescript": "^5.5.4",
     "vite-tsconfig-paths": "^5.0.1"
   }
 }
