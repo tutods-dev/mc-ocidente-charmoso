@@ -60,8 +60,8 @@ importers:
         specifier: ^2.0.23
         version: 2.0.23(solid-js@1.8.18)
       '@solidjs/router':
-        specifier: ^0.14.1
-        version: 0.14.1(solid-js@1.8.18)
+        specifier: ^0.14.3
+        version: 0.14.3(solid-js@1.8.18)
       '@solidjs/start':
         specifier: ^1.0.5
         version: 1.0.6(rollup@4.18.0)(solid-js@1.8.18)(vinxi@0.4.1(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1))(vite@5.3.1(@types/node@20.14.3)(terser@5.31.1))
@@ -98,7 +98,7 @@ importers:
         version: 2.0.13
       autoprefixer:
         specifier: ^10.4.20
-        version: 10.4.20(postcss@8.4.39)
+        version: 10.4.20(postcss@8.4.42)
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0
@@ -2209,8 +2209,8 @@ packages:
     peerDependencies:
       solid-js: ^1.6.12
 
-  '@solidjs/router@0.14.1':
-    resolution: {integrity: sha512-GumQ4jbt5xDngLypAndC4EjapY/3DP0G8Az4YWEVQHdCtjHwB8IOm32eEBxE9lKpOffbtXV0r/0X0mofHJ1m5w==}
+  '@solidjs/router@0.14.3':
+    resolution: {integrity: sha512-9p4k4zL2baK/1XRQALbFcaQ4IikjkWmxqYQtFqLzjONUejhL1uqJHtzxB4tZjmNqtRANVRnTDbJfzjvaD9k+pQ==}
     peerDependencies:
       solid-js: ^1.8.6
 
@@ -8373,7 +8373,7 @@ snapshots:
     dependencies:
       solid-js: 1.8.18
 
-  '@solidjs/router@0.14.1(solid-js@1.8.18)':
+  '@solidjs/router@0.14.3(solid-js@1.8.18)':
     dependencies:
       solid-js: 1.8.18
 
@@ -8797,7 +8797,7 @@ snapshots:
 
   asynckit@0.4.0: {}
 
-  autoprefixer@10.4.20(postcss@8.4.39):
+  autoprefixer@10.4.20(postcss@8.4.42):
     dependencies:
       browserslist: 4.23.3
       caniuse-lite: 1.0.30001655

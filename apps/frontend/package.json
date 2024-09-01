@@ -21,7 +21,7 @@
     "@solid-primitives/pagination": "^0.3.0",
     "@solid-primitives/resize-observer": "^2.0.26",
     "@solid-primitives/scroll": "^2.0.23",
-    "@solidjs/router": "^0.14.1",
+    "@solidjs/router": "^0.14.3",
     "@solidjs/start": "^1.0.5",
     "@tanstack/solid-form": "^0.30.0",
     "@tanstack/zod-form-adapter": "^0.31.0",
