@@ -116,17 +116,7 @@ export const PaginationPrevious = <T extends ValidComponent = 'button'>(
       )}
       {...rest}
     >
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4">
-        <path
-          fill="none"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="m15 6l-6 6l6 6"
-        />
-        <title>Previous page</title>
-      </svg>
+      <i class="ph ph-caret-left text-base leading-none" aria-label="Página anterior" />
     </PaginationPrimitive.Previous>
   );
 };
@@ -152,17 +142,7 @@ export const PaginationNext = <T extends ValidComponent = 'button'>(
       )}
       {...rest}
     >
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24">
-        <path
-          fill="none"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="m9 6l6 6l-6 6"
-        />
-        <title>Next page</title>
-      </svg>
+      <i class="ph ph-caret-right text-base leading-none" aria-label="Próxima página" />
     </PaginationPrimitive.Next>
   );
 };
