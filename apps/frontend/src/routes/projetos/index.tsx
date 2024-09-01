@@ -4,21 +4,7 @@ import { getProjects } from '~/cms/services/projects/get-projects';
 import { ProjectCard } from '~/components/cards/project';
 
 export default function Projects() {
-  // const [searchParams, setSearchParams] = useSearchParams();
-  //
-  // const totalOfProjects = createAsync(() => getTotalOfProjects());
-  //
-  // const [paginationProps, page, setPage] = createPagination({
-  //   pages: Math.ceil((totalOfProjects() ?? 0) / DEFAULT_PAGINATION_OFFSET),
-  // });
-
   const projects = createAsync(() => getProjects(1));
-  //
-  // createEffect(() => {
-  //   setSearchParams({
-  //     page: page(),
-  //   });
-  // });
 
   return (
     <main>

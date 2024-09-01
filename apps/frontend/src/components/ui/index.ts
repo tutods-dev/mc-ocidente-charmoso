@@ -10,3 +10,4 @@ export * from './textarea';
 export * from './textfield';
 export * from './tooltip';
 export * from './separator';
+export * from './badge';

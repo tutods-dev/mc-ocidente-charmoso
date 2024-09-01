@@ -1,6 +1,7 @@
 import { createAsync, useLocation } from '@solidjs/router';
 import { For, Show, Suspense, createMemo } from 'solid-js';
 import { getCtaSettings } from '~/cms/services/singletons/get-settings';
+import { Button } from '~/components/ui';
 import { EXCLUDED_PATHS_TO_SHOW_CTA } from '~/shared/constants';
 
 function CtaSection() {
@@ -27,22 +28,32 @@ function CtaSection() {
             <ul class={'mt-6 flex flex-wrap items-center justify-center gap-8'}>
               <For each={cta()?.points}>
                 {(point) => (
-                  <li class={'flex items-center gap-3 font-medium'}>
-                    <i class="ph ph-check" />
+                  <li class={'flex items-center gap-2 font-medium'}>
+                    <span class="inline-flex size-4 items-center justify-center rounded-full bg-green-700">
+                      <i class="ph ph-check text-white text-xs" />
+                    </span>
+
                     {point}
                   </li>
                 )}
               </For>
             </ul>
 
-            <a
+            <Button
+              variant="ghost"
+              class="mt-10 inline-flex items-center gap-2 font-semibold"
+              as="a"
+              href="/contactos"
+            >
+              {cta()?.button}
+              <i class="ph ph-arrow-right leading-none" />
+            </Button>
+            {/* <a
               class={
                 'mt-10 inline-flex items-center gap-2 border-b border-b-transparent font-semibold text-gray-700 transition-all duration-300 ease-in-out hover:border-b-gray-900 hover:text-gray-900'
               }
               href={'/contactos'}
-            >
-              {cta()?.button} <i class={'ph ph-arrow-right'} />
-            </a>
+            ></a> */}
           </div>
         </section>
       </Show>
