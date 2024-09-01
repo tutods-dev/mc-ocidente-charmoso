@@ -76,6 +76,7 @@ export default function Projects() {
             <div class="container flex justify-end">
               <Pagination
                 count={total}
+                defaultPage={1}
                 fixedItems={true}
                 onPageChange={handlePageChange}
                 page={Number(searchParams.page) ?? 1}

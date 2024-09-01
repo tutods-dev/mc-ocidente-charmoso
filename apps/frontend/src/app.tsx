@@ -27,7 +27,7 @@ function App() {
       root={(props) => (
         <Suspense>
           {/*TODO: fallback*/}
-          <Header />
+          <Header mode="solid" />
 
           {props.children}
 

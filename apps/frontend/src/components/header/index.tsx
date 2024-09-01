@@ -41,15 +41,6 @@ function Header({ mode = 'transparent', className = '' }: HeaderProps) {
    * @description If the current `pathname` is included on the `SOLID_HEADER_PATHS` constant, use the mode `solid` instead of the mode received by property.
    */
   const headerMode = createMemo(() => {
-    // If the current `pathname` contains `projetos`.
-    if (
-      pathname().includes('/projetos/') &&
-      !!pathname().replace('/projetos/', '').length &&
-      SOLID_HEADER_PATHS.includes('/projetos/:slug')
-    ) {
-      return 'solid';
-    }
-
     // If the current `pathname` is on the `SOLID_HEADER_PATHS` constant.
     if (SOLID_HEADER_PATHS.includes(pathname())) {
       return 'solid';

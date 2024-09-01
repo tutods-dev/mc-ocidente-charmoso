@@ -57,7 +57,7 @@ export default function ProjectDetails() {
                   {(content) => (
                     <div
                       class={cn([
-                        'relative my-4 cursor-pointer',
+                        'relative my-4',
                         'overflow-y-hidden',
                         'transition duration-300 ease-in-out',
                       ])}

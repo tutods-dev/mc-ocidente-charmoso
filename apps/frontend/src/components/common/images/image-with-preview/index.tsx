@@ -92,7 +92,7 @@ function ImageWithPreview(rawProps: ImageWithPreviewProps) {
             {(caption) => <span class={'text-md'}>{caption}</span>}
           </Show>
 
-          <i class="ph ph-magnifying-glass-plus text-2xl text-white" />
+          <i class="ph ph-magnifying-glass-plus text-3xl text-white" />
         </figcaption>
       </Dialog.Trigger>
       <Dialog.Portal>

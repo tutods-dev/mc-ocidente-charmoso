@@ -19,7 +19,7 @@ const figureCaptionStyles = clsx([
   'flex flex-col items-center justify-center gap-2',
   'opacity-0 hover:opacity-100',
   'transition-all duration-300 ease-in-out',
-  'bg-gradient-to-b from-gray-500/20 via-gray-800/70 to-gray-900/100',
+  'bg-gradient-to-b from-gray-500/20 to-foreground/85',
   'text-center text-white',
 ]);
 
