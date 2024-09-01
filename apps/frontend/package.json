@@ -11,8 +11,8 @@
   "dependencies": {
     "@corvu/dialog": "^0.2.3",
     "@corvu/drawer": "^0.2.2",
-    "@fontsource/montserrat": "^5.0.18",
-    "@fontsource/spectral": "^5.0.13",
+    "@fontsource/montserrat": "^5.0.19",
+    "@fontsource/spectral": "^5.0.14",
     "@kobalte/core": "^0.13.6",
     "@phosphor-icons/web": "^2.1.1",
     "@portabletext/solid": "^1.0.6",

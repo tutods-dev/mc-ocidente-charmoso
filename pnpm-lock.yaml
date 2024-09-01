@@ -30,11 +30,11 @@ importers:
         specifier: ^0.2.2
         version: 0.2.2(solid-js@1.8.18)
       '@fontsource/montserrat':
-        specifier: ^5.0.18
-        version: 5.0.18
+        specifier: ^5.0.19
+        version: 5.0.19
       '@fontsource/spectral':
-        specifier: ^5.0.13
-        version: 5.0.13
+        specifier: ^5.0.14
+        version: 5.0.14
       '@kobalte/core':
         specifier: ^0.13.6
         version: 0.13.6(solid-js@1.8.18)
@@ -1492,11 +1492,11 @@ packages:
   '@floating-ui/utils@0.2.7':
     resolution: {integrity: sha512-X8R8Oj771YRl/w+c1HqAC1szL8zWQRwFvgDwT129k9ACdBoud/+/rX9V0qiMl6LWUdP9voC2nDVZYPMQQsb6eA==}
 
-  '@fontsource/montserrat@5.0.18':
-    resolution: {integrity: sha512-85JBs2rCdFK/VBdSb401e2lXk5gynVo2zi3Rh2Guem4WNtT2q52+V90o3KzjmajY3TPJvCZA/kI7R05ev7148g==}
+  '@fontsource/montserrat@5.0.19':
+    resolution: {integrity: sha512-d2JyNIE0i2FOqLFkaSrfsyDzFzkzdER7d3xeHqFOTK5OFE+yiFyvlIBMXg5q+nNpMmVoW+2Q182Csn28o+kijQ==}
 
-  '@fontsource/spectral@5.0.13':
-    resolution: {integrity: sha512-t/E81Rp78LtpwSO19BErGP2HxWAib2/lBriYqJ1OsmYwdFTS4k3wqUJ6+vlr1dKWvjbMks+M3e999JyQC5JaMA==}
+  '@fontsource/spectral@5.0.14':
+    resolution: {integrity: sha512-Xw7UVA5DFCBke6LGCROtF0K0oCj/Its9NIBkgmbXG1HjxEdpOdvYGFQ5lPRZJyJGgHB7kH8evrNNveOWkKWtyA==}
 
   '@internationalized/date@3.5.5':
     resolution: {integrity: sha512-H+CfYvOZ0LTJeeLOqm19E3uj/4YjrmOFtBufDHPfvtI80hFAMqtrp7oCACpe4Cil5l8S0Qu/9dYfZc/5lY8WQQ==}
@@ -7505,9 +7505,9 @@ snapshots:
 
   '@floating-ui/utils@0.2.7': {}
 
-  '@fontsource/montserrat@5.0.18': {}
+  '@fontsource/montserrat@5.0.19': {}
 
-  '@fontsource/spectral@5.0.13': {}
+  '@fontsource/spectral@5.0.14': {}
 
   '@internationalized/date@3.5.5':
     dependencies:
