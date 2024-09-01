@@ -24,8 +24,8 @@ importers:
   apps/frontend:
     dependencies:
       '@corvu/dialog':
-        specifier: ^0.2.1
-        version: 0.2.1(solid-js@1.8.18)
+        specifier: ^0.2.3
+        version: 0.2.3(solid-js@1.8.18)
       '@corvu/drawer':
         specifier: ^0.2.2
         version: 0.2.2(solid-js@1.8.18)
@@ -45,8 +45,8 @@ importers:
         specifier: ^1.0.6
         version: 1.0.6(solid-js@1.8.18)
       '@sanity/client':
-        specifier: ^6.21.1
-        version: 6.21.1(debug@4.3.5)
+        specifier: ^6.21.3
+        version: 6.21.3(debug@4.3.5)
       '@sanity/image-url':
         specifier: ^1.0.2
         version: 1.0.2
@@ -85,10 +85,10 @@ importers:
         version: 1.8.18
       tailwind-variants:
         specifier: ^0.2.1
-        version: 0.2.1(tailwindcss@3.4.6)
+        version: 0.2.1(tailwindcss@3.4.10)
       tailwindcss-animate:
         specifier: ^1.0.7
-        version: 1.0.7(tailwindcss@3.4.6)
+        version: 1.0.7(tailwindcss@3.4.10)
       vinxi:
         specifier: ^0.4.0
         version: 0.4.1(@opentelemetry/api@1.9.0)(@types/node@20.14.3)(ioredis@5.4.1)(terser@5.31.1)
@@ -112,8 +112,8 @@ importers:
         specifier: ^2.4.0
         version: 2.4.0
       tailwindcss:
-        specifier: ^3.4.6
-        version: 3.4.6
+        specifier: ^3.4.10
+        version: 3.4.10
 
   apps/studio:
     dependencies:
@@ -979,8 +979,8 @@ packages:
     resolution: {integrity: sha512-tpyc+7i6bPG9mvaBbtKUeghfyZSDgWquIDfMgqYtTbmZ9Y9VzEm2je9EYcQ0aoz5o7NvGS+rcDec93yO08MHYA==}
     engines: {node: '>=v18'}
 
-  '@corvu/dialog@0.2.1':
-    resolution: {integrity: sha512-VpMVckWK4wUp1Rv0LRz2j2kiJq6DzAKS0tjXGI/jcm8Xb6Ucy44JvLiivjbjx0OPGadCQair7Y65ur8DZCw2PA==}
+  '@corvu/dialog@0.2.3':
+    resolution: {integrity: sha512-1p1lG2Pdu7CtDYw0FP+gdU0Db4zsB2ljOP7UxszZIQpvVvnrAYhNPfu/8IpscB38c0hZCodEnv5hR0NaEEA/Ag==}
     peerDependencies:
       solid-js: ^1.8
 
@@ -996,6 +996,11 @@ packages:
 
   '@corvu/utils@0.3.2':
     resolution: {integrity: sha512-ZWlyWEE8qV9+CB9OAyo2bTrZGXQN9ZeM+JfYv89zoR+lRACKTDuoOZEdiyL8Uc7U5dUSH1uTqKhTTnaHWb+wZA==}
+    peerDependencies:
+      solid-js: ^1.8
+
+  '@corvu/utils@0.4.1':
+    resolution: {integrity: sha512-swd/2DUJiXTo9PM5GVbBv3jNlEOwmKWvVOJG2l8Cwu1cokoXknKrDkBSZRz+yf0rFXdbhWhRQMWDPMPwuBnWNg==}
     peerDependencies:
       solid-js: ^1.8
 
@@ -1463,6 +1468,9 @@ packages:
   '@floating-ui/core@1.6.2':
     resolution: {integrity: sha512-+2XpQV9LLZeanU4ZevzRnGFg2neDeKHgFLjP6YLW+tly0IvrhqT4u8enLGjLH3qeh85g19xY5rsAusfwTdn5lg==}
 
+  '@floating-ui/dom@1.6.10':
+    resolution: {integrity: sha512-fskgCFv8J8OamCmyun8MfjB1Olfn+uZKjOKZ0vhYF3gRmEUXcGOjxWL8bBr7i4kIuPZ2KD2S3EUIOxnjC8kl2A==}
+
   '@floating-ui/dom@1.6.5':
     resolution: {integrity: sha512-Nsdud2X65Dz+1RHjAIP0t8z5e2ff/IRbei6BqFrl1urT8sDVzM1HMQ+R0XcU5ceRfyO3I6ayeqIfh+6Wb8LGTw==}
 
@@ -1480,6 +1488,9 @@ packages:
 
   '@floating-ui/utils@0.2.4':
     resolution: {integrity: sha512-dWO2pw8hhi+WrXq1YJy2yCuWoL20PddgGaqTgVe4cOS9Q6qklXCiA1tJEqX6BEwRNSCP84/afac9hd4MS+zEUA==}
+
+  '@floating-ui/utils@0.2.7':
+    resolution: {integrity: sha512-X8R8Oj771YRl/w+c1HqAC1szL8zWQRwFvgDwT129k9ACdBoud/+/rX9V0qiMl6LWUdP9voC2nDVZYPMQQsb6eA==}
 
   '@fontsource/montserrat@5.0.18':
     resolution: {integrity: sha512-85JBs2rCdFK/VBdSb401e2lXk5gynVo2zi3Rh2Guem4WNtT2q52+V90o3KzjmajY3TPJvCZA/kI7R05ev7148g==}
@@ -1963,8 +1974,8 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  '@sanity/client@6.21.1':
-    resolution: {integrity: sha512-j6OnE6Ytso0c5imjuIviglJDKXgd3jCVyPmZO+GpqWDtPWSXPucqH/mFyHcs5+kWyfAfkY5G1R2+Er0L7Sb0hA==}
+  '@sanity/client@6.21.3':
+    resolution: {integrity: sha512-oE2+4kKRTZhFCc4IIsojkzKF0jIhsSYSRxkPZjScZ1k/EQ3Y2tEcQYiKwvvotzaXoaWsIL3RTpulE+R4iBYiBw==}
     engines: {node: '>=14.18'}
 
   '@sanity/codegen@3.52.0':
@@ -2287,6 +2298,9 @@ packages:
   '@types/eventsource@1.1.15':
     resolution: {integrity: sha512-XQmGcbnxUNa06HR3VBVkc9+A2Vpi9ZyLJcdS5dwaQQ/4ZMWFO+5c90FnMUpbtMZwB/FChoYHwuVg8TvkECacTA==}
 
+  '@types/follow-redirects@1.14.4':
+    resolution: {integrity: sha512-GWXfsD0Jc1RWiFmMuMFCpXMzi9L7oPDVwxUnZdg89kDNnqsRfUKXEtUYtA98A6lig1WXH/CYY/fvPW9HuN5fTA==}
+
   '@types/glob@7.2.0':
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
 
@@ -2319,6 +2333,9 @@ packages:
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
+
+  '@types/progress-stream@2.0.5':
+    resolution: {integrity: sha512-5YNriuEZkHlFHHepLIaxzq3atGeav1qCTGzB74HKWpo66qjfostF+rHc785YYYHeBytve8ZG3ejg42jEIfXNiQ==}
 
   '@types/prop-types@15.7.12':
     resolution: {integrity: sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==}
@@ -3512,6 +3529,10 @@ packages:
 
   get-it@8.6.3:
     resolution: {integrity: sha512-I7AKP1Xl2q2j4ucvU0yMtiM+xZKgzD1Fvyh1YcZCT66i+wNrxJAonV+H1yynB3gerZ17uA00IXg61LVLdDeiCg==}
+    engines: {node: '>=14.0.0'}
+
+  get-it@8.6.5:
+    resolution: {integrity: sha512-o1hjPwrb/icm3WJbCweTSq8mKuDfJlqwbFauI+Pdgid99at/BFaBXFBJZE+uqvHyOVARE4z680S44vrDm8SsCw==}
     engines: {node: '>=14.0.0'}
 
   get-port-please@3.1.2:
@@ -5215,6 +5236,11 @@ packages:
   smob@1.5.0:
     resolution: {integrity: sha512-g6T+p7QO8npa+/hNx9ohv1E5pVCmWrVCUzUXJyLdMmftX6ER0oiWY/w9knEonLpnOp6b6FenKnMfR8gqwWdwig==}
 
+  solid-dismissible@0.1.1:
+    resolution: {integrity: sha512-9kcKBJIMdS+586cA1g63HYWxKh3h89leeNHbPZ1csYjuni+NvPBtNr11l0iEX2AKKEt6FHk6qNhc/gjoYAW1pA==}
+    peerDependencies:
+      solid-js: ^1.8
+
   solid-focus-trap@0.1.7:
     resolution: {integrity: sha512-NSJiIkL+WTWGgca+OKQA9rV3bD51lT23iLn1Z+Ap1Qk3rJBxQ8SoEAQ0FvXoQThtyXFKAK1ibcVBBMMEcu6YMw==}
     peerDependencies:
@@ -5225,6 +5251,11 @@ packages:
 
   solid-presence@0.1.7:
     resolution: {integrity: sha512-786JcN2PFCSKKOIQ7Zg0GZuy2vmtF8b78WZDbOIzzVOCcZF/ovZTCZOY11lUYiKqPCXxeLxh8kBLoFF1X42i9w==}
+    peerDependencies:
+      solid-js: ^1.8
+
+  solid-presence@0.1.8:
+    resolution: {integrity: sha512-pWGtXUFWYYUZNbg5YpG5vkQJyOtzn2KXhxYaMx/4I+lylTLYkITOLevaCwMRN+liCVk0pqB6EayLWojNqBFECA==}
     peerDependencies:
       solid-js: ^1.8
 
@@ -5419,8 +5450,8 @@ packages:
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
 
-  tailwindcss@3.4.6:
-    resolution: {integrity: sha512-1uRHzPB+Vzu57ocybfZ4jh5Q3SdlH7XW23J5sQoM9LhE9eIOlzxer/3XPSsycvih3rboRsvt0QCmzSrqyOYUIA==}
+  tailwindcss@3.4.10:
+    resolution: {integrity: sha512-KWZkVPm7yJRhdu4SRSl9d4AK2wM3a50UsvgHZO7xY77NQr2V+fIrEuoDGQcbvswWvFGbS2f6e+jC/6WJm1Dl0w==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -7150,17 +7181,18 @@ snapshots:
       '@types/conventional-commits-parser': 5.0.0
       chalk: 5.3.0
 
-  '@corvu/dialog@0.2.1(solid-js@1.8.18)':
+  '@corvu/dialog@0.2.3(solid-js@1.8.18)':
     dependencies:
-      '@corvu/utils': 0.3.2(solid-js@1.8.18)
+      '@corvu/utils': 0.4.1(solid-js@1.8.18)
+      solid-dismissible: 0.1.1(solid-js@1.8.18)
       solid-focus-trap: 0.1.7(solid-js@1.8.18)
       solid-js: 1.8.18
-      solid-presence: 0.1.7(solid-js@1.8.18)
+      solid-presence: 0.1.8(solid-js@1.8.18)
       solid-prevent-scroll: 0.1.9(solid-js@1.8.18)
 
   '@corvu/drawer@0.2.2(solid-js@1.8.18)':
     dependencies:
-      '@corvu/dialog': 0.2.1(solid-js@1.8.18)
+      '@corvu/dialog': 0.2.3(solid-js@1.8.18)
       '@corvu/utils': 0.3.2(solid-js@1.8.18)
       '@solid-primitives/memo': 1.3.8(solid-js@1.8.18)
       solid-js: 1.8.18
@@ -7174,6 +7206,11 @@ snapshots:
   '@corvu/utils@0.3.2(solid-js@1.8.18)':
     dependencies:
       '@floating-ui/dom': 1.6.7
+      solid-js: 1.8.18
+
+  '@corvu/utils@0.4.1(solid-js@1.8.18)':
+    dependencies:
+      '@floating-ui/dom': 1.6.10
       solid-js: 1.8.18
 
   '@deno/shim-deno-test@0.5.0': {}
@@ -7441,6 +7478,11 @@ snapshots:
     dependencies:
       '@floating-ui/utils': 0.2.2
 
+  '@floating-ui/dom@1.6.10':
+    dependencies:
+      '@floating-ui/core': 1.6.2
+      '@floating-ui/utils': 0.2.7
+
   '@floating-ui/dom@1.6.5':
     dependencies:
       '@floating-ui/core': 1.6.2
@@ -7460,6 +7502,8 @@ snapshots:
   '@floating-ui/utils@0.2.2': {}
 
   '@floating-ui/utils@0.2.4': {}
+
+  '@floating-ui/utils@0.2.7': {}
 
   '@fontsource/montserrat@5.0.18': {}
 
@@ -7931,7 +7975,7 @@ snapshots:
   '@sanity/cli@3.52.0(react@18.3.1)':
     dependencies:
       '@babel/traverse': 7.24.7
-      '@sanity/client': 6.21.1(debug@4.3.5)
+      '@sanity/client': 6.21.3(debug@4.3.5)
       '@sanity/codegen': 3.52.0
       '@sanity/telemetry': 0.7.9(react@18.3.1)
       '@sanity/util': 3.52.0(debug@4.3.5)
@@ -7952,10 +7996,10 @@ snapshots:
       - react
       - supports-color
 
-  '@sanity/client@6.21.1(debug@4.3.5)':
+  '@sanity/client@6.21.3(debug@4.3.5)':
     dependencies:
       '@sanity/eventsource': 5.0.2
-      get-it: 8.6.3(debug@4.3.5)
+      get-it: 8.6.5(debug@4.3.5)
       rxjs: 7.8.1
     transitivePeerDependencies:
       - debug
@@ -7997,7 +8041,7 @@ snapshots:
 
   '@sanity/export@3.40.0':
     dependencies:
-      '@sanity/client': 6.21.1(debug@4.3.5)
+      '@sanity/client': 6.21.3(debug@4.3.5)
       '@sanity/util': 3.37.2(debug@4.3.5)
       archiver: 7.0.1
       debug: 4.3.5
@@ -8070,7 +8114,7 @@ snapshots:
   '@sanity/migrate@3.52.0':
     dependencies:
       '@bjoerge/mutiny': 0.5.3
-      '@sanity/client': 6.21.1(debug@4.3.5)
+      '@sanity/client': 6.21.3(debug@4.3.5)
       '@sanity/types': 3.52.0(debug@4.3.5)
       '@sanity/util': 3.52.0(debug@4.3.5)
       arrify: 2.0.1
@@ -8099,11 +8143,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@sanity/presentation@1.16.2(@sanity/client@6.21.1(debug@4.3.5))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
+  '@sanity/presentation@1.16.2(@sanity/client@6.21.3(debug@4.3.5))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
     dependencies:
-      '@sanity/client': 6.21.1(debug@4.3.5)
+      '@sanity/client': 6.21.3(debug@4.3.5)
       '@sanity/icons': 3.3.1(react@18.3.1)
-      '@sanity/preview-url-secret': 1.6.18(@sanity/client@6.21.1(debug@4.3.5))
+      '@sanity/preview-url-secret': 1.6.18(@sanity/client@6.21.3(debug@4.3.5))
       '@sanity/ui': 2.8.8(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@sanity/uuid': 3.0.2
       '@types/lodash.isequal': 4.5.8
@@ -8122,9 +8166,9 @@ snapshots:
       - react-is
       - styled-components
 
-  '@sanity/preview-url-secret@1.6.18(@sanity/client@6.21.1(debug@4.3.5))':
+  '@sanity/preview-url-secret@1.6.18(@sanity/client@6.21.3(debug@4.3.5))':
     dependencies:
-      '@sanity/client': 6.21.1(debug@4.3.5)
+      '@sanity/client': 6.21.3(debug@4.3.5)
       '@sanity/uuid': 3.0.2
 
   '@sanity/schema@3.52.0(debug@4.3.5)':
@@ -8150,14 +8194,14 @@ snapshots:
 
   '@sanity/types@3.37.2(debug@4.3.5)':
     dependencies:
-      '@sanity/client': 6.21.1(debug@4.3.5)
+      '@sanity/client': 6.21.3(debug@4.3.5)
       '@types/react': 18.3.5
     transitivePeerDependencies:
       - debug
 
   '@sanity/types@3.52.0(debug@4.3.5)':
     dependencies:
-      '@sanity/client': 6.21.1(debug@4.3.5)
+      '@sanity/client': 6.21.3(debug@4.3.5)
       '@types/react': 18.3.5
     transitivePeerDependencies:
       - debug
@@ -8178,7 +8222,7 @@ snapshots:
 
   '@sanity/util@3.37.2(debug@4.3.5)':
     dependencies:
-      '@sanity/client': 6.21.1(debug@4.3.5)
+      '@sanity/client': 6.21.3(debug@4.3.5)
       '@sanity/types': 3.37.2(debug@4.3.5)
       get-random-values-esm: 1.0.2
       moment: 2.30.1
@@ -8188,7 +8232,7 @@ snapshots:
 
   '@sanity/util@3.52.0(debug@4.3.5)':
     dependencies:
-      '@sanity/client': 6.21.1(debug@4.3.5)
+      '@sanity/client': 6.21.3(debug@4.3.5)
       '@sanity/types': 3.52.0(debug@4.3.5)
       get-random-values-esm: 1.0.2
       moment: 2.30.1
@@ -8477,6 +8521,10 @@ snapshots:
 
   '@types/eventsource@1.1.15': {}
 
+  '@types/follow-redirects@1.14.4':
+    dependencies:
+      '@types/node': 20.14.3
+
   '@types/glob@7.2.0':
     dependencies:
       '@types/minimatch': 5.1.2
@@ -8511,6 +8559,10 @@ snapshots:
       undici-types: 5.26.5
 
   '@types/normalize-package-data@2.4.4': {}
+
+  '@types/progress-stream@2.0.5':
+    dependencies:
+      '@types/node': 20.14.3
 
   '@types/prop-types@15.7.12': {}
 
@@ -9809,6 +9861,18 @@ snapshots:
 
   get-it@8.6.3(debug@4.3.5):
     dependencies:
+      decompress-response: 7.0.0
+      follow-redirects: 1.15.6(debug@4.3.5)
+      is-retry-allowed: 2.2.0
+      progress-stream: 2.0.0
+      tunnel-agent: 0.6.0
+    transitivePeerDependencies:
+      - debug
+
+  get-it@8.6.5(debug@4.3.5):
+    dependencies:
+      '@types/follow-redirects': 1.14.4
+      '@types/progress-stream': 2.0.5
       decompress-response: 7.0.0
       follow-redirects: 1.15.6(debug@4.3.5)
       is-retry-allowed: 2.2.0
@@ -11444,7 +11508,7 @@ snapshots:
       '@sanity/bifur-client': 0.4.1
       '@sanity/block-tools': 3.52.0
       '@sanity/cli': 3.52.0(react@18.3.1)
-      '@sanity/client': 6.21.1(debug@4.3.5)
+      '@sanity/client': 6.21.3(debug@4.3.5)
       '@sanity/color': 3.0.6
       '@sanity/diff': 3.52.0
       '@sanity/diff-match-patch': 3.1.1
@@ -11457,7 +11521,7 @@ snapshots:
       '@sanity/logos': 2.1.12(@sanity/color@3.0.6)(react@18.3.1)
       '@sanity/migrate': 3.52.0
       '@sanity/mutator': 3.52.0
-      '@sanity/presentation': 1.16.2(@sanity/client@6.21.1(debug@4.3.5))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+      '@sanity/presentation': 1.16.2(@sanity/client@6.21.3(debug@4.3.5))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@sanity/schema': 3.52.0(debug@4.3.5)
       '@sanity/telemetry': 0.7.9(react@18.3.1)
       '@sanity/types': 3.52.0(debug@4.3.5)
@@ -11697,6 +11761,11 @@ snapshots:
 
   smob@1.5.0: {}
 
+  solid-dismissible@0.1.1(solid-js@1.8.18):
+    dependencies:
+      '@corvu/utils': 0.4.1(solid-js@1.8.18)
+      solid-js: 1.8.18
+
   solid-focus-trap@0.1.7(solid-js@1.8.18):
     dependencies:
       '@corvu/utils': 0.3.2(solid-js@1.8.18)
@@ -11711,6 +11780,11 @@ snapshots:
   solid-presence@0.1.7(solid-js@1.8.18):
     dependencies:
       '@corvu/utils': 0.3.1(solid-js@1.8.18)
+      solid-js: 1.8.18
+
+  solid-presence@0.1.8(solid-js@1.8.18):
+    dependencies:
+      '@corvu/utils': 0.4.1(solid-js@1.8.18)
       solid-js: 1.8.18
 
   solid-prevent-scroll@0.1.9(solid-js@1.8.18):
@@ -11890,16 +11964,16 @@ snapshots:
 
   tailwind-merge@2.4.0: {}
 
-  tailwind-variants@0.2.1(tailwindcss@3.4.6):
+  tailwind-variants@0.2.1(tailwindcss@3.4.10):
     dependencies:
       tailwind-merge: 2.4.0
-      tailwindcss: 3.4.6
+      tailwindcss: 3.4.10
 
-  tailwindcss-animate@1.0.7(tailwindcss@3.4.6):
+  tailwindcss-animate@1.0.7(tailwindcss@3.4.10):
     dependencies:
-      tailwindcss: 3.4.6
+      tailwindcss: 3.4.10
 
-  tailwindcss@3.4.6:
+  tailwindcss@3.4.10:
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
