@@ -41,7 +41,7 @@ function TestimonialCard(rawProps: Props) {
         <Show when={testimonialProps.url} keyed={true}>
           {(googleUrl) => (
             <Button
-              variant={'link'}
+              variant="link"
               as="a"
               href={googleUrl}
               target="_blank"
