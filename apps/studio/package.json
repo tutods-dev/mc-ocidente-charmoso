@@ -1,5 +1,5 @@
 {
-  "name": "mc-ocidente-charmoso",
+  "name": "mc-ocidente-charmoso-cms",
   "private": true,
   "version": "1.0.0",
   "author": {
@@ -26,7 +26,6 @@
     "styled-components": "^6.1.13"
   },
   "devDependencies": {
-    "@types/react": "^18.0.25",
     "@types/react": "^18.3.5",
     "typescript": "^5.5.4",
     "vite-tsconfig-paths": "^5.0.1"

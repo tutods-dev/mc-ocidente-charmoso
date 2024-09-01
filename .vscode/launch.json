@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "FE: Dev",
+      "runtimeExecutable": "pnpm",
+      "cwd": "${workspaceFolder}/apps/frontend",
+      "runtimeArgs": ["run-script", "dev"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Studio: Dev",
+      "runtimeExecutable": "pnpm",
+      "cwd": "${workspaceFolder}/apps/studio",
+      "runtimeArgs": ["run-script", "dev"]
+    }
+  ]
+}

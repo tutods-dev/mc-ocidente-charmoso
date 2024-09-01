@@ -1,5 +1,5 @@
 {
-  "name": "example-with-tailwindcss",
+  "name": "mc-ocidente-charmoso-fe",
   "type": "module",
   "packageManager": "pnpm@9.9.0",
   "scripts": {
