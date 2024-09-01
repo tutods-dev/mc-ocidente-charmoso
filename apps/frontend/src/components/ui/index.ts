@@ -1,8 +1,10 @@
 export * from './accordion';
+export * from './badge';
 export * from './button';
 export * from './carousel';
 export * from './checkbox';
 export * from './drawer';
+export * from './label';
 export * from './pagination';
 export * from './separator';
 export * from './tabs';
@@ -10,4 +12,3 @@ export * from './textarea';
 export * from './textfield';
 export * from './tooltip';
 export * from './separator';
-export * from './badge';
