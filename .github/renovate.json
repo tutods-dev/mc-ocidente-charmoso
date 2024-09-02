@@ -5,6 +5,13 @@
   "prCreation": "immediate",
   "updateInternalDeps": true,
   "rangeStrategy": "bump",
+  "automerge": true,
+  "automergeType": "pr",
+  "timezone": "Europe/Lisbon",
+  "schedule": [
+    "after 3pm every day",
+    "before 5am every day"
+  ],
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true

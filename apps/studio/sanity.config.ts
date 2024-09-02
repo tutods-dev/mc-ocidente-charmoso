@@ -42,6 +42,11 @@ export default defineConfig({
               .id('settings')
               .icon(CogIcon)
               .child(S.document().schemaType('settings').documentId('settings')),
+            S.listItem()
+              .title('Listagens')
+              .id('archives')
+              .icon(CogIcon)
+              .child(S.document().schemaType('archives').documentId('archives')),
 
             S.divider(),
 
