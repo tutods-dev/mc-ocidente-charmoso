@@ -1,15 +1,15 @@
 /**
  * Query to retrieve projects archive settings.
  */
-const getProjectsArchive = `
+const getProjectsArchiveQuery = `
     *[_type == "archives"] [0].projects
 `;
 
 /**
  * Query to retrieve services archive settings.
  */
-const getServicesArchive = `
+const getServicesArchiveQuery = `
     *[_type == "archives"] [0].services
 `;
 
-export { getServicesArchive, getProjectsArchive };
+export { getServicesArchiveQuery, getProjectsArchiveQuery };

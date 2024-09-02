@@ -1,6 +1,6 @@
 /**
  * Query to retrieve all settings.
- * @description This query is focused on retrive all the existing settings on the dataset.
+ * @description This query is focused on retrieve all the existing settings on the dataset.
  */
 const getAllSettingsQuery = `
     *[_type == "settings"] [0] {
@@ -29,7 +29,7 @@ const getSeoSettingsQuery = `
 `;
 
 /**
- * Query to retrive CTA settings only.
+ * Query to retrieve CTA settings only.
  */
 const getCtaSettingsQuery = `
     *[_type == "settings"] [0] {

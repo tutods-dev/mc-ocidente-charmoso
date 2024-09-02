@@ -1,27 +1,37 @@
 import { cache } from '@solidjs/router';
-import { client } from '~/cms';
-import { getCtaSettingsQuery } from '~/cms/queries';
-import type { CtaSettings } from '~/shared/types/singletons/settings.types';
+import { client, getProjectsArchiveQuery, getServicesArchiveQuery } from '~/cms';
+import type { Archives } from '~/shared/types';
 
 /**
- * Service to retrieve the CTA settings.
- * @param isEnable Indicates if the query can be executed or not
+ * Service to retrieve the projects archive settings.
  */
-const getCtaSettings = cache<(isEnabled: boolean) => Promise<CtaSettings | undefined>>(
-  async (isEnabled = true) => {
+const getProjectsArchive = cache<() => Promise<Archives['projects'] | undefined>>(
+  async () => {
     'use server';
 
-    if (!isEnabled) {
-      return;
-    }
-
     try {
-      return client.fetch<CtaSettings>(getCtaSettingsQuery);
+      return client.fetch<Archives['projects']>(getProjectsArchiveQuery);
     } catch {
       return;
     }
   },
-  'cta-settings',
+  'projects-archive',
 );
 
-export { getCtaSettings };
+/**
+ * Service to retrieve the services archive settings.
+ */
+const getServicesArchive = cache<() => Promise<Archives['services'] | undefined>>(
+  async () => {
+    'use server';
+
+    try {
+      return client.fetch<Archives['services']>(getServicesArchiveQuery);
+    } catch {
+      return;
+    }
+  },
+  'services-archive',
+);
+
+export { getProjectsArchive, getServicesArchive };

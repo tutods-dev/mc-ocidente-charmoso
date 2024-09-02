@@ -10,7 +10,7 @@ type RelatedProjectsByService = Pick<Project, 'slug'> &
   }[];
 
 /**
- * Service to retrive a specific project.
+ * Service to retrieve a specific project.
  * @param slug Project slug to exclude from the search
  * @param serviceSlugs List of service slugs
  * @param start Offset (how many results should skip).

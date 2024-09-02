@@ -4,7 +4,7 @@ import { getProjectTestimonialQuery } from '~/cms/queries';
 import type { GetProjectTestimonialQueryResult } from '~/shared/types';
 
 /**
- * Service to retrive the testimonial for a specific project.
+ * Service to retrieve the testimonial for a specific project.
  * @param slug Project slug
  */
 const getProjectTestimonial = cache(async (slug: string) => {

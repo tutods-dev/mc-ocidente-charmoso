@@ -33,7 +33,7 @@ const getTotalOfProjects = cache(async (serviceSlug?: string): Promise<number> =
 }, 'total-projects');
 
 /**
- * Service to retrive a list of projects.
+ * Service to retrieve a list of projects.
  * @param page Current page
  */
 const getProjects = cache(async (page = 1): Promise<ProjectCard[]> => {

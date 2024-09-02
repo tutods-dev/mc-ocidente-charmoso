@@ -4,7 +4,7 @@ import { getProjectQuery } from '~/cms/queries/projects/get-project';
 import type { Project } from '~/shared/types';
 
 /**
- * Service to retrive a specific project.
+ * Service to retrieve a specific project.
  * @param slug Project slug
  */
 const getProject = cache(async (slug: string): Promise<undefined | Project> => {
