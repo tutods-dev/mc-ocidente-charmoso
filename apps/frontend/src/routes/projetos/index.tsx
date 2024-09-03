@@ -1,6 +1,7 @@
 import { createAsync, useSearchParams } from '@solidjs/router';
 import { For, Show } from 'solid-js';
 import { getPaginatedProjects } from '~/cms/services/projects/get-projects';
+import { getProjectsArchive } from '~/cms/services/singletons/get-archives';
 import {
   Pagination,
   PaginationEllipsis,
@@ -15,7 +16,7 @@ import { DEFAULT_PAGINATION_OFFSET } from '~/shared/constants';
 export default function Projects() {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  // const listSettings = createAsync(() => getProjectsArchive());
+  const listSettings = createAsync(() => getProjectsArchive());
   const data = createAsync(async () => {
     let currentPage = searchParams.page ? Number(searchParams.page) : 1;
 
@@ -44,9 +45,13 @@ export default function Projects() {
 
   return (
     <main>
-      <header class={'py-12'}>
-        <div class="container flex flex-col items-center justify-center text-center">
-          <h1>Projetos</h1>
+      <header class="py-16">
+        <div class="container flex flex-col items-center justify-center gap-2 text-center">
+          <h1 class="font-bold">{listSettings()?.title ?? 'Projetos'}</h1>
+
+          <Show when={listSettings()?.headline} keyed={true}>
+            {(headline) => <p class="text-lg">{headline}</p>}
+          </Show>
         </div>
       </header>
 

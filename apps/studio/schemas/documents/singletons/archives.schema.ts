@@ -28,6 +28,7 @@ const archivesSchema = defineType({
           title: 'Descrição',
           description: 'Pequena descrição sobre a página',
           type: 'text',
+          rows: 3,
           validation: (Rule) => [
             Rule.min(0).warning(
               'A descrição não é obrigatória, porém pode ajudar a melhorar o SEO da página',
@@ -58,6 +59,7 @@ const archivesSchema = defineType({
           title: 'Descrição',
           description: 'Pequena descrição sobre a página',
           type: 'text',
+          rows: 3,
           validation: (Rule) => [
             Rule.min(0).warning(
               'A descrição não é obrigatória, porém pode ajudar a melhorar o SEO da página',
