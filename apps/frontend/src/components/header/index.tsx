@@ -69,7 +69,14 @@ function Header({ mode = 'transparent', className = '' }: HeaderProps) {
           headerContainerVariants({ mode: headerMode(), isSticky: isSticky() }),
         )}
       >
-        <a href="/">MC Ocidente charmoso</a>
+        <a href="/">
+          <img
+            class={'h-auto max-w-20'}
+            fetchpriority={'high'}
+            src={'/logo.jpeg'}
+            alt={'MC Ocidente Charmoso'}
+          />
+        </a>
 
         <Switch>
           <Match when={deviceType() === 'desktop'}>

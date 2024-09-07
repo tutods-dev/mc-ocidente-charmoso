@@ -4,7 +4,7 @@ import { tv } from 'tailwind-variants';
  * Styles for `header` element
  */
 const headerVariants = tv({
-  base: ['h-14', 'z-50', 'transition duration-300 ease-in-out'],
+  base: ['py-2', 'z-50', 'transition duration-300 ease-in-out'],
   variants: {
     mode: {
       transparent: 'fixed top-0 right-0 left-0',
