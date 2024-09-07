@@ -4,7 +4,7 @@ import { For } from 'solid-js';
 import { twMerge } from 'tailwind-merge';
 import { MENU_ITEMS } from '~/shared/constants/menu';
 import { cn } from '~/shared/utils';
-import { drawerContentVariants, navigatioItemVariants } from './styles';
+import { drawerContentVariants, navigationItemVariants } from './styles';
 
 type MobileNavigationProps = {
   /**
@@ -80,7 +80,7 @@ function MobileNavigation(props: MobileNavigationProps) {
                         <a
                           onclick={() => drawerProps.setOpen(false)}
                           class={twMerge(
-                            navigatioItemVariants({
+                            navigationItemVariants({
                               isActive: isMenuActive(menuItem.href),
                             }),
                           )}

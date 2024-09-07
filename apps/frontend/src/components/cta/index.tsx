@@ -29,9 +29,7 @@ function CtaSection() {
               <For each={cta()?.points}>
                 {(point) => (
                   <li class={'flex items-center gap-2 font-medium'}>
-                    <span class="inline-flex size-4 items-center justify-center rounded-full bg-green-700">
-                      <i class="ph ph-check text-white text-xs" />
-                    </span>
+                    <i class="ph ph-check text-lg" />
 
                     {point}
                   </li>
@@ -48,12 +46,6 @@ function CtaSection() {
               {cta()?.button}
               <i class="ph ph-arrow-right leading-none" />
             </Button>
-            {/* <a
-              class={
-                'mt-10 inline-flex items-center gap-2 border-b border-b-transparent font-semibold text-gray-700 transition-all duration-300 ease-in-out hover:border-b-gray-900 hover:text-gray-900'
-              }
-              href={'/contactos'}
-            ></a> */}
           </div>
         </section>
       </Show>

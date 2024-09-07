@@ -40,7 +40,7 @@ export default function Projects() {
   });
 
   function handlePageChange(page: number) {
-    setSearchParams({ page }, { replace: true });
+    setSearchParams({ pagina: page }, { replace: true });
   }
 
   return (

@@ -2,7 +2,7 @@ import { useLocation } from '@solidjs/router';
 import { For } from 'solid-js';
 import { twMerge } from 'tailwind-merge';
 import { MENU_ITEMS } from '~/shared/constants/menu';
-import { navigatioItemVariants } from './styles';
+import { navigationItemVariants } from './styles';
 
 type NavigationProps = {
   /**
@@ -69,7 +69,7 @@ export function Navigation(props: NavigationProps) {
             <li class={li}>
               <a
                 class={twMerge(
-                  navigatioItemVariants({
+                  navigationItemVariants({
                     mode: props.mode,
                     isSticky: props.isSticky,
                     isActive: isMenuActive(menuItem.href),
