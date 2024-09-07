@@ -9,7 +9,7 @@ import { sendEmailAction } from '~/shared/actions';
 import { BaseInput, BaseTextArea } from './partials';
 
 function ContactFormSection() {
-  const [sended, setSended] = createSignal(false);
+  const [isSent, setIsSent] = createSignal(false);
   const sendEmail = useAction(sendEmailAction);
 
   const form = createForm(() => ({
@@ -44,7 +44,7 @@ function ContactFormSection() {
       await form.handleSubmit();
       form.reset();
 
-      setSended(true);
+      setIsSent(true);
       // TODO: show toast
     } catch {
       //   treat error
@@ -52,8 +52,8 @@ function ContactFormSection() {
   }
 
   return (
-    <form onSubmit={handleSubmit} class={'space-y-4'}>
-      <Show when={sended()}>
+    <form onSubmit={handleSubmit} class={'space-y-6'}>
+      <Show when={isSent()}>
         <div
           data-aos={'fade-down'}
           class={cn([
@@ -85,8 +85,8 @@ function ContactFormSection() {
             })
             .min(2, 'Por favor, preencha o seu nome.'),
         }}
-        // biome-ignore lint/correctness/noChildrenProp:
-        children={(field) => (
+      >
+        {(field) => (
           <BaseInput
             type={'text'}
             required={true}
@@ -100,7 +100,7 @@ function ContactFormSection() {
             Nome
           </BaseInput>
         )}
-      />
+      </form.Field>
 
       <form.Field
         name="email"
@@ -116,8 +116,8 @@ function ContactFormSection() {
             })
             .email('Por favor, introduza um email válido'),
         }}
-        // biome-ignore lint/correctness/noChildrenProp: <explanation>
-        children={(field) => (
+      >
+        {(field) => (
           <BaseInput
             required={true}
             id={field().name}
@@ -131,7 +131,7 @@ function ContactFormSection() {
             Email
           </BaseInput>
         )}
-      />
+      </form.Field>
 
       <form.Field
         name="phone"
@@ -161,8 +161,8 @@ function ContactFormSection() {
             }, 'Por favor, introduza um contacto válido.')
             .optional(),
         }}
-        // biome-ignore lint/correctness/noChildrenProp: <explanation>
-        children={(field) => (
+      >
+        {(field) => (
           <BaseInput
             id={field().name}
             name={field().name}
@@ -176,7 +176,7 @@ function ContactFormSection() {
             Contacto telefónico
           </BaseInput>
         )}
-      />
+      </form.Field>
 
       <form.Field
         name="message"
@@ -185,10 +185,10 @@ function ContactFormSection() {
             .string({
               required_error: 'Por favor, preencha a mensagem.',
             })
-            .min(5, 'A sua mensage deve conter, pelo menos, 5 caracteres.'),
+            .min(5, 'A sua mensagem deve conter, pelo menos, 5 caracteres.'),
         }}
-        // biome-ignore lint/correctness/noChildrenProp: <explanation>
-        children={(field) => (
+      >
+        {(field) => (
           <BaseTextArea
             id={field().name}
             name={field().name}
@@ -200,7 +200,7 @@ function ContactFormSection() {
             Mensagem
           </BaseTextArea>
         )}
-      />
+      </form.Field>
 
       {/*<form.Field*/}
       {/*  name="acceptance"*/}
@@ -237,10 +237,9 @@ function ContactFormSection() {
           canSubmit: state.canSubmit,
           isSubmitting: state.isSubmitting,
         })}
-        // biome-ignore lint/correctness/noChildrenProp: <explanation>
-        children={(state) => (
+      >
+        {(state) => (
           <Button
-            variant={'ghost'}
             disabled={!state().canSubmit || state().isSubmitting}
             class={cn(['w-fit', { 'animate-pulse': state().isSubmitting }])}
             type={'submit'}
@@ -248,7 +247,7 @@ function ContactFormSection() {
             Enviar
           </Button>
         )}
-      />
+      </form.Subscribe>
     </form>
   );
 }

@@ -35,7 +35,7 @@ const navigationItemVariants = cva(
   [
     'py-3 pr-4 pl-8',
     'flex items-center',
-    'font-serif text-lg',
+    'font-bold font-serif text-lg',
     'transition duration-300 ease-in-out',
     'relative before:absolute before:inset-y-0 before:left-0 before:h-full before:w-1 before:rounded-r-md before:bg-transparent before:content-[""]',
   ],
