@@ -1,3 +1,4 @@
+import type { SocialNetworks as SocialNetworksEnum } from '~/shared/enums';
 import type { ImageWithAlt } from '~/shared/types';
 import type { Settings as SettingsSchema } from '~/shared/types/sanity.types';
 
@@ -11,4 +12,22 @@ type SocialNetworks = SettingsSchema['social'];
 
 type Contacts = SettingsSchema['contacts'];
 
-export type { Settings, Contacts, SocialNetworks, CtaSettings };
+type SocialNetworksAsEnum = Array<{
+  network: SocialNetworksEnum;
+  link?: string;
+  _type: 'social';
+  _key: string;
+}>;
+
+type SocialNetworksAndContacts = {
+  contacts?: Contacts;
+  social?: SocialNetworks;
+};
+
+export type {
+  Settings,
+  Contacts,
+  SocialNetworks,
+  CtaSettings,
+  SocialNetworksAndContacts,
+};

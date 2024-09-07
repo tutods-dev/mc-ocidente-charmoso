@@ -13,7 +13,7 @@ import {
 import { ProjectCard } from '~/components/cards/project';
 import { DEFAULT_PAGINATION_OFFSET } from '~/shared/constants';
 
-export default function Projects() {
+function Projects() {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const listSettings = createAsync(() => getProjectsArchive());
@@ -101,3 +101,5 @@ export default function Projects() {
     </main>
   );
 }
+
+export default Projects;

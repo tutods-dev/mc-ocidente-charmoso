@@ -9,7 +9,7 @@ import { ProjectDetailsSection } from '~/components/views/project/details';
 import { cn } from '~/shared/utils';
 import { getBlurHashImage } from '~/shared/utils/images';
 
-export default function ProjectDetails() {
+function ProjectDetails() {
   // Hooks
   const params = useParams<{ slug: string }>();
 
@@ -84,3 +84,5 @@ export default function ProjectDetails() {
     </Show>
   );
 }
+
+export default ProjectDetails;

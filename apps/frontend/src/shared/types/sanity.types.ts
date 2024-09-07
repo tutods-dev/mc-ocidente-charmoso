@@ -134,6 +134,24 @@ export type BlockContent = Array<{
   _key: string;
 }>;
 
+export type Contacts = {
+  _id: string;
+  _type: "contacts";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title: string;
+  headline?: string;
+  list?: {
+    title: string;
+    headline?: string;
+  };
+  form?: {
+    title: string;
+    headline?: string;
+  };
+};
+
 export type Archives = {
   _id: string;
   _type: "archives";
@@ -341,5 +359,5 @@ export type Slug = {
   source?: string;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | VideoUrlWithCover | Gallery | ImageWithAltAndCaption | BlockContent | Archives | Settings | ImageWithAlt | Testimonial | Project | Service | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | VideoUrlWithCover | Gallery | ImageWithAltAndCaption | BlockContent | Contacts | Archives | Settings | ImageWithAlt | Testimonial | Project | Service | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug;
 export declare const internalGroqTypeReferenceTo: unique symbol;

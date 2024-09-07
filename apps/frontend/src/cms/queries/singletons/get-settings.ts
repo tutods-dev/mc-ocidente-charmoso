@@ -38,4 +38,19 @@ const getCtaSettingsQuery = `
     }
 `;
 
-export { getAllSettingsQuery, getSeoSettingsQuery, getCtaSettingsQuery };
+/**
+ * Query to retrieve only social networks and contacts from settings.
+ */
+const getSocialNetworksAndContactsQuery = `
+  *[_type == "settings"] [0] {
+    "contacts": coalesce(contacts, []),
+    "social": coalesce(social, [])
+  }
+`;
+
+export {
+  getAllSettingsQuery,
+  getSeoSettingsQuery,
+  getCtaSettingsQuery,
+  getSocialNetworksAndContactsQuery,
+};

@@ -1,7 +1,10 @@
 import { cache } from '@solidjs/router';
 import { client } from '~/cms';
-import { getCtaSettingsQuery } from '~/cms/queries';
-import type { CtaSettings } from '~/shared/types/singletons/settings.types';
+import { getCtaSettingsQuery, getSocialNetworksAndContactsQuery } from '~/cms/queries';
+import type {
+  CtaSettings,
+  SocialNetworksAndContacts,
+} from '~/shared/types/singletons/settings.types';
 
 /**
  * Service to retrieve the CTA settings.
@@ -24,4 +27,23 @@ const getCtaSettings = cache<(isEnabled: boolean) => Promise<CtaSettings | undef
   'cta-settings',
 );
 
-export { getCtaSettings };
+/**
+ * Service to retrieve social networks and contacts from settings
+ */
+const getSocialNetworksAndContacts = cache(
+  async (): Promise<SocialNetworksAndContacts> => {
+    'use server';
+
+    try {
+      return client.fetch<SocialNetworksAndContacts>(getSocialNetworksAndContactsQuery);
+    } catch {
+      return {
+        social: [],
+        contacts: [],
+      };
+    }
+  },
+  'social-networks-and-contacts',
+);
+
+export { getCtaSettings, getSocialNetworksAndContacts };

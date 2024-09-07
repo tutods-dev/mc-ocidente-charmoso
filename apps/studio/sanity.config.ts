@@ -1,4 +1,4 @@
-import { CogIcon } from '@sanity/icons';
+import { CogIcon, CommentIcon } from '@sanity/icons';
 import { ptPTLocale } from '@sanity/locale-pt-pt';
 import { visionTool } from '@sanity/vision';
 import { defineConfig } from 'sanity';
@@ -47,6 +47,11 @@ export default defineConfig({
               .id('archives')
               .icon(CogIcon)
               .child(S.document().schemaType('archives').documentId('archives')),
+            S.listItem()
+              .title('Página de Contactos')
+              .id('contacts')
+              .icon(CommentIcon)
+              .child(S.document().schemaType('contacts').documentId('contacts')),
 
             S.divider(),
 
