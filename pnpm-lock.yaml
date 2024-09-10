@@ -69,8 +69,8 @@ importers:
         specifier: ^0.32.0
         version: 0.32.0(solid-js@1.8.22)
       '@tanstack/zod-form-adapter':
-        specifier: ^0.31.0
-        version: 0.31.0(zod@3.23.8)
+        specifier: ^0.32.0
+        version: 0.32.0(zod@3.23.8)
       '@unpic/solid':
         specifier: ^0.0.49
         version: 0.0.49(solid-js@1.8.22)
@@ -2151,9 +2151,6 @@ packages:
   '@swc/helpers@0.5.12':
     resolution: {integrity: sha512-KMZNXiGibsW9kvZAO1Pam2JPTDBm+KSHMMHWdsyI/1DbIZjT2A6Gy3hblVXUMEDvUAKq+e0vL0X0o54owWji7g==}
 
-  '@tanstack/form-core@0.30.0':
-    resolution: {integrity: sha512-vjGh9UZwJDJRr2OMetJR+RngnLF5TU4k6h367nADHaTYoun2TqwsksBz4vYIt5e46B+oZhSfUTW3VUbey0c0sQ==}
-
   '@tanstack/form-core@0.32.0':
     resolution: {integrity: sha512-8x+6/QRUxiZy2Oq4p62wHXilVOIhV/Zy3uQwhBU/+pSgaC4ZmIxTE9GmUfxZTD8fhx8KBwcQsivC/8AXs4Zarg==}
 
@@ -2189,8 +2186,8 @@ packages:
   '@tanstack/virtual-core@3.0.0-beta.54':
     resolution: {integrity: sha512-jtkwqdP2rY2iCCDVAFuaNBH3fiEi29aTn2RhtIoky8DTTiCdc48plpHHreLwmv1PICJ4AJUUESaq3xa8fZH8+g==}
 
-  '@tanstack/zod-form-adapter@0.31.0':
-    resolution: {integrity: sha512-Nru0hDJ/FcblPg5jIe4OmZ5nHaVi3spB44QP2tBIG44MyQHQ0ghTXbUVuMww9PRcPzD+v97lhIACluoZoaeoXw==}
+  '@tanstack/zod-form-adapter@0.32.0':
+    resolution: {integrity: sha512-N42Sl02rZBMZ70iLtqsnPTtGbRwuwx+SePFdGcJiQ1JE6W8s/0lBpSi8ArGRO2I+Pg0Bn1fpzDSx3FpxhyiqJQ==}
     peerDependencies:
       zod: ^3.x
 
@@ -8269,10 +8266,6 @@ snapshots:
     dependencies:
       tslib: 2.7.0
 
-  '@tanstack/form-core@0.30.0':
-    dependencies:
-      '@tanstack/store': 0.5.5
-
   '@tanstack/form-core@0.32.0':
     dependencies:
       '@tanstack/store': 0.5.5
@@ -8305,9 +8298,9 @@ snapshots:
 
   '@tanstack/virtual-core@3.0.0-beta.54': {}
 
-  '@tanstack/zod-form-adapter@0.31.0(zod@3.23.8)':
+  '@tanstack/zod-form-adapter@0.32.0(zod@3.23.8)':
     dependencies:
-      '@tanstack/form-core': 0.30.0
+      '@tanstack/form-core': 0.32.0
       zod: 3.23.8
 
   '@types/babel__core@7.20.5':
