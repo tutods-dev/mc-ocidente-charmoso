@@ -133,8 +133,8 @@ importers:
         specifier: ^3.4.0
         version: 3.4.0(react@18.3.1)
       '@sanity/locale-pt-pt':
-        specifier: ^1.1.9
-        version: 1.1.9(sanity@3.57.2(@types/node@22.5.4)(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.32.0))
+        specifier: ^1.1.10
+        version: 1.1.10(sanity@3.57.2(@types/node@22.5.4)(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.32.0))
       '@sanity/vision':
         specifier: ^3.57.2
         version: 3.57.2(@babel/runtime@7.25.6)(@codemirror/lint@6.8.1)(@codemirror/theme-one-dark@6.1.2)(@lezer/common@1.2.1)(codemirror@6.0.1(@lezer/common@1.2.1))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
@@ -1944,8 +1944,8 @@ packages:
       react-dom: ^18.3 || >=19.0.0-rc
       react-is: ^18.3 || >=19.0.0-rc
 
-  '@sanity/locale-pt-pt@1.1.9':
-    resolution: {integrity: sha512-58OvGUWI8W079Lu9VFGN7N3viXThr2xvMiMT3B0Rizv7jKhorbYGd/zRHFvdXtyjka21n5aPqGzcJiuzWSpHjg==}
+  '@sanity/locale-pt-pt@1.1.10':
+    resolution: {integrity: sha512-6WTIXwMhpSsF/ko9p6/LV4l9jksFwjZ2UyUTtYcHFNuS0IYkRceHKYg6J8o3YfHrz3I+pBB7+qS2zaq3NJ5Tvg==}
     peerDependencies:
       sanity: ^3.22.0
 
@@ -7906,7 +7906,7 @@ snapshots:
     transitivePeerDependencies:
       - styled-components
 
-  '@sanity/locale-pt-pt@1.1.9(sanity@3.57.2(@types/node@22.5.4)(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.32.0))':
+  '@sanity/locale-pt-pt@1.1.10(sanity@3.57.2(@types/node@22.5.4)(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.32.0))':
     dependencies:
       sanity: 3.57.2(@types/node@22.5.4)(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.32.0)
 
