@@ -8,7 +8,7 @@ import { cn } from '~/libs/cn';
 import { sendEmailAction } from '~/shared/actions';
 import { BaseInput, BaseTextArea } from './partials';
 
-function ContactFormSection() {
+function ContactForm() {
   const [isSent, setIsSent] = createSignal(false);
   const sendEmail = useAction(sendEmailAction);
 
@@ -193,7 +193,8 @@ function ContactFormSection() {
             id={field().name}
             name={field().name}
             onBlur={field().handleBlur}
-            onInput={(e) => field().handleChange(e.target.value)}
+            required={true}
+            onChange={(value) => field().handleChange(value)}
             field={field()}
             placeholder={'Por favor introduza a sua mensagem.'}
           >
@@ -252,4 +253,4 @@ function ContactFormSection() {
   );
 }
 
-export { ContactFormSection };
+export { ContactForm };
