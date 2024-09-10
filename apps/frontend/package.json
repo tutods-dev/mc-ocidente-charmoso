@@ -1,7 +1,7 @@
 {
   "name": "mc-ocidente-charmoso-fe",
   "type": "module",
-  "packageManager": "pnpm@9.9.0",
+  "packageManager": "pnpm@9.10.0",
   "scripts": {
     "dev": "doppler run -- vinxi dev",
     "build": "doppler run -- vinxi build",
