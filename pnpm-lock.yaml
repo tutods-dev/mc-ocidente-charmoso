@@ -66,8 +66,8 @@ importers:
         specifier: ^1.0.6
         version: 1.0.6(rollup@4.21.2)(solid-js@1.8.22)(vinxi@0.4.2(@types/node@22.5.2)(ioredis@5.4.1)(terser@5.31.6))(vite@5.4.2(@types/node@22.5.2)(terser@5.31.6))
       '@tanstack/solid-form':
-        specifier: ^0.30.0
-        version: 0.30.0(solid-js@1.8.22)
+        specifier: ^0.32.0
+        version: 0.32.0(solid-js@1.8.22)
       '@tanstack/zod-form-adapter':
         specifier: ^0.31.0
         version: 0.31.0(zod@3.23.8)
@@ -2154,6 +2154,9 @@ packages:
   '@tanstack/form-core@0.30.0':
     resolution: {integrity: sha512-vjGh9UZwJDJRr2OMetJR+RngnLF5TU4k6h367nADHaTYoun2TqwsksBz4vYIt5e46B+oZhSfUTW3VUbey0c0sQ==}
 
+  '@tanstack/form-core@0.32.0':
+    resolution: {integrity: sha512-8x+6/QRUxiZy2Oq4p62wHXilVOIhV/Zy3uQwhBU/+pSgaC4ZmIxTE9GmUfxZTD8fhx8KBwcQsivC/8AXs4Zarg==}
+
   '@tanstack/react-table@8.20.5':
     resolution: {integrity: sha512-WEHopKw3znbUZ61s9i0+i9g8drmDo6asTWbrQh8Us63DAk/M0FkmIqERew6P71HI75ksZ2Pxyuf4vvKh9rAkiA==}
     engines: {node: '>=12'}
@@ -2166,8 +2169,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@tanstack/solid-form@0.30.0':
-    resolution: {integrity: sha512-6+UmAZf1xt85Ta+wWOFsBzbMNSYAGIoihYnjAPSDoeU+m4K6dLeDR+Ws3xDpHcHj0CD5S5A1KXrnbg2HS7Zeww==}
+  '@tanstack/solid-form@0.32.0':
+    resolution: {integrity: sha512-jstmAoWcal7kkzbCbQrk6lahfpR99xEl0V9793uEi4i+b2uhoxHSSpkSpOKoLnLEOYws/yAJuMSB8aED60ZqRw==}
     peerDependencies:
       solid-js: ^1.6.0
 
@@ -8270,6 +8273,10 @@ snapshots:
     dependencies:
       '@tanstack/store': 0.5.5
 
+  '@tanstack/form-core@0.32.0':
+    dependencies:
+      '@tanstack/store': 0.5.5
+
   '@tanstack/react-table@8.20.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@tanstack/table-core': 8.20.5
@@ -8281,9 +8288,9 @@ snapshots:
       '@tanstack/virtual-core': 3.0.0-beta.54
       react: 18.3.1
 
-  '@tanstack/solid-form@0.30.0(solid-js@1.8.22)':
+  '@tanstack/solid-form@0.32.0(solid-js@1.8.22)':
     dependencies:
-      '@tanstack/form-core': 0.30.0
+      '@tanstack/form-core': 0.32.0
       '@tanstack/solid-store': 0.5.5(solid-js@1.8.22)
       solid-js: 1.8.22
 
