@@ -1,8 +1,9 @@
 import { cache } from '@solidjs/router';
-import { client } from '~/cms';
+import { client } from '~/cms/client';
 import { getProjectTestimonialQuery } from '~/cms/queries';
 import type { GetProjectTestimonialQueryResult } from '~/shared/types';
 
+// TODO: type
 /**
  * Service to retrieve the testimonial for a specific project.
  * @param slug Project slug

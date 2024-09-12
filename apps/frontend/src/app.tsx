@@ -25,7 +25,7 @@ function App() {
     <Router
       preload={true}
       root={(props) => (
-        <Suspense>
+        <Suspense fallback={'Loading...'}>
           {/*TODO: fallback*/}
           <Header mode="solid" />
 

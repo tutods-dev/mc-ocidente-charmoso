@@ -8,16 +8,13 @@ type Settings = Omit<SettingsSchema, 'thumbnail'> & {
 
 type CtaSettings = SettingsSchema['cta'];
 
-type SocialNetworks = SettingsSchema['social'];
+type SocialNetworks = Array<
+  Omit<NonNullable<SettingsSchema['social']>[number], 'network'> & {
+    network: SocialNetworksEnum;
+  }
+>;
 
-type Contacts = SettingsSchema['contacts'];
-
-type SocialNetworksAsEnum = Array<{
-  network: SocialNetworksEnum;
-  link?: string;
-  _type: 'social';
-  _key: string;
-}>;
+type Contacts = NonNullable<SettingsSchema['contacts']>;
 
 type SocialNetworksAndContacts = {
   contacts?: Contacts;
