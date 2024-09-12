@@ -1,5 +1,5 @@
 import { cache } from '@solidjs/router';
-import { client } from '~/cms/client';
+import { client } from '~/cms';
 import { getContactsQuery } from '~/cms/queries/singletons/get-contacts-page';
 import type { Contacts } from '~/shared/types';
 

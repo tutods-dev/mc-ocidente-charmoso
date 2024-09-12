@@ -1,5 +1,5 @@
 import { cache, redirect } from '@solidjs/router';
-import { client } from '~/cms/client';
+import { client } from '~/cms';
 import { getProjectQuery } from '~/cms/queries/projects/get-project';
 import type { Project } from '~/shared/types';
 

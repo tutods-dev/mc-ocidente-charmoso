@@ -1,5 +1,5 @@
 import { cache } from '@solidjs/router';
-import { client } from '~/cms/client';
+import { client } from '~/cms';
 import { getSocialNetworksAndContactsQuery } from '~/cms/queries';
 import type { SocialNetworksAndContacts } from '~/shared/types';
 

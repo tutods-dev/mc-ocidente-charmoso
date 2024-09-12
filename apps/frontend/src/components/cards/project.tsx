@@ -1,6 +1,6 @@
 import { Image } from '@unpic/solid';
 import { type ComponentProps, For, Show, mergeProps, splitProps } from 'solid-js';
-import { urlFor } from '~/cms';
+import { urlFor } from '~/cms/utils';
 import { Badge } from '~/components/ui';
 import type { ProjectCard as ProjectCardType } from '~/shared/types';
 import { cn } from '~/shared/utils';

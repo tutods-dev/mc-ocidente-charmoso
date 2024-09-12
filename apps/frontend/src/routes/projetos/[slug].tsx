@@ -2,7 +2,9 @@ import { createAsync, useParams } from '@solidjs/router';
 import { For, Show } from 'solid-js';
 
 import { PortableText } from '@portabletext/solid';
-import { components, getProject, urlFor } from '~/cms';
+import { components } from '~/cms/components';
+import { getProject } from '~/cms/services';
+import { urlFor } from '~/cms/utils';
 import { ImageWithPreview } from '~/components/common';
 import { ProjectTestimonialSection } from '~/components/views/project';
 import { ProjectDetailsSection } from '~/components/views/project/details';

@@ -1,12 +1,12 @@
 import { cache } from '@solidjs/router';
+import { client } from '~/cms';
 import {
   getPaginatedProjectsQuery,
-  getPagination,
   getProjectsQuery,
   getTotalOfProjectsFromServiceQuery,
   getTotalOfProjectsQuery,
-} from '~/cms';
-import { client } from '~/cms/client';
+} from '~/cms/queries';
+import { getPagination } from '~/cms/utils';
 import { DEFAULT_PAGINATION_OFFSET } from '~/shared/constants';
 import type { PaginatedProjects, ProjectCard } from '~/shared/types';
 

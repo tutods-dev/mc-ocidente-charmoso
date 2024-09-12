@@ -1,7 +1,7 @@
 import { cache } from '@solidjs/router';
-import { client } from '~/cms/client';
+import { client } from '~/cms';
 import { getProjectTestimonialQuery } from '~/cms/queries';
-import type { GetProjectTestimonialQueryResult } from '~/shared/types';
+import type { Testimonial } from '~/shared/types';
 
 // TODO: type
 /**
@@ -11,7 +11,7 @@ import type { GetProjectTestimonialQueryResult } from '~/shared/types';
 const getProjectTestimonial = cache(async (slug: string) => {
   'use server';
 
-  return client.fetch<GetProjectTestimonialQueryResult>(getProjectTestimonialQuery, {
+  return client.fetch<Testimonial>(getProjectTestimonialQuery, {
     slug,
   });
 }, 'cta-settings');

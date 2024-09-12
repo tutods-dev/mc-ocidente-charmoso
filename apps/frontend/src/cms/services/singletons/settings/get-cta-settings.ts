@@ -1,5 +1,5 @@
 import { cache } from '@solidjs/router';
-import { client } from '~/cms/client';
+import { client } from '~/cms';
 import { getCtaSettingsQuery } from '~/cms/queries';
 import type { CtaSettings } from '~/shared/types/singletons/settings.types';
 

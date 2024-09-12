@@ -1,5 +1,5 @@
 import { cache } from '@solidjs/router';
-import { client } from '~/cms/client';
+import { client } from '~/cms';
 import { getRelatedProjectsByServiceQuery } from '~/cms/queries';
 import type { Image, Project, Service } from '~/shared/types';
 

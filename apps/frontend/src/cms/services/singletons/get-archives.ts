@@ -1,6 +1,6 @@
 import { cache } from '@solidjs/router';
-import { getProjectsArchiveQuery, getServicesArchiveQuery } from '~/cms';
-import { client } from '~/cms/client';
+import { client } from '~/cms';
+import { getProjectsArchiveQuery, getServicesArchiveQuery } from '~/cms/queries';
 import type { Archives } from '~/shared/types';
 
 /**

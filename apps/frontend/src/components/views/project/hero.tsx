@@ -1,12 +1,9 @@
 import { Show } from 'solid-js';
-import { urlFor } from '~/cms';
-import type { GetProjectQueryResult } from '~/shared/types';
+import { urlFor } from '~/cms/utils';
+import type { Project } from '~/shared/types';
 import { cn } from '~/shared/utils';
 
-type Props = Pick<
-  NonNullable<GetProjectQueryResult>,
-  'title' | 'headline' | 'thumbnail'
->;
+type Props = Pick<NonNullable<Project>, 'title' | 'headline' | 'thumbnail'>;
 
 function ProjectHeroSection({ title, headline, thumbnail }: Props) {
   const thumbnailImg = urlFor(thumbnail).url();
