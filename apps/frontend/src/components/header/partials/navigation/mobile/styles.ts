@@ -42,8 +42,8 @@ const navigationItemVariants = cva(
   {
     variants: {
       isActive: {
-        true: ['text-gray-900', 'before:bg-gray-900'],
-        false: ['text-gray-800', 'hover:text-gray-900 hover:before:bg-gray-900'],
+        true: ['text-zinc-900', 'before:bg-zinc-900'],
+        false: ['text-zinc-800', 'hover:text-zinc-900 hover:before:bg-zinc-900'],
       },
     },
     defaultVariants: {

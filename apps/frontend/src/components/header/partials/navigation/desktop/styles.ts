@@ -16,11 +16,11 @@ const navigationItemVariants = cva(
         false: [],
       },
       mode: {
-        transparent: ['text-gray-100', 'hover:text-white hover:after:bg-white'],
-        solid: ['text-gray-500', 'hover:text-gray-900 hover:after:bg-gray-900'],
+        transparent: ['text-zinc-100', 'hover:text-white hover:after:bg-white'],
+        solid: ['text-zinc-500', 'hover:text-zinc-900 hover:after:bg-zinc-900'],
       },
       isSticky: {
-        true: ['text-gray-600', 'hover:text-gray-900 hover:after:bg-gray-900'],
+        true: ['text-zinc-600', 'hover:text-zinc-900 hover:after:bg-zinc-900'],
         false: [],
       },
     },
@@ -28,7 +28,7 @@ const navigationItemVariants = cva(
       {
         isActive: true,
         mode: 'solid',
-        class: ['after:bg-gray-900', 'text-gray-900'],
+        class: ['after:bg-zinc-900', 'text-zinc-900'],
       },
       {
         isActive: true,

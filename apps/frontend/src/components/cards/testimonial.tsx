@@ -18,7 +18,7 @@ function TestimonialCard(rawProps: Props) {
 
   return (
     <blockquote
-      class={cn(['mt-8 rounded-lg bg-gray-900 px-6 py-4 text-white', styleProps.class])}
+      class={cn(['mt-8 rounded-lg bg-zinc-900 px-6 py-4 text-white', styleProps.class])}
     >
       <svg
         class={'fill-white'}
@@ -46,7 +46,7 @@ function TestimonialCard(rawProps: Props) {
               href={googleUrl}
               target="_blank"
               rel="noreferrer nofollow"
-              class="w-fit px-0 text-gray-100"
+              class="w-fit px-0 text-zinc-100"
             >
               Ver feedback no Google
             </Button>

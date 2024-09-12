@@ -18,19 +18,19 @@ function ProjectHeroSection({ title, headline, thumbnail }: Props) {
       />
 
       {/* Overlay */}
-      <div class={'-z-10 absolute inset-0 bg-gray-800/80'} />
+      <div class={'-z-10 absolute inset-0 bg-zinc-800/80'} />
 
       <section
         class={cn([
           'h-full',
           'container px-4 py-12',
           'flex flex-col justify-center',
-          'text-center text-gray-50',
+          'text-center text-zinc-50',
         ])}
       >
         <h1 class={'text-white'}>{title}</h1>
         <Show when={!!headline}>
-          <p class={'mt-2 text-gray-100 text-lg leading-8'}>{headline}</p>
+          <p class={'mt-2 text-lg text-zinc-100 leading-8'}>{headline}</p>
         </Show>
 
         <footer class="hidden items-center justify-center gap-2 sm:mt-8 sm:flex sm:justify-center">

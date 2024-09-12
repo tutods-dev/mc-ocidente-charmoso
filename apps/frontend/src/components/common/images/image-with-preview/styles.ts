@@ -19,7 +19,7 @@ const figureCaptionStyles = clsx([
   'flex flex-col items-center justify-center gap-2',
   'opacity-0 hover:opacity-100',
   'transition-all duration-300 ease-in-out',
-  'bg-gradient-to-b from-gray-500/20 to-foreground/85',
+  'bg-gradient-to-b from-zinc-500/20 to-foreground/85',
   'text-center text-white',
 ]);
 
@@ -40,7 +40,7 @@ const closePreviewStyles = clsx([
   'absolute top-6 right-6',
   'flex items-center justify-center',
   'size-8 rounded-full',
-  'bg-gray-500/40 text-gray-100 hover:bg-gray-950/50 hover:text-white',
+  'bg-zinc-500/40 text-zinc-100 hover:bg-zinc-950/50 hover:text-white',
   'text-lg leading-none',
   'transition-colors duration-300 ease-in-out',
   'outline-none focus-visible:ring-2 focus-visible:ring-indigo-500',
@@ -51,7 +51,7 @@ const closePreviewStyles = clsx([
  */
 const previewStylesOverlay = clsx([
   'fixed inset-0 z-50',
-  'bg-gray-900/90 backdrop-blur-sm',
+  'bg-zinc-900/90 backdrop-blur-sm',
   'data-[closed]:fade-out-0 data-[expanded]:fade-in-0 data-[closed]:animate-out data-[expanded]:animate-in',
 ]);
 

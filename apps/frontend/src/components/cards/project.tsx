@@ -40,7 +40,7 @@ function ProjectCard(rawProps: Props) {
           class="-z-10 absolute inset-0 size-full object-cover object-center transition-transform duration-300 ease-in-out group-hover:scale-105"
         />
 
-        <section class="flex size-full flex-col justify-end bg-gradient-to-b from-50% from-transparent to-foreground px-6 py-8 text-gray-50 transition-colors duration-300 ease-in-out hover:from-0% group-hover:to-foreground">
+        <section class="flex size-full flex-col justify-end bg-gradient-to-b from-50% from-transparent to-foreground px-6 py-8 text-zinc-50 transition-colors duration-300 ease-in-out hover:from-0% group-hover:to-foreground">
           <h3 class="font-semibold text-white">{projectProps.title}</h3>
 
           <Show when={projectProps.headline}>

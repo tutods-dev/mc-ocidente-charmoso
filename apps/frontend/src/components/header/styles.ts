@@ -11,7 +11,7 @@ const headerVariants = tv({
       solid: '',
     },
     isSticky: {
-      true: ['bg-gray-50', 'shadow-lg', 'sticky top-0 inset-x-0'],
+      true: ['bg-zinc-50', 'shadow-lg', 'sticky top-0 inset-x-0'],
       false: [],
     },
   },
@@ -31,7 +31,7 @@ const headerContainerVariants = tv({
       solid: [''],
     },
     isSticky: {
-      true: 'text-gray-800',
+      true: 'text-zinc-800',
       false: [],
     },
   },

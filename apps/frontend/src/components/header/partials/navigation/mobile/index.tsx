@@ -37,9 +37,9 @@ function MobileNavigation(props: MobileNavigationProps) {
         <>
           <Drawer.Trigger
             class={cn([
-              'size-8 rounded bg-transparent transition-colors duration-300 ease-in-out enabled:cursor-pointer enabled:hover:bg-gray-100/50 disabled:cursor-not-allowed disabled:opacity-70',
-              { 'text-gray-50 hover:text-white': props.mode === 'transparent' },
-              { 'text-gray-800': props.isSticky },
+              'size-8 rounded bg-transparent transition-colors duration-300 ease-in-out enabled:cursor-pointer enabled:hover:bg-zinc-100/50 disabled:cursor-not-allowed disabled:opacity-70',
+              { 'text-zinc-50 hover:text-white': props.mode === 'transparent' },
+              { 'text-zinc-800': props.isSticky },
             ])}
           >
             <i class="ph ph-list text-2xl" />
@@ -66,7 +66,7 @@ function MobileNavigation(props: MobileNavigationProps) {
                 <p>MC Ocidente charmoso</p>
                 <Drawer.Close
                   class={
-                    'size-7 rounded bg-transparent transition-colors duration-300 ease-in-out enabled:cursor-pointer enabled:hover:bg-gray-100/50 disabled:cursor-not-allowed disabled:opacity-70'
+                    'size-7 rounded bg-transparent transition-colors duration-300 ease-in-out enabled:cursor-pointer enabled:hover:bg-zinc-100/50 disabled:cursor-not-allowed disabled:opacity-70'
                   }
                 >
                   <i class="ph ph-x text-lg" />
