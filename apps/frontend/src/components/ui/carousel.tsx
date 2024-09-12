@@ -134,6 +134,7 @@ export const Carousel = (props: ComponentProps<'div'> & CarouselProps) => {
       <div
         onKeyDown={handleKeyDown}
         class={cn('relative', local.class)}
+        // biome-ignore lint/a11y/useSemanticElements: Solid UI code
         role="region"
         aria-roledescription="carousel"
         {...rest}

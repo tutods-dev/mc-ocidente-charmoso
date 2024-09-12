@@ -5,7 +5,9 @@ import { cn } from '~/lib/utils';
 
 const Label: Component<ComponentProps<'label'>> = (props) => {
   const [local, others] = splitProps(props, ['class']);
+
   return (
+    // biome-ignore lint/a11y/noLabelWithoutControl: `for` is on `others` props.
     <label
       class={cn(
         'font-medium text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
