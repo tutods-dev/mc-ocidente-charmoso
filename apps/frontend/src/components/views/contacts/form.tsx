@@ -190,6 +190,7 @@ function ContactForm() {
       >
         {(field) => (
           <BaseTextArea
+            rows={5}
             id={field().name}
             name={field().name}
             onBlur={field().handleBlur}

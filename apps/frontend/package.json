@@ -30,7 +30,7 @@
     "boxicons": "^2.1.4",
     "embla-carousel-autoplay": "^8.2.1",
     "embla-carousel-solid": "^8.2.1",
-    "nodemailer": "^6.9.15",
+    "nodemailer": "6.9.14",
     "solid-js": "^1.8.22",
     "tailwind-variants": "^0.2.1",
     "tailwindcss-animate": "^1.0.7",

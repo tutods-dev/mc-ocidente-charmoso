@@ -1,28 +1,35 @@
 import { createTransport } from 'nodemailer';
-import { env } from '~/shared/utils/env';
+import { env } from '~/shared/utils';
 
-const transporter = createTransport({
-  host: process.env.SMTP_HOST ?? '',
-  port: Number(process.env.SMTP_PORT) ?? 587,
-  secureConnection: Boolean(process.env.SMTP_SECURE) ?? false,
-  auth: {
-    user: process.env.SMTP_EMAIL ?? '', // generated ethereal user
-    pass: process.env.SMTP_PASSWORD ?? '', // generated ethereal password
-  },
-});
+function transporter() {
+  'use server';
 
-// verify connection configuration
-transporter.verify((error, success) => {
-  if (env.isProduction) {
-    return;
-  }
+  const localTransporter = createTransport({
+    host: env.email.host,
+    from: env.email.email,
+    port: env.email.port,
+    secureConnection: env.email.secure,
+    auth: {
+      user: env.email.email,
+      pass: env.email.password,
+    },
+  });
 
-  if (error) {
-    console.error('📥 Email serverw error:', error);
-  } else {
-    console.info('📤 Email server is ready to send messages!');
-  }
-});
+  // verify connection configuration
+  localTransporter.verify((error, success) => {
+    if (env.isProduction) {
+      return;
+    }
+
+    if (error) {
+      console.error('📥 Email server error:', error);
+    } else {
+      console.info('📤 Email server is ready to send messages!');
+    }
+  });
+
+  return localTransporter;
+}
 
 export { transporter };
 export * from './base-view';

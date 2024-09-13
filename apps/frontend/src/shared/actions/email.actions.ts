@@ -1,6 +1,7 @@
 import { action } from '@solidjs/router';
-import { env } from '~/shared/utils';
-import { baseView, transporter } from '~/shared/utils/mail';
+import { env, transporter } from '~/shared/utils';
+import { baseView } from '~/shared/utils/mail';
+
 type FormData = {
   name: string;
   email: string;
@@ -13,7 +14,7 @@ const sendEmailAction = action<[data: FormData]>(async (data) => {
   'use server';
 
   try {
-    await transporter.sendMail({
+    await transporter().sendMail({
       from: env.email.email,
       to: env.email.email,
       subject: 'Formulário de contacto',

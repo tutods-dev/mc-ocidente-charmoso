@@ -1,8 +1,10 @@
 import { createAsync } from '@solidjs/router';
 import { Show } from 'solid-js';
 import { getContacts, getSocialNetworksAndContacts } from '~/cms/services';
+import { PageSeo } from '~/components/seo';
 import { ContactForm, ContactsList } from '~/components/views/contacts';
 import { cn } from '~/libs/cn';
+import 'boxicons/css/boxicons.min.css';
 
 function ContactsRouter() {
   const data = createAsync(() => getContacts());
@@ -10,6 +12,11 @@ function ContactsRouter() {
 
   return (
     <main>
+      <PageSeo
+        title={data()?.title ?? 'Contactos'}
+        headline={data()?.headline}
+        keywords={['contactos', 'questões frequentes', 'perguntas frequentes']}
+      />
       <header class="py-16">
         <div class="container flex flex-col items-center justify-center gap-2 text-center">
           <h1 class="font-bold">{data()?.title ?? 'Contactos'}</h1>
@@ -21,7 +28,7 @@ function ContactsRouter() {
       </header>
 
       <section class="py-8 md:py-12">
-        <div class="container grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-[0.5fr_1fr]">
+        <div class="container grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-8 lg:grid-cols-[0.5fr_1fr]">
           <Show
             when={
               !!listOfContacts()?.contacts?.length || !!listOfContacts()?.social?.length

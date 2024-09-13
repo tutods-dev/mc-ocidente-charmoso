@@ -1,6 +1,13 @@
 import { For, Match, Show, Switch } from 'solid-js';
+import { Tooltip, TooltipContent, TooltipTrigger } from '~/components';
 import type { SocialNetworksAndContacts } from '~/shared/types';
-import { getContactUrl, getFormattedPhone } from '~/shared/utils';
+import {
+  getContactIcon,
+  getContactUrl,
+  getFormattedPhone,
+  getSocialNetworkIcon,
+  getSocialNetworkLabel,
+} from '~/shared/utils';
 
 type Props = {
   title?: string;
@@ -25,13 +32,13 @@ function ContactsList(props: Props) {
             <ul class="mt-6 space-y-6">
               <For each={contacts}>
                 {(contact) => (
-                  <li class="flex items-center gap-4">
-                    <span class="inline-flex size-8 shrink-0 items-center justify-center rounded bg-zinc-800 text-white">
-                      <i class={'ph ph-phone-call'} />
+                  <li class="flex gap-4">
+                    <span class="inline-flex size-10 shrink-0 items-center justify-center rounded bg-zinc-800 text-2xl text-white">
+                      <i class={getContactIcon(contact.type)} />
                     </span>
 
                     <div>
-                      <h3 class="font-bold text-sm">
+                      <h3 class="font-bold text-md md:text-sm">
                         <Switch>
                           <Match when={contact.type === 'email'}>Email</Match>
 
@@ -50,12 +57,39 @@ function ContactsList(props: Props) {
                             : contact.value}
                         </a>{' '}
                         <Show when={contact.type === 'phone'}>
-                          <small class="text-xs">
+                          <small class="block text-sm sm:inline md:text-xs">
                             (Chamada para rede móvel nacional)
                           </small>
                         </Show>
                       </p>
                     </div>
+                  </li>
+                )}
+              </For>
+            </ul>
+          )}
+        </Show>
+
+        <Show keyed={true} when={props.social}>
+          {(social) => (
+            <ul class="mt-6 flex flex-wrap items-center gap-2">
+              <For each={social}>
+                {(item) => (
+                  <li>
+                    <Tooltip openDelay={0} placement="top">
+                      <TooltipTrigger
+                        as={'a'}
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex size-10 shrink-0 items-center justify-center rounded bg-zinc-800 text-2xl text-white shadow-sm transition-colors duration-300 ease-in-out hover:bg-zinc-200 hover:text-zinc-900"
+                      >
+                        <i class={getSocialNetworkIcon(item.network)} />
+                      </TooltipTrigger>
+                      <TooltipContent class="font-semibold">
+                        {getSocialNetworkLabel(item.network)}
+                      </TooltipContent>
+                    </Tooltip>
                   </li>
                 )}
               </For>

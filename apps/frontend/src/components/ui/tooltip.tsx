@@ -1,35 +1,36 @@
+import type { ValidComponent } from 'solid-js';
+import { type Component, splitProps } from 'solid-js';
+
 import type { PolymorphicProps } from '@kobalte/core/polymorphic';
-import type { TooltipContentProps, TooltipRootProps } from '@kobalte/core/tooltip';
-import { Tooltip as TooltipPrimitive } from '@kobalte/core/tooltip';
-import { type ValidComponent, mergeProps, splitProps } from 'solid-js';
-import { cn } from '~/libs/cn';
+import * as TooltipPrimitive from '@kobalte/core/tooltip';
 
-export const TooltipTrigger = TooltipPrimitive.Trigger;
+import { cn } from '~/lib/utils';
 
-export const Tooltip = (props: TooltipRootProps) => {
-  const merge = mergeProps<TooltipRootProps[]>({ gutter: 4 }, props);
+const TooltipTrigger = TooltipPrimitive.Trigger;
 
-  return <TooltipPrimitive {...merge} />;
+const Tooltip: Component<TooltipPrimitive.TooltipRootProps> = (props) => {
+  return <TooltipPrimitive.Root gutter={4} {...props} />;
 };
 
-type tooltipContentProps<T extends ValidComponent = 'div'> = TooltipContentProps<T> & {
-  class?: string;
-};
+type TooltipContentProps<T extends ValidComponent = 'div'> =
+  TooltipPrimitive.TooltipContentProps<T> & { class?: string | undefined };
 
-export const TooltipContent = <T extends ValidComponent = 'div'>(
-  props: PolymorphicProps<T, tooltipContentProps<T>>,
+const TooltipContent = <T extends ValidComponent = 'div'>(
+  props: PolymorphicProps<T, TooltipContentProps<T>>,
 ) => {
-  const [local, rest] = splitProps(props as tooltipContentProps, ['class']);
-
+  const [local, others] = splitProps(props as TooltipContentProps, ['class']);
   return (
     <TooltipPrimitive.Portal>
       <TooltipPrimitive.Content
         class={cn(
-          'data-[closed]:fade-out-0 data-[expanded]:fade-in-0 data-[closed]:zoom-out-95 data-[expanded]:zoom-in-95 z-50 overflow-hidden rounded-md bg-primary px-3 py-1.5 text-primary-foreground text-xs data-[closed]:animate-out data-[expanded]:animate-in',
+          'fade-in-0 zoom-in-95 z-50 origin-[var(--kb-popover-content-transform-origin)] animate-in overflow-hidden rounded-md border bg-popover px-3 py-1.5 text-popover-foreground text-sm shadow-md',
           local.class,
         )}
-        {...rest}
+        {...others}
       />
+      <TooltipPrimitive.Arrow />
     </TooltipPrimitive.Portal>
   );
 };
+
+export { Tooltip, TooltipTrigger, TooltipContent };
