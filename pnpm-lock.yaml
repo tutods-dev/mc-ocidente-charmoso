@@ -86,9 +86,6 @@ importers:
       embla-carousel-solid:
         specifier: ^8.2.1
         version: 8.2.1(solid-js@1.8.22)
-      groq:
-        specifier: ^3.57.3
-        version: 3.57.3
       nodemailer:
         specifier: ^6.9.15
         version: 6.9.15
