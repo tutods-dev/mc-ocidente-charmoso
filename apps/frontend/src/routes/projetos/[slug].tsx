@@ -50,10 +50,10 @@ function ProjectDetails() {
               </section>
               <section
                 class={
-                  'order-first md:sticky md:top-10 md:right-0 md:order-last md:h-fit md:py-10'
+                  'order-first md:sticky md:top-10 md:right-0 md:order-last md:h-fit md:py-10 lg:top-24'
                 }
               >
-                <h1>{project.title}</h1>
+                <h1 class="tracking-wide">{project.title}</h1>
 
                 <Show when={project.content} keyed={true}>
                   {(content) => (

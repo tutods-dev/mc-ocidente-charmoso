@@ -1,12 +1,10 @@
 import { For, Match, Show, Switch } from 'solid-js';
-import { Tooltip, TooltipContent, TooltipTrigger } from '~/components';
 import type { SocialNetworksAndContacts } from '~/shared/types';
 import {
   getContactIcon,
   getContactUrl,
   getFormattedPhone,
   getSocialNetworkIcon,
-  getSocialNetworkLabel,
 } from '~/shared/utils';
 
 type Props = {
@@ -80,20 +78,14 @@ function ContactsList(props: Props) {
               <For each={social}>
                 {(item) => (
                   <li>
-                    <Tooltip openDelay={0} placement="top">
-                      <TooltipTrigger
-                        as={'a'}
-                        href={item.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="inline-flex size-10 shrink-0 items-center justify-center rounded bg-zinc-800 text-2xl text-white shadow-sm transition-colors duration-300 ease-in-out hover:bg-zinc-200 hover:text-zinc-900"
-                      >
-                        <i class={getSocialNetworkIcon(item.network)} />
-                      </TooltipTrigger>
-                      <TooltipContent class="font-semibold">
-                        {getSocialNetworkLabel(item.network)}
-                      </TooltipContent>
-                    </Tooltip>
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex size-10 shrink-0 items-center justify-center rounded bg-zinc-800 text-2xl text-white shadow-sm transition-colors duration-300 ease-in-out hover:bg-zinc-200 hover:text-zinc-900"
+                    >
+                      <i class={getSocialNetworkIcon(item.network)} />
+                    </a>
                   </li>
                 )}
               </For>
