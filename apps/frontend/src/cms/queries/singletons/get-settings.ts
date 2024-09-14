@@ -19,12 +19,13 @@ const getAllSettingsQuery = `
  */
 const getSeoSettingsQuery = `
     *[_type == "settings"] [0] {
-        title,
+        "title": coalesce(title, "MC Ocidente Charmoso"),
         description,
-        "thumbnail": {
+        "keywords": coalesce(keywords, ['design de interiores', 'móveis', 'cozinhas', 'quartos']),
+        "thumbnail": select(defined(thumbnail) => {
             ...thumbnail,
             "asset": thumbnail.asset->
-        },
+        }),
     }
 `;
 

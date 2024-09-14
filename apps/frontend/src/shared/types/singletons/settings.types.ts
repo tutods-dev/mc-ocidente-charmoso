@@ -21,10 +21,13 @@ type SocialNetworksAndContacts = {
   social?: SocialNetworks;
 };
 
+type SeoSettings = Pick<Settings, 'title' | 'description' | 'keywords' | 'thumbnail'>;
+
 export type {
   Settings,
+  CtaSettings,
+  SeoSettings,
   Contacts,
   SocialNetworks,
-  CtaSettings,
   SocialNetworksAndContacts,
 };

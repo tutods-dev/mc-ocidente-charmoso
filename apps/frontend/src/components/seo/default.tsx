@@ -1,7 +1,11 @@
-import { Link, Meta } from '@solidjs/meta';
+import { Link, Meta, Title } from '@solidjs/meta';
+import { createAsync } from '@solidjs/router';
+import { Show } from 'solid-js';
+import { getSeoSettings } from '~/cms/services';
+import { urlFor } from '~/cms/utils';
 
 function DefaultSeo() {
-  // const seoSettings = createAsync(() => getSeoSettings(), { deferStream: true });
+  const seoSettings = createAsync(() => getSeoSettings(), { deferStream: true });
 
   return (
     <>
@@ -13,7 +17,6 @@ function DefaultSeo() {
       {/* Default social tags */}
       <Meta property="og:locale" content="Portuguese" />
       <Meta property="og:type" content="website" />
-      <Meta property="og:image" content="/media/design.webp" />
 
       {/* Favicon */}
       <Link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -21,31 +24,36 @@ function DefaultSeo() {
       {/* Robots */}
       <Meta name="robots" content="index, follow" />
 
-      {/*<Show when={seoSettings()} keyed={true}>*/}
-      {/*  {(seo) => (*/}
-      {/*    <>*/}
-      {/*      <Title>*/}
-      {/*        {seo.title} <Show when={seo.slogan}>-</Show>{' '}*/}
-      {/*        <Show when={seo.slogan} keyed={true}>*/}
-      {/*          {(slogan) => <>{slogan}</>}*/}
-      {/*        </Show>*/}
-      {/*      </Title>*/}
+      <Show when={seoSettings()} keyed={true}>
+        {(seo) => (
+          <>
+            <Title>{seo.title}</Title>
 
-      {/*      <Show when={seo.defaultDescription} keyed={true}>*/}
-      {/*        {(description) => <Meta name="description" content={description} />}*/}
-      {/*      </Show>*/}
-      {/*      <Meta name="keywords" content={seo.keywords?.join(', ')} />*/}
+            <Show when={seo.description} keyed={true}>
+              {(description) => <Meta name="description" content={description} />}
+            </Show>
+            <Meta name="keywords" content={seo.keywords?.join(', ')} />
 
-      {/*      /!* Social tags *!/*/}
-      {/*      <Meta property="og:site_name" content={seo.title} />*/}
-      {/*      <Meta*/}
-      {/*        property="og:title"*/}
-      {/*        content={`${seo.title} ${seo.slogan && `- ${seo.slogan}`}`}*/}
-      {/*      />*/}
-      {/*      <Meta property="og:description" content={seo.defaultDescription} />*/}
-      {/*    </>*/}
-      {/*  )}*/}
-      {/*</Show>*/}
+            {/* Social tags */}
+            <Meta property="og:site_name" content={seo.title} />
+            <Meta property="og:title" content={seo.title} />
+            <Meta property="og:description" content={seo.description} />
+
+            <Show when={seo.thumbnail} keyed={true}>
+              {(thumbnail) => (
+                <Meta
+                  property="og:image"
+                  content={urlFor(thumbnail)
+                    .width(800)
+                    .height(600)
+                    .auto('format')
+                    .url()}
+                />
+              )}
+            </Show>
+          </>
+        )}
+      </Show>
     </>
   );
 }

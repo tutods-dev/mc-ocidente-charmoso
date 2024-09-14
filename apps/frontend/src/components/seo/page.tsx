@@ -1,5 +1,9 @@
 import { Link, Meta, Title } from '@solidjs/meta';
+import { createAsync } from '@solidjs/router';
 import { type JSXElement, Show, mergeProps } from 'solid-js';
+import { getSeoSettings } from '~/cms/services';
+import { urlFor } from '~/cms/utils';
+import type { ImageWithAlt } from '~/shared/types';
 
 type Props = {
   /**
@@ -8,9 +12,9 @@ type Props = {
   title: string;
 
   /**
-   * Page headline/short description.
+   * Page description.
    */
-  headline?: string;
+  description?: string;
 
   /**
    * List of keywords related with the page,
@@ -29,19 +33,18 @@ type Props = {
 };
 
 function PageSeo(rawProps: Props) {
-  // const seoSettings = createAsync(() => getSeoSettings(), { deferStream: true });
+  const seoSettings = createAsync(() => getSeoSettings(), { deferStream: true });
 
   const props = mergeProps(
     {
-      // keywords: seoSettings()?.keywords ?? [
-      //   'impulsionar',
-      //   'marketing',
-      //   'design',
-      //   'social media',
-      //   'branding',
-      // ],
-      // headline: seoSettings()?.defaultDescription,
-      // image: '/media/design-webp',
+      keywords: seoSettings()?.keywords ?? ['design de interiores', 'móveis'],
+      description: seoSettings()?.description,
+      image: seoSettings()?.thumbnail
+        ? urlFor(seoSettings()?.thumbnail as ImageWithAlt)
+            .width(800)
+            .height(600)
+            .url()
+        : undefined,
     },
     rawProps,
   );
@@ -64,15 +67,17 @@ function PageSeo(rawProps: Props) {
       {/* Robots */}
       <Meta name="robots" content="index, follow" />
 
-      <Title>{/*{props.title} | {seoSettings()?.title}*/}</Title>
+      <Title>
+        {props.title} | {seoSettings()?.title}
+      </Title>
 
-      <Meta name="description" content={props.headline} />
-      {/*<Meta name="keywords" content={props.keywords.join(', ')} />*/}
+      <Meta name="description" content={props.description} />
+      <Meta name="keywords" content={props.keywords.join(', ')} />
 
       {/* Social tags */}
-      {/*<Meta property="og:site_name" content={seoSettings()?.title} />*/}
-      {/*<Meta property="og:title" content={`${props.title} | ${seoSettings()?.title}`} />*/}
-      <Meta property="og:description" content={props.headline} />
+      <Meta property="og:site_name" content={seoSettings()?.title} />
+      <Meta property="og:title" content={`${props.title} | ${seoSettings()?.title}`} />
+      <Meta property="og:description" content={props.description} />
 
       <Show when={props.children}>{props.children}</Show>
     </>
