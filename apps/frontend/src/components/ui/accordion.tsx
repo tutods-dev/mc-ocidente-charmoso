@@ -40,32 +40,23 @@ export const AccordionTrigger = <T extends ValidComponent = 'button'>(
     <AccordionPrimitive.Header class="flex" as="div">
       <AccordionPrimitive.Trigger
         class={cn(
-          'flex flex-1 items-center justify-between py-4 font-medium text-sm transition-shadow hover:underline focus-visible:outline-none focus-visible:ring-[1.5px] focus-visible:ring-ring [&[data-expanded]>svg]:rotate-180',
+          'group',
+          'flex flex-1 items-center justify-between py-4 font-medium text-sm transition-shadow',
+          'focus-visible:outline-none focus-visible:ring-[1.5px] focus-visible:ring-ring',
+          '[&[data-expanded]>i]:rotate-180',
           local.class,
         )}
         {...rest}
       >
-        {local.children}
+        <span class="transition-all duration-300 ease-in-out group-hover:underline">
+          {local.children}
+        </span>
+
         <i
           class={
             'ph ph-caret-down text-muted-foreground leading-none transition-transform duration-200'
           }
         />
-        {/*<svg*/}
-        {/*	xmlns="http://www.w3.org/2000/svg"*/}
-        {/*	viewBox="0 0 24 24"*/}
-        {/*	class="h-4 w-4 text-muted-foreground transition-transform duration-200"*/}
-        {/*>*/}
-        {/*	<path*/}
-        {/*		fill="none"*/}
-        {/*		stroke="currentColor"*/}
-        {/*		stroke-linecap="round"*/}
-        {/*		stroke-linejoin="round"*/}
-        {/*		stroke-width="2"*/}
-        {/*		d="m6 9l6 6l6-6"*/}
-        {/*	/>*/}
-        {/*	<title>Arrow</title>*/}
-        {/*</svg>*/}
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   );

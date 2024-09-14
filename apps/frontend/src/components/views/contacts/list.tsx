@@ -32,37 +32,41 @@ function ContactsList(props: Props) {
             <ul class="mt-6 space-y-6">
               <For each={contacts}>
                 {(contact) => (
-                  <li class="flex gap-4">
-                    <span class="inline-flex size-10 shrink-0 items-center justify-center rounded bg-zinc-800 text-2xl text-white">
-                      <i class={getContactIcon(contact.type)} />
-                    </span>
+                  <li>
+                    <a
+                      href={`${getContactUrl(contact.type)}${contact.value}`}
+                      class="group flex gap-4"
+                      rel="noopener noreferrer"
+                    >
+                      <span class="inline-flex size-10 shrink-0 items-center justify-center rounded bg-zinc-800 text-2xl text-white transition-colors duration-300 ease-in-out group-hover:bg-zinc-200 group-hover:text-zinc-900">
+                        <i class={getContactIcon(contact.type)} />
+                      </span>
 
-                    <div>
-                      <h3 class="font-bold text-md md:text-sm">
-                        <Switch>
-                          <Match when={contact.type === 'email'}>Email</Match>
+                      <div>
+                        <h3 class="font-bold text-md md:text-sm">
+                          <Switch>
+                            <Match when={contact.type === 'email'}>Email</Match>
 
-                          <Match when={contact.type === 'phone'}>Contacto móvel</Match>
-                        </Switch>
-                      </h3>
+                            <Match when={contact.type === 'phone'}>
+                              Contacto móvel
+                            </Match>
+                          </Switch>
+                        </h3>
 
-                      <p class="text-lg">
-                        <a
-                          class="text-zinc-600 underline transition-colors ease-in-out hover:text-zinc-950"
-                          href={`${getContactUrl(contact.type)}${contact.value}`}
-                          rel="noopener noreferrer"
-                        >
-                          {contact.type === 'phone'
-                            ? getFormattedPhone(contact.value)
-                            : contact.value}
-                        </a>{' '}
-                        <Show when={contact.type === 'phone'}>
-                          <small class="block text-sm sm:inline md:text-xs">
-                            (Chamada para rede móvel nacional)
-                          </small>
-                        </Show>
-                      </p>
-                    </div>
+                        <p class="text-lg">
+                          <span class="underline">
+                            {contact.type === 'phone'
+                              ? getFormattedPhone(contact.value)
+                              : contact.value}
+                          </span>{' '}
+                          <Show when={contact.type === 'phone'}>
+                            <small class="block text-sm sm:inline md:text-xs">
+                              (Chamada para rede móvel nacional)
+                            </small>
+                          </Show>
+                        </p>
+                      </div>
+                    </a>
                   </li>
                 )}
               </For>

@@ -17,18 +17,6 @@ export const settingsSchema = defineType({
       validation: (Rule) =>
         Rule.required().error('Por favor, preencha o nome do website.'),
     }),
-    // defineField({
-    //   description: 'Texto breve sobre o website.',
-    //   group: 'seo',
-    //   name: 'slogan',
-    //   rows: 3,
-    //   title: 'Slogan',
-    //   type: 'text',
-    //   validation: (Rule) =>
-    //     Rule.required().warning(
-    //       'Este campo é recomendado para melhorar o SEO do website.',
-    //     ),
-    // }),
     defineField({
       description: 'Descrição breve sobre o website, utilizada para fins de SEO.',
       group: 'seo',

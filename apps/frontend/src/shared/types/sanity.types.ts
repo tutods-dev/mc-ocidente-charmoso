@@ -150,6 +150,16 @@ export type Contacts = {
     title: string;
     headline?: string;
   };
+  faq?: {
+    title: string;
+    headline?: string;
+    questions?: Array<{
+      question: string;
+      answer: string;
+      _type: "question";
+      _key: string;
+    }>;
+  };
 };
 
 export type Archives = {

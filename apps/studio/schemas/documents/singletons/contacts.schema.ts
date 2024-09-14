@@ -93,6 +93,62 @@ const contactsSchema = defineType({
         }),
       ],
     }),
+    defineField({
+      name: 'faq',
+      title: 'Questões Frequentes',
+      type: 'object',
+      fields: [
+        defineField({
+          name: 'title',
+          title: 'Título',
+          type: 'string',
+          validation: (Rule) => isTextRequired(Rule, 'título'),
+        }),
+        defineField({
+          name: 'headline',
+          rows: 3,
+          title: 'Descrição',
+          type: 'text',
+          validation: (Rule) => [
+            Rule.min(0).warning(
+              'A descrição não é obrigatória, porém pode ajudar a melhorar o SEO da página',
+            ),
+            Rule.min(50).warning(
+              'Para uma descrição é recomendado entre 50 a 160 caracteres.',
+            ),
+            Rule.max(160).warning(
+              'Para uma descrição é recomendado entre 50 a 160 caracteres.',
+            ),
+          ],
+        }),
+        defineField({
+          name: 'questions',
+          title: 'questions',
+          type: 'array',
+          of: [
+            defineField({
+              name: 'question',
+              type: 'object',
+              fields: [
+                defineField({
+                  title: 'Questão',
+                  name: 'question',
+                  type: 'string',
+                  validation: (Rule) => isTextRequired(Rule, 'questão'),
+                }),
+                defineField({
+                  name: 'answer',
+                  title: 'Resposta',
+                  type: 'text',
+                  rows: 5,
+                  validation: (Rule) => isTextRequired(Rule, 'resposta'),
+                }),
+              ],
+            }),
+          ],
+        }),
+      ],
+    }),
   ],
 });
 

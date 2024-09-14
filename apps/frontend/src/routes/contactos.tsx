@@ -2,7 +2,7 @@ import { createAsync } from '@solidjs/router';
 import { Show } from 'solid-js';
 import { getContacts, getSocialNetworksAndContacts } from '~/cms/services';
 import { PageSeo } from '~/components/seo';
-import { ContactForm, ContactsList } from '~/components/views/contacts';
+import { ContactForm, ContactsList, Faq } from '~/components/views/contacts';
 import { cn } from '~/libs/cn';
 import 'boxicons/css/boxicons.min.css';
 
@@ -63,6 +63,10 @@ function ContactsRouter() {
           </section>
         </div>
       </section>
+
+      <Show when={data()?.faq} keyed={true}>
+        {(faq) => <Faq {...faq} />}
+      </Show>
     </main>
   );
 }

@@ -1,16 +1,16 @@
 import { cache } from '@solidjs/router';
 import { client } from '~/cms';
 import { getContactsQuery } from '~/cms/queries/singletons/get-contacts-page';
-import type { Contacts } from '~/shared/types';
+import type { ContactsSingleton } from '~/shared/types';
 
 /**
  * Service to retrieve the contacts page settings.
  */
-const getContacts = cache<() => Promise<Contacts | undefined>>(async () => {
+const getContacts = cache<() => Promise<ContactsSingleton | undefined>>(async () => {
   'use server';
 
   try {
-    return client.fetch<Contacts>(getContactsQuery);
+    return client.fetch<ContactsSingleton>(getContactsQuery);
   } catch {
     return;
   }
