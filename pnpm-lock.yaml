@@ -81,11 +81,11 @@ importers:
         specifier: ^2.1.4
         version: 2.1.4
       embla-carousel-autoplay:
-        specifier: ^8.2.1
-        version: 8.2.1(embla-carousel@8.2.1)
+        specifier: ^8.3.0
+        version: 8.3.0(embla-carousel@8.3.0)
       embla-carousel-solid:
-        specifier: ^8.2.1
-        version: 8.2.1(solid-js@1.8.22)
+        specifier: ^8.3.0
+        version: 8.3.0(solid-js@1.8.22)
       nodemailer:
         specifier: 6.9.14
         version: 6.9.14
@@ -3182,23 +3182,23 @@ packages:
   electron-to-chromium@1.5.21:
     resolution: {integrity: sha512-+rBAerCpQvFSPyAO677i5gJuWGO2WFsoujENdcMzsrpP7Ebcc3pmpERgU8CV4fFF10a5haP4ivnFQ/AmLICBVg==}
 
-  embla-carousel-autoplay@8.2.1:
-    resolution: {integrity: sha512-jhE2aNz5pbmICVkz3XyB3uACgkk4YvbnOZeMcoeIMjfycierQvmcice107w73kYaPrQSzCrHLNkKNmq9eA2iOQ==}
+  embla-carousel-autoplay@8.3.0:
+    resolution: {integrity: sha512-h7DFJLf9uQD+XDxr1NwA3/oFIjsnj/iED2RjET5u6/svMec46IbF1CYPhmB5Q/1Fc0WkcvhPpsEsrtVXQLxNzA==}
     peerDependencies:
-      embla-carousel: 8.2.1
+      embla-carousel: 8.3.0
 
-  embla-carousel-reactive-utils@8.2.1:
-    resolution: {integrity: sha512-LXMVOOyv09ZKRxRQXYMX1FpVGcypsuxdcidNcNlBQUN2mK7hkmjVFQwwhfnnY39KMi88XYnYPBgMxfTe0vxSrA==}
+  embla-carousel-reactive-utils@8.3.0:
+    resolution: {integrity: sha512-EYdhhJ302SC4Lmkx8GRsp0sjUhEN4WyFXPOk0kGu9OXZSRMmcBlRgTvHcq8eKJE1bXWBsOi1T83B+BSSVZSmwQ==}
     peerDependencies:
-      embla-carousel: 8.2.1
+      embla-carousel: 8.3.0
 
-  embla-carousel-solid@8.2.1:
-    resolution: {integrity: sha512-dLv+VQ1Ynhw4MBU9rmRKD6+Uxsybi0hKcXaJUWFfDg3cLkUPPxEZ+m8mHIaHRUOsN/7Dliv4tMXL32qa2uw3Dg==}
+  embla-carousel-solid@8.3.0:
+    resolution: {integrity: sha512-QYwzYD+X65oX7agioW3BXEONH1aIrJDW5VgsDLy+Cqf3SzxMLcgh6V9BB8etdaQ6v+PRRZy/t12kkvCX1PFK0g==}
     peerDependencies:
       solid-js: ^1.0.0
 
-  embla-carousel@8.2.1:
-    resolution: {integrity: sha512-9mTDtyMZJhFuuW5pixhTT4iLiJB1l3dH3IpXUKCsgLlRlHCiySf/wLKy5xIAzmxIsokcQ50xea8wi7BCt0+Rxg==}
+  embla-carousel@8.3.0:
+    resolution: {integrity: sha512-Ve8dhI4w28qBqR8J+aMtv7rLK89r1ZA5HocwFz6uMB/i5EiC7bGI7y+AM80yAVUJw3qqaZYK7clmZMUR8kM3UA==}
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -9614,21 +9614,21 @@ snapshots:
 
   electron-to-chromium@1.5.21: {}
 
-  embla-carousel-autoplay@8.2.1(embla-carousel@8.2.1):
+  embla-carousel-autoplay@8.3.0(embla-carousel@8.3.0):
     dependencies:
-      embla-carousel: 8.2.1
+      embla-carousel: 8.3.0
 
-  embla-carousel-reactive-utils@8.2.1(embla-carousel@8.2.1):
+  embla-carousel-reactive-utils@8.3.0(embla-carousel@8.3.0):
     dependencies:
-      embla-carousel: 8.2.1
+      embla-carousel: 8.3.0
 
-  embla-carousel-solid@8.2.1(solid-js@1.8.22):
+  embla-carousel-solid@8.3.0(solid-js@1.8.22):
     dependencies:
-      embla-carousel: 8.2.1
-      embla-carousel-reactive-utils: 8.2.1(embla-carousel@8.2.1)
+      embla-carousel: 8.3.0
+      embla-carousel-reactive-utils: 8.3.0(embla-carousel@8.3.0)
       solid-js: 1.8.22
 
-  embla-carousel@8.2.1: {}
+  embla-carousel@8.3.0: {}
 
   emoji-regex@8.0.0: {}
 
