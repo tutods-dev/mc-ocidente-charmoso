@@ -65,7 +65,30 @@ function ContactsRouter() {
       </section>
 
       <Show when={data()?.faq} keyed={true}>
-        {(faq) => <Faq {...faq} />}
+        {(faq) => (
+          <section class="py-8 md:py-12">
+            <div class="container">
+              <Show when={faq.title} keyed={true}>
+                {(title) => (
+                  <h2
+                    class={cn([
+                      'mb-2 text-center font-semibold',
+                      { 'mb-6': !faq.headline },
+                    ])}
+                  >
+                    {title}
+                  </h2>
+                )}
+              </Show>
+
+              <Show when={faq.headline} keyed={true}>
+                {(headline) => <p class="mb-6 text-center">{headline}</p>}
+              </Show>
+
+              <Faq questions={faq.questions} />
+            </div>
+          </section>
+        )}
       </Show>
     </main>
   );
