@@ -1,4 +1,4 @@
-import { CogIcon, CommentIcon } from '@sanity/icons';
+import { CogIcon, EnvelopeIcon, InfoOutlineIcon } from '@sanity/icons';
 import { ptPTLocale } from '@sanity/locale-pt-pt';
 import { visionTool } from '@sanity/vision';
 import { defineConfig } from 'sanity';
@@ -50,8 +50,13 @@ export default defineConfig({
             S.listItem()
               .title('Página de Contactos')
               .id('contacts')
-              .icon(CommentIcon)
+              .icon(EnvelopeIcon)
               .child(S.document().schemaType('contacts').documentId('contacts')),
+            S.listItem()
+              .title('Sobre Nós')
+              .id('about-us')
+              .icon(InfoOutlineIcon)
+              .child(S.document().schemaType('about-us').documentId('about-us')),
 
             S.divider(),
 
@@ -61,10 +66,9 @@ export default defineConfig({
             S.documentTypeListItem('testimonial'),
           ]),
     }),
-    // For production environment, remove the vision plugin
-    ...(process.env.NODE_ENV !== 'production' ? [visionTool()] : []),
     ptPTLocale({
       title: 'Português',
     }),
+    visionTool(),
   ],
 });

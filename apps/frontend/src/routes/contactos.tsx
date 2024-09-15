@@ -14,7 +14,7 @@ function ContactsRouter() {
     <main>
       <PageSeo
         title={data()?.title ?? 'Contactos'}
-        headline={data()?.headline}
+        description={data()?.headline}
         keywords={['contactos', 'questões frequentes', 'perguntas frequentes']}
       />
       <header class="py-16">

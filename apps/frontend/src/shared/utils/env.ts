@@ -9,7 +9,7 @@ const env = {
   },
   email: {
     host: process.env.SMTP_HOST ?? '',
-    port: Number(process.env.SMTP_PORT) ?? 587,
+    port: Number.isNaN(process.env.SMTP_PORT) ? Number(process.env.SMTP_PORT) : 587,
     email: process.env.SMTP_EMAIL ?? '',
     password: process.env.SMTP_PASSWORD ?? '',
     secure: Boolean(process.env.SMTP_SECURE),
