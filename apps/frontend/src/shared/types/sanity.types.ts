@@ -134,6 +134,72 @@ export type BlockContent = Array<{
   _key: string;
 }>;
 
+export type AboutUs = {
+  _id: string;
+  _type: "about-us";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title: string;
+  headline?: string;
+  aboutUs?: {
+    title: string;
+    description?: string;
+    thumbnail: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      alt: string;
+      _type: "imageWithAlt";
+    };
+    stats?: Array<{
+      value: number;
+      extra?: string;
+      isPrefix?: boolean;
+      label: string;
+      _type: "counter";
+      _key: string;
+    }>;
+  };
+  factory?: {
+    title: string;
+    description?: string;
+    gallery?: Array<{
+      _key: string;
+    } & ImageWithAltAndCaption>;
+  };
+  process?: {
+    title: string;
+    thumbnail: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      alt: string;
+      _type: "imageWithAlt";
+    };
+    steps?: Array<{
+      title: string;
+      description?: string;
+      _type: "step";
+      _key: string;
+    }>;
+  };
+  services?: {
+    title: string;
+    description?: string;
+  };
+};
+
 export type Contacts = {
   _id: string;
   _type: "contacts";
@@ -369,5 +435,5 @@ export type Slug = {
   source?: string;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | VideoUrlWithCover | Gallery | ImageWithAltAndCaption | BlockContent | Contacts | Archives | Settings | ImageWithAlt | Testimonial | Project | Service | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | VideoUrlWithCover | Gallery | ImageWithAltAndCaption | BlockContent | AboutUs | Contacts | Archives | Settings | ImageWithAlt | Testimonial | Project | Service | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug;
 export declare const internalGroqTypeReferenceTo: unique symbol;

@@ -1,6 +1,7 @@
 import type {
   FileRule,
   ImageRule,
+  NumberRule,
   SlugRule,
   StringRule,
   TextRule,
@@ -25,6 +26,18 @@ function isTextRequired(rule: StringRule | TextRule, name?: string) {
   const errorMessage = getErrorMessage(name);
 
   return [rule.required().error(errorMessage), rule.min(0).error(errorMessage)];
+}
+
+/**
+ * Helper function to add the required validation for string and text fields.
+ * @param rule Rule object
+ * @param name Field name
+ * @returns Required rules
+ */
+function isNumberRequired(rule: NumberRule, name?: string) {
+  const errorMessage = getErrorMessage(name);
+
+  return rule.required().error(errorMessage);
 }
 
 /**
@@ -57,4 +70,10 @@ function isFileRequired(rule: FileRule | ImageRule, name?: string) {
   return rule.required().error(getErrorMessage(name));
 }
 
-export { isTextRequired, isUrlRequired, isSlugRequired, isFileRequired };
+export {
+  isTextRequired,
+  isUrlRequired,
+  isSlugRequired,
+  isFileRequired,
+  isNumberRequired,
+};
