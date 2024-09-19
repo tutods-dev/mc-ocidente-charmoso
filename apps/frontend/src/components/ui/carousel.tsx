@@ -1,20 +1,23 @@
-import type { CreateEmblaCarouselType } from 'embla-carousel-solid';
-import createEmblaCarousel from 'embla-carousel-solid';
-import type { Accessor, ComponentProps, ParentProps, VoidProps } from 'solid-js';
+import type { Accessor, Component, ComponentProps, VoidProps } from 'solid-js';
 import {
   createContext,
   createEffect,
   createMemo,
   createSignal,
   mergeProps,
-  onCleanup,
   splitProps,
   useContext,
 } from 'solid-js';
-import { cn } from '~/libs/cn';
-import { Button } from './button';
+
+import type { CreateEmblaCarouselType } from 'embla-carousel-solid';
+import createEmblaCarousel from 'embla-carousel-solid';
+
+import type { ButtonProps } from '~/components/ui/button';
+import { Button } from '~/components/ui/button';
+import { cn } from '~/lib/utils';
 
 export type CarouselApi = CreateEmblaCarouselType[1];
+
 type UseCarouselParameters = Parameters<typeof createEmblaCarousel>;
 type CarouselOptions = NonNullable<UseCarouselParameters[0]>;
 type CarouselPlugin = NonNullable<UseCarouselParameters[1]>;
@@ -47,13 +50,13 @@ const useCarousel = () => {
   return context();
 };
 
-export const Carousel = (props: ComponentProps<'div'> & CarouselProps) => {
-  const merge = mergeProps<ParentProps<ComponentProps<'div'> & CarouselProps>[]>(
+const Carousel: Component<CarouselProps & ComponentProps<'div'>> = (rawProps) => {
+  const props = mergeProps<(CarouselProps & ComponentProps<'div'>)[]>(
     { orientation: 'horizontal' },
-    props,
+    rawProps,
   );
 
-  const [local, rest] = splitProps(merge, [
+  const [local, others] = splitProps(props, [
     'orientation',
     'opts',
     'setApi',
@@ -77,9 +80,13 @@ export const Carousel = (props: ComponentProps<'div'> & CarouselProps) => {
     setCanScrollNext(api.canScrollNext());
   };
 
-  const scrollPrev = () => api()?.scrollPrev();
+  const scrollPrev = () => {
+    api()?.scrollPrev();
+  };
 
-  const scrollNext = () => api()?.scrollNext();
+  const scrollNext = () => {
+    api()?.scrollNext();
+  };
 
   const handleKeyDown = (event: KeyboardEvent) => {
     if (event.key === 'ArrowLeft') {
@@ -95,23 +102,21 @@ export const Carousel = (props: ComponentProps<'div'> & CarouselProps) => {
     if (!api() || !local.setApi) {
       return;
     }
-
     local.setApi(api);
   });
 
   createEffect(() => {
-    const _api = api();
-    if (_api === undefined) {
+    if (!api()) {
       return;
     }
 
-    onSelect(_api);
-    _api.on('reInit', onSelect);
-    _api.on('select', onSelect);
+    onSelect(api()!);
+    api()!.on('reInit', onSelect);
+    api()!.on('select', onSelect);
 
-    onCleanup(() => {
-      _api.off('select', onSelect);
-    });
+    return () => {
+      api()?.off('select', onSelect);
+    };
   });
 
   const value = createMemo(
@@ -134,10 +139,8 @@ export const Carousel = (props: ComponentProps<'div'> & CarouselProps) => {
       <div
         onKeyDown={handleKeyDown}
         class={cn('relative', local.class)}
-        // biome-ignore lint/a11y/useSemanticElements: Solid UI code
-        role="region"
         aria-roledescription="carousel"
-        {...rest}
+        {...others}
       >
         {local.children}
       </div>
@@ -145,8 +148,8 @@ export const Carousel = (props: ComponentProps<'div'> & CarouselProps) => {
   );
 };
 
-export const CarouselContent = (props: ComponentProps<'div'>) => {
-  const [local, rest] = splitProps(props, ['class']);
+const CarouselContent: Component<ComponentProps<'div'>> = (props) => {
+  const [local, others] = splitProps(props, ['class']);
   const { carouselRef, orientation } = useCarousel();
 
   return (
@@ -157,14 +160,14 @@ export const CarouselContent = (props: ComponentProps<'div'>) => {
           orientation === 'horizontal' ? '-ml-4' : '-mt-4 flex-col',
           local.class,
         )}
-        {...rest}
+        {...others}
       />
     </div>
   );
 };
 
-export const CarouselItem = (props: ComponentProps<'div'>) => {
-  const [local, rest] = splitProps(props, ['class']);
+const CarouselItem: Component<ComponentProps<'div'>> = (props) => {
+  const [local, others] = splitProps(props, ['class']);
   const { orientation } = useCarousel();
 
   return (
@@ -176,17 +179,19 @@ export const CarouselItem = (props: ComponentProps<'div'>) => {
         orientation === 'horizontal' ? 'pl-4' : 'pt-4',
         local.class,
       )}
-      {...rest}
+      {...others}
     />
   );
 };
 
-export const CarouselPrevious = (props: VoidProps<ComponentProps<typeof Button>>) => {
-  const merge = mergeProps<VoidProps<ComponentProps<typeof Button>[]>>(
+type CarouselButtonProps = VoidProps<ButtonProps>;
+
+const CarouselPrevious: Component<CarouselButtonProps> = (rawProps) => {
+  const props = mergeProps<CarouselButtonProps[]>(
     { variant: 'outline', size: 'icon' },
-    props,
+    rawProps,
   );
-  const [local, rest] = splitProps(merge, ['class', 'variant', 'size']);
+  const [local, others] = splitProps(props, ['class', 'variant', 'size']);
   const { orientation, scrollPrev, canScrollPrev } = useCarousel();
 
   return (
@@ -194,7 +199,7 @@ export const CarouselPrevious = (props: VoidProps<ComponentProps<typeof Button>>
       variant={local.variant}
       size={local.size}
       class={cn(
-        'absolute h-8 w-8 touch-manipulation rounded-full',
+        'absolute size-8 touch-manipulation rounded-full',
         orientation === 'horizontal'
           ? '-left-12 -translate-y-1/2 top-1/2'
           : '-top-12 -translate-x-1/2 left-1/2 rotate-90',
@@ -202,29 +207,33 @@ export const CarouselPrevious = (props: VoidProps<ComponentProps<typeof Button>>
       )}
       disabled={!canScrollPrev()}
       onClick={scrollPrev}
-      {...rest}
+      {...others}
     >
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-4">
-        <path
-          fill="none"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M5 12h14M5 12l6 6m-6-6l6-6"
-        />
-        <title>Previous slide</title>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="size-4"
+      >
+        <path d="M5 12l14 0" />
+        <path d="M5 12l6 6" />
+        <path d="M5 12l6 -6" />
       </svg>
+      <span class="sr-only">Previous slide</span>
     </Button>
   );
 };
 
-export const CarouselNext = (props: VoidProps<ComponentProps<typeof Button>>) => {
-  const merge = mergeProps<VoidProps<ComponentProps<typeof Button>[]>>(
+const CarouselNext: Component<CarouselButtonProps> = (rawProps) => {
+  const props = mergeProps<CarouselButtonProps[]>(
     { variant: 'outline', size: 'icon' },
-    props,
+    rawProps,
   );
-  const [local, rest] = splitProps(merge, ['class', 'variant', 'size']);
+  const [local, others] = splitProps(props, ['class', 'variant', 'size']);
   const { orientation, scrollNext, canScrollNext } = useCarousel();
 
   return (
@@ -232,7 +241,7 @@ export const CarouselNext = (props: VoidProps<ComponentProps<typeof Button>>) =>
       variant={local.variant}
       size={local.size}
       class={cn(
-        'absolute h-8 w-8 touch-manipulation rounded-full',
+        'absolute size-8 touch-manipulation rounded-full',
         orientation === 'horizontal'
           ? '-right-12 -translate-y-1/2 top-1/2'
           : '-bottom-12 -translate-x-1/2 left-1/2 rotate-90',
@@ -240,19 +249,25 @@ export const CarouselNext = (props: VoidProps<ComponentProps<typeof Button>>) =>
       )}
       disabled={!canScrollNext()}
       onClick={scrollNext}
-      {...rest}
+      {...others}
     >
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-4">
-        <path
-          fill="none"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M5 12h14m-4 4l4-4m-4-4l4 4"
-        />
-        <title>Next slide</title>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="size-4"
+      >
+        <path d="M5 12l14 0" />
+        <path d="M13 18l6 -6" />
+        <path d="M13 6l6 6" />
       </svg>
+      <span class="sr-only">Next slide</span>
     </Button>
   );
 };
+
+export { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext };

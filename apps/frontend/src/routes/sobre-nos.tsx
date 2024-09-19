@@ -1,3 +1,32 @@
-export default function AboutUs() {
-  return <h1>Sobre nos</h1>;
+import { createAsync } from '@solidjs/router';
+import { Show } from 'solid-js';
+import { getAboutUs } from '~/cms/services';
+import { FactorySection, IntroductionSection } from '~/components/views/about-us';
+
+function AboutUsRoute() {
+  const data = createAsync(() => getAboutUs());
+
+  return (
+    <main>
+      <header class="py-16">
+        <div class="container flex flex-col items-center justify-center gap-2 text-center">
+          <h1 class="font-bold">{data()?.title ?? 'Sobre nós'}</h1>
+
+          <Show when={data()?.headline} keyed={true}>
+            {(headline) => <p class="text-lg">{headline}</p>}
+          </Show>
+        </div>
+      </header>
+
+      <Show when={data()?.aboutUs} keyed={true}>
+        {(aboutUs) => <IntroductionSection {...aboutUs} />}
+      </Show>
+
+      <Show when={data()?.factory} keyed={true}>
+        {(factory) => <FactorySection {...factory} />}
+      </Show>
+    </main>
+  );
 }
+
+export default AboutUsRoute;

@@ -94,7 +94,8 @@
       },
       "a11y": {
         "recommended": true,
-        "useKeyWithClickEvents": "off"
+        "useKeyWithClickEvents": "off",
+        "noSvgWithoutTitle": "off"
       },
       "security": {
         "recommended": true
