@@ -199,7 +199,7 @@ const CarouselPrevious: Component<CarouselButtonProps> = (rawProps) => {
       variant={local.variant}
       size={local.size}
       class={cn(
-        'absolute size-8 touch-manipulation rounded-full',
+        'absolute z-10 size-8 touch-manipulation rounded-full',
         orientation === 'horizontal'
           ? '-translate-y-1/2 top-1/2 left-4'
           : '-top-4 -translate-x-1/2 left-1/2 rotate-90',
@@ -241,7 +241,7 @@ const CarouselNext: Component<CarouselButtonProps> = (rawProps) => {
       variant={local.variant}
       size={local.size}
       class={cn(
-        'absolute size-8 touch-manipulation rounded-full',
+        'absolute z-10 size-8 touch-manipulation rounded-full',
         orientation === 'horizontal'
           ? '-translate-y-1/2 top-1/2 right-4'
           : '-bottom-4 -translate-x-1/2 left-1/2 rotate-90',

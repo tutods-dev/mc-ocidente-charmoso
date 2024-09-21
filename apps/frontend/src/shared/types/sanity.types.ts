@@ -121,7 +121,7 @@ export type BlockContent = Array<{
     _type: "span";
     _key: string;
   }>;
-  style?: "normal";
+  style?: "normal" | "h2" | "h3" | "h4" | "blockquote";
   listItem?: "bullet" | "number";
   markDefs?: Array<{
     href?: string;
@@ -144,7 +144,7 @@ export type AboutUs = {
   headline?: string;
   aboutUs?: {
     title: string;
-    description?: string;
+    description?: BlockContent;
     thumbnail: {
       asset?: {
         _ref: string;
@@ -196,7 +196,7 @@ export type AboutUs = {
   };
   services?: {
     title: string;
-    description?: string;
+    description?: BlockContent;
   };
 };
 

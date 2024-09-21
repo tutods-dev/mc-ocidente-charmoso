@@ -5,6 +5,7 @@ import {
   FactorySection,
   IntroductionSection,
   ProcessSection,
+  ServicesSection,
 } from '~/components/views/about-us';
 
 function AboutUsRoute() {
@@ -33,6 +34,11 @@ function AboutUsRoute() {
       <Show when={data()?.process} keyed={true}>
         {(process) => <ProcessSection {...process} />}
       </Show>
+
+      <ServicesSection
+        {...data()?.services}
+        title={data()?.services?.title ?? 'O que fazemos?'}
+      />
     </main>
   );
 }

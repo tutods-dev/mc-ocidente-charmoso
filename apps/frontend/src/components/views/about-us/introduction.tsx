@@ -2,7 +2,7 @@ import { Image } from '@unpic/solid';
 import clsx from 'clsx';
 import { For, Show } from 'solid-js';
 import { urlFor } from '~/cms/utils';
-import { Stat } from '~/components/common';
+import { Stat } from '~/components/cards';
 import { cn } from '~/lib/utils';
 import type { AboutUs } from '~/shared/types';
 import { getBlurHashImage } from '~/shared/utils/images';
@@ -25,7 +25,7 @@ function IntroductionSection(props: NonNullable<AboutUs['aboutUs']>) {
           </Show>
 
           <Show when={props.stats}>
-            <ul class="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4">
+            <ul class="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4 lg:grid-cols-3 lg:gap-6">
               <For each={props.stats}>{(stat) => <Stat {...stat} />}</For>
             </ul>
           </Show>
