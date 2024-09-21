@@ -1,7 +1,11 @@
 import { createAsync } from '@solidjs/router';
 import { Show } from 'solid-js';
 import { getAboutUs } from '~/cms/services';
-import { FactorySection, IntroductionSection } from '~/components/views/about-us';
+import {
+  FactorySection,
+  IntroductionSection,
+  ProcessSection,
+} from '~/components/views/about-us';
 
 function AboutUsRoute() {
   const data = createAsync(() => getAboutUs());
@@ -24,6 +28,10 @@ function AboutUsRoute() {
 
       <Show when={data()?.factory} keyed={true}>
         {(factory) => <FactorySection {...factory} />}
+      </Show>
+
+      <Show when={data()?.process} keyed={true}>
+        {(process) => <ProcessSection {...process} />}
       </Show>
     </main>
   );

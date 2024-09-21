@@ -201,8 +201,8 @@ const CarouselPrevious: Component<CarouselButtonProps> = (rawProps) => {
       class={cn(
         'absolute size-8 touch-manipulation rounded-full',
         orientation === 'horizontal'
-          ? '-left-12 -translate-y-1/2 top-1/2'
-          : '-top-12 -translate-x-1/2 left-1/2 rotate-90',
+          ? '-translate-y-1/2 top-1/2 left-4'
+          : '-top-4 -translate-x-1/2 left-1/2 rotate-90',
         local.class,
       )}
       disabled={!canScrollPrev()}
@@ -243,8 +243,8 @@ const CarouselNext: Component<CarouselButtonProps> = (rawProps) => {
       class={cn(
         'absolute size-8 touch-manipulation rounded-full',
         orientation === 'horizontal'
-          ? '-right-12 -translate-y-1/2 top-1/2'
-          : '-bottom-12 -translate-x-1/2 left-1/2 rotate-90',
+          ? '-translate-y-1/2 top-1/2 right-4'
+          : '-bottom-4 -translate-x-1/2 left-1/2 rotate-90',
         local.class,
       )}
       disabled={!canScrollNext()}
