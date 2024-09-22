@@ -13,7 +13,7 @@ function AboutUsRoute() {
 
   return (
     <main>
-      <header class="py-16">
+      <header class="py-8 md:py-16">
         <div class="container flex flex-col items-center justify-center gap-2 text-center">
           <h1 class="font-bold">{data()?.title ?? 'Sobre nós'}</h1>
 

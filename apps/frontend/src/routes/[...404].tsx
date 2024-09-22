@@ -1,32 +1,20 @@
-import { A } from '@solidjs/router';
+import { Button } from '~/components';
 
 export default function NotFound() {
   return (
-    <main class="mx-auto p-4 text-center text-zinc-700">
-      <h1 class="max-6-xs my-16 font-thin text-6xl text-sky-700 uppercase">
-        Not Found
-      </h1>
-      <p class="mt-8">
-        Visit{' '}
-        <a
-          href="https://solidjs.com"
-          target="_blank"
-          class="text-sky-600 hover:underline"
-          rel="noreferrer"
-        >
-          solidjs.com
-        </a>{' '}
-        to learn how to build Solid apps.
-      </p>
-      <p class="my-4">
-        <A href="/" class="text-sky-600 hover:underline">
-          Home
-        </A>
-        {' - '}
-        <A href="/about" class="text-sky-600 hover:underline">
-          About Page
-        </A>
-      </p>
+    <main class="flex items-center justify-center py-8 md:h-[65vh] md:py-16">
+      <div class="container flex flex-col items-center justify-center text-center">
+        <h1 class="mb-1 font-bold">404</h1>
+        <h2>Página não encontrada!</h2>
+        <p class="mt-2 mb-6">
+          A página que procura não foi encontrada ou foi removida.
+        </p>
+
+        <Button as="a" href="/" variant="ghost" class="inline-flex items-center gap-1">
+          Ir para a página inicial
+          <i class="ph ph-arrow-right text-sm leading-none" />
+        </Button>
+      </div>
     </main>
   );
 }

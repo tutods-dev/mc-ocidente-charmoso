@@ -11,12 +11,12 @@ import { getBlurHashImage } from '~/shared/utils/images';
 
 function IntroductionSection(props: NonNullable<AboutUs['aboutUs']>) {
   return (
-    <section class="py-16">
+    <section class="py-4 md:py-16">
       <div
         class={cn([
-          'container grid grid-cols-1 items-center gap-4',
+          'container grid grid-cols-1 items-center gap-8',
           {
-            'sm:grid-cols-2 sm:gap-8': props?.thumbnail,
+            'sm:grid-cols-2': props?.thumbnail,
           },
         ])}
       >

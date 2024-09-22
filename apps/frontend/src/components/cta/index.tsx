@@ -39,12 +39,12 @@ function CtaSection() {
 
             <Button
               variant="ghost"
-              class="mt-10 inline-flex items-center gap-2 font-semibold"
+              class="mt-10 inline-flex items-center gap-1 font-semibold"
               as="a"
               href="/contactos"
             >
               {cta()?.button}
-              <i class="ph ph-arrow-right leading-none" />
+              <i class="ph ph-arrow-right text-xs leading-none" />
             </Button>
           </div>
         </section>

@@ -45,7 +45,7 @@ function ProjectHeroSection({ title, headline, thumbnail }: Props) {
             class="inline-flex items-center gap-1 rounded-full px-3 py-1 font-semibold text-sm text-white leading-6 outline-none ring-1 ring-white/20 transition duration-300 ease-in-out hover:ring-white focus-visible:ring-white"
           >
             Fale connosco
-            <i class="ph ph-arrow-right" />
+            <i class="ph ph-arrow-right text-xs leading-none" />
           </a>
         </footer>
       </section>

@@ -8,7 +8,7 @@ import { getBlurHashImage } from '~/shared/utils/images';
 
 function ProcessSection(props: NonNullable<AboutUs['process']>) {
   return (
-    <section class="py-16">
+    <section class="py-4 md:py-16">
       <div
         class={cn([
           'container grid grid-cols-1 gap-4',

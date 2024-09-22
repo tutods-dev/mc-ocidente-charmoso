@@ -29,8 +29,11 @@ function ServiceCard(props: ServiceCardType) {
             {(description) => <p class="mt-1 mb-2">{description}</p>}
           </Show>
 
-          <Button class="w-fit px-0 text-zinc-100" variant="link">
-            Ver projetos <i class="ph ph-arrow-right" />
+          <Button
+            class="inline-flex w-fit items-center px-0 text-zinc-100"
+            variant="link"
+          >
+            Ver projetos <i class="ph ph-arrow-right text-xs leading-none" />
           </Button>
         </div>
       </article>

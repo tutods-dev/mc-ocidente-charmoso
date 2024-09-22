@@ -20,7 +20,7 @@ function ServicesSection(props: NonNullable<AboutUs['services']>) {
   const services = createAsync(() => getServices());
 
   return (
-    <section class="py-16">
+    <section class="py-4 md:py-16">
       <div class="container grid grid-cols-1 items-center gap-4 md:grid-cols-2 md:gap-8">
         <section>
           <Carousel
@@ -47,7 +47,7 @@ function ServicesSection(props: NonNullable<AboutUs['services']>) {
           </Carousel>
         </section>
 
-        <section class="py-4">
+        <section class="order-first py-4 md:order-last">
           <h2
             class={cn([
               {
@@ -65,8 +65,13 @@ function ServicesSection(props: NonNullable<AboutUs['services']>) {
             )}
           </Show>
 
-          <Button as="a" href="/projetos" variant="ghost">
-            Ver projetos <i class="ph ph-arrow-right" />
+          <Button
+            as="a"
+            href="/projetos"
+            variant="ghost"
+            class="inline-flex items-center"
+          >
+            Ver projetos <i class="ph ph-arrow-right text-xs leading-none" />
           </Button>
         </section>
       </div>
