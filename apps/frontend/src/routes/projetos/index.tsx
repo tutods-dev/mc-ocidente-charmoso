@@ -1,16 +1,19 @@
 import { createAsync, useSearchParams } from '@solidjs/router';
-import { For, Show } from 'solid-js';
+import { For, Show, createMemo } from 'solid-js';
 import { getPaginatedProjects } from '~/cms/services/projects/get-projects';
 import { getProjectsArchive } from '~/cms/services/singletons/get-archives';
+import { ProjectCard } from '~/components/cards';
 import {
+  Menubar,
+  MenubarMenu,
+  MenubarTrigger,
   Pagination,
   PaginationEllipsis,
   PaginationItem,
   PaginationItems,
   PaginationNext,
   PaginationPrevious,
-} from '~/components';
-import { ProjectCard } from '~/components/cards/project';
+} from '~/components/ui';
 import { DEFAULT_PAGINATION_OFFSET } from '~/shared/constants';
 
 function Projects() {
@@ -39,19 +42,82 @@ function Projects() {
     };
   });
 
+  /**
+   * Accessor to store the current service.
+   */
+  const currentTab = createMemo(() => {
+    const service = searchParams.service;
+
+    if (!service || service === 'all') {
+      return 'all';
+    }
+
+    return service;
+  });
+
+  /**
+   * Callback function to change the service query parameter in order to filter
+   * the projects from a new service.
+   * @param service Current service.
+   */
+  function handleServiceChange(service?: string) {
+    if (!service) {
+      setSearchParams({ service: undefined }, { replace: true });
+      return;
+    }
+
+    setSearchParams({ service }, { replace: true });
+  }
+
+  /**
+   * Callback function to change to a new page.
+   * @param page Current page
+   */
   function handlePageChange(page: number) {
     setSearchParams({ page }, { replace: true });
   }
 
   return (
     <main>
-      <header class="py-16">
+      <header class="flex flex-col items-center justify-center gap-2 py-16 md:gap-4">
         <div class="container flex flex-col items-center justify-center gap-2 text-center">
           <h1 class="font-bold">{listSettings()?.title ?? 'Projetos'}</h1>
 
           <Show when={listSettings()?.headline} keyed={true}>
             {(headline) => <p class="text-lg">{headline}</p>}
           </Show>
+        </div>
+
+        <div class="container flex items-center justify-center">
+          <Menubar class="max-w-screen-lg items-center justify-center">
+            <MenubarMenu>
+              <MenubarTrigger
+                onClick={() => handleServiceChange()}
+                class="disabled:cursor-not-allowed disabled:opacity-50"
+                disabled={currentTab() === 'all'}
+              >
+                Todos
+              </MenubarTrigger>
+            </MenubarMenu>
+            <MenubarMenu>
+              <MenubarTrigger
+                onClick={() => handleServiceChange('cozinhas')}
+                class="disabled:cursor-not-allowed disabled:opacity-50"
+                disabled={currentTab() === 'cozinhas'}
+              >
+                Cozinhas
+              </MenubarTrigger>
+            </MenubarMenu>
+            <MenubarMenu>
+              <MenubarTrigger
+                onClick={() => handleServiceChange('quartos')}
+                class="disabled:cursor-not-allowed disabled:opacity-50"
+                disabled={currentTab() === 'quartos'}
+              >
+                Quartos
+              </MenubarTrigger>
+            </MenubarMenu>
+          </Menubar>
         </div>
       </header>
 

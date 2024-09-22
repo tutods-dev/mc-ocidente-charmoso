@@ -12,3 +12,6 @@ export * from './textarea';
 export * from './textfield';
 export * from './tooltip';
 export * from './separator';
+export * from './timeline';
+export * from './menubar';
+export * from './tabs';
