@@ -48,8 +48,7 @@ const aboutUsSchema = defineType({
         defineField({
           name: 'description',
           title: 'Descrição',
-          type: 'text',
-          rows: 5,
+          type: 'blockContent',
         }),
         defineField({
           name: 'thumbnail',
@@ -189,8 +188,7 @@ const aboutUsSchema = defineType({
         defineField({
           name: 'description',
           title: 'Descrição',
-          type: 'text',
-          rows: 5,
+          type: 'blockContent',
         }),
       ],
     }),

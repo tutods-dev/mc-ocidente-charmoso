@@ -1,6 +1,8 @@
+import { PortableText } from '@portabletext/solid';
 import { Image } from '@unpic/solid';
 import clsx from 'clsx';
 import { For, Show } from 'solid-js';
+import { components } from '~/cms/components';
 import { urlFor } from '~/cms/utils';
 import { Stat } from '~/components/cards';
 import { cn } from '~/lib/utils';
@@ -21,7 +23,11 @@ function IntroductionSection(props: NonNullable<AboutUs['aboutUs']>) {
         <section>
           <h2 class={clsx({ 'mb-4': !props.description })}>{props.title}</h2>
           <Show when={props.description} keyed={true}>
-            {(description) => <p class="mt-2 mb-4">{description}</p>}
+            {(description) => (
+              <p class="mt-2 mb-4">
+                <PortableText value={description} components={components} />
+              </p>
+            )}
           </Show>
 
           <Show when={props.stats}>

@@ -17,10 +17,10 @@ const blockContentSchema = defineType({
       // use your content.
       styles: [
         { title: 'Normal', value: 'normal' },
-        // { title: 'H2', value: 'h2' },
-        // { title: 'H3', value: 'h3' },
-        // { title: 'H4', value: 'h4' },
-        // { title: 'Citação', value: 'blockquote' },
+        { title: 'H2', value: 'h2' },
+        { title: 'H3', value: 'h3' },
+        { title: 'H4', value: 'h4' },
+        { title: 'Citação', value: 'blockquote' },
       ],
       lists: [
         { title: 'Lista não ordenada', value: 'bullet' },
