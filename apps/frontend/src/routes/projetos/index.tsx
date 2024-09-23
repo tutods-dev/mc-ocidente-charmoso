@@ -141,7 +141,7 @@ function Projects() {
           <section class="py-2">
             <div class="container flex justify-end">
               <Pagination
-                count={total + 2}
+                count={total}
                 defaultPage={1}
                 fixedItems={true}
                 onPageChange={handlePageChange}
