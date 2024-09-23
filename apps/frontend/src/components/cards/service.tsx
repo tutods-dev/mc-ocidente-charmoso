@@ -8,7 +8,7 @@ import { getBlurHashImage } from '~/shared/utils/images';
 
 function ServiceCard(props: ServiceCardType) {
   return (
-    <a class="group" href={`/projetos?servico=${props.slug}`}>
+    <a class="group" href={`/projetos?service=${props.slug}`}>
       <article class="relative isolate min-h-[400px] overflow-hidden rounded-sm">
         <Image
           src={urlFor(props.thumbnail)
