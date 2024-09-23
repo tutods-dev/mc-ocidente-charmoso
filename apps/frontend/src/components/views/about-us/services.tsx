@@ -71,7 +71,8 @@ function ServicesSection(props: NonNullable<AboutUs['services']>) {
             variant="ghost"
             class="inline-flex items-center"
           >
-            Ver projetos <i class="ph ph-arrow-right text-xs leading-none" />
+            Ver projetos&nbsp;
+            <i class="ph ph-arrow-right" />
           </Button>
         </section>
       </div>

@@ -48,6 +48,33 @@ const getPaginatedProjectsQuery = `
   }
 `;
 
+/**
+ * Query to retrieve list of a projects for a specific service.
+ * @param `$serviceSlug` Service slug
+ * @param `$start` Offset (how many results should skip)
+ * @param `$end` Limit
+ */
+const getPaginatedProjectsByServiceQuery = `
+  {
+    "total": count(*[_type == 'project' && $serviceSlug in services[]->slug.current]),
+    "data": *[_type == 'project' && $serviceSlug in services[]->slug.current] | order(_createdAt desc) [$start...$end] {
+      _id,
+      title,
+      "slug": slug.current,
+      headline,
+      "thumbnail": {
+          ...thumbnail,
+          "asset": thumbnail.asset->
+      },
+      "services": coalesce(services[]->{
+          _id,
+          title,
+          'slug': slug.current
+      }, []),
+    },
+  }
+`;
+
 export {
   getProjectsQuery,
   getPaginatedProjectsQuery,

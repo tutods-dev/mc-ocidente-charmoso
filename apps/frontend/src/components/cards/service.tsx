@@ -33,7 +33,8 @@ function ServiceCard(props: ServiceCardType) {
             class="inline-flex w-fit items-center px-0 text-zinc-100"
             variant="link"
           >
-            Ver projetos <i class="ph ph-arrow-right text-xs leading-none" />
+            Ver projetos&nbsp;
+            <i class="ph ph-arrow-right text-xs leading-none" />
           </Button>
         </div>
       </article>
