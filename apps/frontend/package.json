@@ -3,9 +3,9 @@
   "type": "module",
   "packageManager": "pnpm@9.11.0",
   "scripts": {
-    "dev": "doppler run -- vinxi dev",
-    "build": "doppler run -- vinxi build",
-    "start": "doppler run -- vinxi start",
+    "dev": "vinxi dev",
+    "build": "vinxi build",
+    "start": "vinxi start",
     "types:generate": "doppler run -- sanity typegen generate"
   },
   "dependencies": {
