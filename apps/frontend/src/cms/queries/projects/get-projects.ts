@@ -79,5 +79,6 @@ export {
   getProjectsQuery,
   getPaginatedProjectsQuery,
   getTotalOfProjectsQuery,
+  getPaginatedProjectsByServiceQuery,
   getTotalOfProjectsFromServiceQuery,
 };

@@ -13,4 +13,14 @@ const getServicesQuery = `
   }
 `;
 
-export { getServicesQuery };
+/**
+ * Query to retrieve title and slug of available services.
+ */
+const getAvailableServicesQuery = `
+  *[_type == "service" && count(*[_type == 'project' && ^._id in services[]->_id]) > 0] | order(_createdAt desc) {
+    title,
+    "slug": slug.current
+  }
+`;
+
+export { getServicesQuery, getAvailableServicesQuery };
