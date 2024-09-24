@@ -23,7 +23,16 @@ function ServiceCard(props: ServiceCardType) {
           alt={props.title}
         />
 
-        <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-b from-transparent to-zinc-800/70 px-6 pb-8 text-zinc-100 transition-colors duration-300 ease-in-out group-hover:to-zinc-900">
+        <div
+          class={cn([
+            'absolute inset-0',
+            'flex flex-col justify-end',
+            'px-6 pb-8',
+            'transition-all duration-300 ease-in-out',
+            'bg-gradient-to-b from-zinc-500/0 to-foreground/50 text-zinc-100',
+            'group-hover:from-zinc-500/30 group-hover:to-foreground/90',
+          ])}
+        >
           <h3 class={cn({ 'mb-1': !props.description })}>{props.title}</h3>
           <Show when={props.description} keyed={true}>
             {(description) => <p class="mt-1 mb-2">{description}</p>}
