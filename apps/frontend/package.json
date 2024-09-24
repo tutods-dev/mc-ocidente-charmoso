@@ -23,7 +23,6 @@
     "@solid-primitives/scroll": "^2.0.23",
     "@solidjs/meta": "^0.29.4",
     "@solidjs/router": "^0.14.5",
-    "@solidjs/start": "^1.0.6",
     "@tanstack/solid-form": "^0.33.0",
     "@tanstack/zod-form-adapter": "^0.33.0",
     "@unpic/solid": "^0.0.49",
@@ -39,6 +38,7 @@
   },
   "devDependencies": {
     "@portabletext/types": "^2.0.13",
+    "@solidjs/start": "^1.0.6",
     "@types/nodemailer": "^6.4.16",
     "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.0",

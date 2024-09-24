@@ -72,7 +72,10 @@ function PageSeo(rawProps: Props) {
       </Title>
 
       <Meta name="description" content={props.description} />
-      <Meta name="keywords" content={props.keywords.join(', ')} />
+      <Meta
+        name="keywords"
+        content={[seoSettings()?.keywords, props.keywords].join(', ')}
+      />
 
       {/* Social tags */}
       <Meta property="og:site_name" content={seoSettings()?.title} />

@@ -5,6 +5,7 @@
 const getProjectQuery = `
     *[_type == "project" && slug.current == $slug] [0] {
       ...,
+      "description": pt::text(content),
       "slug": slug.current,
       "thumbnail": {
           ...thumbnail,

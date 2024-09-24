@@ -1,97 +1,21 @@
-import { A } from '@solidjs/router';
+import { createAsync } from '@solidjs/router';
+import { Show } from 'solid-js';
+import { getSeoSettings } from '~/cms/services';
 
 export default function Home() {
+  const seo = createAsync(() => getSeoSettings());
+
   return (
-    <main class="mx-auto p-4 text-center text-zinc-700">
-      <h1 class="max-6-xs my-16 font-thin text-6xl text-sky-700 uppercase">
-        Hello world!
-      </h1>
-      <p class="mt-8">
-        Visit{' '}
-        <a
-          href="https://solidjs.com"
-          target="_blank"
-          class="text-sky-600 hover:underline"
-          rel="noreferrer"
-        >
-          solidjs.com
-        </a>{' '}
-        to learn how to build Solid apps.
-      </p>
-      <p class="my-4">
-        <span>Home</span>
-        {' - '}
-        <A href="/about" class="text-sky-600 hover:underline">
-          About Page
-        </A>{' '}
-      </p>{' '}
-      <h1 class="max-6-xs my-16 font-thin text-6xl text-sky-700 uppercase">
-        Hello world!
-      </h1>
-      <p class="mt-8">
-        Visit{' '}
-        <a
-          href="https://solidjs.com"
-          target="_blank"
-          class="text-sky-600 hover:underline"
-          rel="noreferrer"
-        >
-          solidjs.com
-        </a>{' '}
-        to learn how to build Solid apps.
-      </p>
-      <p class="my-4">
-        <span>Home</span>
-        {' - '}
-        <A href="/about" class="text-sky-600 hover:underline">
-          About Page
-        </A>{' '}
-      </p>{' '}
-      <h1 class="max-6-xs my-16 font-thin text-6xl text-sky-700 uppercase">
-        Hello world!
-      </h1>
-      <p class="mt-8">
-        Visit{' '}
-        <a
-          href="https://solidjs.com"
-          target="_blank"
-          class="text-sky-600 hover:underline"
-          rel="noreferrer"
-        >
-          solidjs.com
-        </a>{' '}
-        to learn how to build Solid apps.
-      </p>
-      <p class="my-4">
-        <span>Home</span>
-        {' - '}
-        <A href="/about" class="text-sky-600 hover:underline">
-          About Page
-        </A>{' '}
-      </p>{' '}
-      <h1 class="max-6-xs my-16 font-thin text-6xl text-sky-700 uppercase">
-        Hello world!
-      </h1>
-      <p class="mt-8">
-        Visit{' '}
-        <a
-          href="https://solidjs.com"
-          target="_blank"
-          class="text-sky-600 hover:underline"
-          rel="noreferrer"
-        >
-          solidjs.com
-        </a>{' '}
-        to learn how to build Solid apps.
-      </p>
-      <p class="my-4">
-        <span>Home</span>
-        {' - '}
-        <A href="/about" class="text-sky-600 hover:underline">
-          About Page
-        </A>{' '}
-      </p>
-      <div class="h-56">space</div>
+    <main>
+      <header class="py-8 md:py-16">
+        <div class="container flex flex-col items-center justify-center gap-2 text-center">
+          <h1 class="font-bold">{seo()?.title ?? 'MC Ocidente Charmoso'}</h1>
+
+          <Show when={seo()?.description} keyed={true}>
+            {(description) => <p class="text-lg">{description}</p>}
+          </Show>
+        </div>
+      </header>
     </main>
   );
 }

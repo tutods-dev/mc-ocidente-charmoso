@@ -19,6 +19,7 @@ import '@fontsource/montserrat/700.css';
 import '@fontsource/montserrat/900.css';
 
 import '@phosphor-icons/web/regular/style.css';
+import { DefaultSeo } from '~/components/seo';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Suspense fallback={'Loading...'}>
           {/*TODO: fallback*/}
           <MetaProvider>
+            <DefaultSeo />
             <Header mode="solid" />
 
             {props.children}

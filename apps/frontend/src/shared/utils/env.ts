@@ -5,7 +5,7 @@ const env = {
   sanity: {
     projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
     dataset: import.meta.env.VITE_SANITY_DATASET,
-    apiVersion: 'X',
+    apiVersion: 'v2022-03-07',
   },
   email: {
     host: process.env.SMTP_HOST ?? '',

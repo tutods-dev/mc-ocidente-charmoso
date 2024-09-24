@@ -7,6 +7,7 @@ import {
 } from '~/cms/services/projects/get-projects';
 import { getProjectsArchive } from '~/cms/services/singletons/get-archives';
 import { ProjectCard } from '~/components/cards';
+import { PageSeo } from '~/components/seo';
 import {
   Menubar,
   MenubarMenu,
@@ -80,86 +81,93 @@ function Projects() {
   }
 
   return (
-    <main>
-      <header class="flex flex-col items-center justify-center gap-2 py-4 md:gap-4 md:py-16">
-        <div class="container flex flex-col items-center justify-center gap-2 text-center">
-          <h1 class="font-bold">{listSettings()?.title ?? 'Projetos'}</h1>
+    <>
+      <PageSeo
+        title={listSettings()?.title ?? 'Projetos'}
+        description={listSettings()?.headline}
+        keywords={[listSettings()?.title.toLowerCase() ?? 'projetos']}
+      />
+      <main>
+        <header class="flex flex-col items-center justify-center gap-2 py-4 md:gap-4 md:py-16">
+          <div class="container flex flex-col items-center justify-center gap-2 text-center">
+            <h1 class="font-bold">{listSettings()?.title ?? 'Projetos'}</h1>
 
-          <Show when={listSettings()?.headline} keyed={true}>
-            {(headline) => <p class="text-lg">{headline}</p>}
-          </Show>
-        </div>
-
-        <div class="container flex items-center justify-center">
-          <Menubar class="max-w-screen-lg items-center justify-center">
-            <MenubarMenu>
-              <MenubarTrigger
-                onClick={() => handleServiceChange()}
-                class="disabled:cursor-not-allowed disabled:opacity-50"
-                disabled={!searchParams.service}
-              >
-                Todos
-              </MenubarTrigger>
-            </MenubarMenu>
-            <For each={services()}>
-              {(service) => (
-                <MenubarMenu>
-                  <MenubarTrigger
-                    onClick={() => handleServiceChange(service.slug)}
-                    class="disabled:cursor-not-allowed disabled:opacity-50"
-                    disabled={searchParams.service === service.slug}
-                  >
-                    {service.title}
-                  </MenubarTrigger>
-                </MenubarMenu>
-              )}
-            </For>
-          </Menubar>
-        </div>
-      </header>
-
-      <Show when={data()?.data.length}>
-        <section class="py-4 md:py-16">
-          <div class="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-            <For each={data()?.data}>
-              {(project) => (
-                <ProjectCard
-                  title={project.title}
-                  headline={project.headline}
-                  thumbnail={project.thumbnail}
-                  services={project.services}
-                  slug={project.slug}
-                />
-              )}
-            </For>
+            <Show when={listSettings()?.headline} keyed={true}>
+              {(headline) => <p class="text-lg">{headline}</p>}
+            </Show>
           </div>
-        </section>
-      </Show>
 
-      <Show when={data()?.total} keyed={true}>
-        {(total) => (
-          <section class="py-2">
-            <div class="container flex justify-end">
-              <Pagination
-                count={total}
-                defaultPage={1}
-                fixedItems={true}
-                onPageChange={handlePageChange}
-                page={Number(searchParams.page) ?? 1}
-                itemComponent={(props) => (
-                  <PaginationItem page={props.page}>{props.page}</PaginationItem>
+          <div class="container flex items-center justify-center">
+            <Menubar class="max-w-screen-lg items-center justify-center">
+              <MenubarMenu>
+                <MenubarTrigger
+                  onClick={() => handleServiceChange()}
+                  class="disabled:cursor-not-allowed disabled:opacity-50"
+                  disabled={!searchParams.service}
+                >
+                  Todos
+                </MenubarTrigger>
+              </MenubarMenu>
+              <For each={services()}>
+                {(service) => (
+                  <MenubarMenu>
+                    <MenubarTrigger
+                      onClick={() => handleServiceChange(service.slug)}
+                      class="disabled:cursor-not-allowed disabled:opacity-50"
+                      disabled={searchParams.service === service.slug}
+                    >
+                      {service.title}
+                    </MenubarTrigger>
+                  </MenubarMenu>
                 )}
-                ellipsisComponent={() => <PaginationEllipsis />}
-              >
-                <PaginationPrevious />
-                <PaginationItems />
-                <PaginationNext />
-              </Pagination>
+              </For>
+            </Menubar>
+          </div>
+        </header>
+
+        <Show when={data()?.data.length}>
+          <section class="py-4 md:py-16">
+            <div class="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+              <For each={data()?.data}>
+                {(project) => (
+                  <ProjectCard
+                    title={project.title}
+                    headline={project.headline}
+                    thumbnail={project.thumbnail}
+                    services={project.services}
+                    slug={project.slug}
+                  />
+                )}
+              </For>
             </div>
           </section>
-        )}
-      </Show>
-    </main>
+        </Show>
+
+        <Show when={data()?.total} keyed={true}>
+          {(total) => (
+            <section class="py-2">
+              <div class="container flex justify-end">
+                <Pagination
+                  count={total}
+                  defaultPage={1}
+                  fixedItems={true}
+                  onPageChange={handlePageChange}
+                  page={Number(searchParams.page) ?? 1}
+                  itemComponent={(props) => (
+                    <PaginationItem page={props.page}>{props.page}</PaginationItem>
+                  )}
+                  ellipsisComponent={() => <PaginationEllipsis />}
+                >
+                  <PaginationPrevious />
+                  <PaginationItems />
+                  <PaginationNext />
+                </Pagination>
+              </div>
+            </section>
+          )}
+        </Show>
+      </main>
+    </>
   );
 }
 

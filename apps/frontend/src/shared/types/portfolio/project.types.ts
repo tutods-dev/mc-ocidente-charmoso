@@ -12,6 +12,7 @@ type Project = Omit<
   'thumbnail' | 'gallery' | 'video' | 'services' | 'slug'
 > & {
   slug: string;
+  description?: string;
   thumbnail: Image;
   gallery: Gallery;
   video?: VideoUrlWithCover;
