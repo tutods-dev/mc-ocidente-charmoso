@@ -5,7 +5,7 @@ import { getHome } from '~/cms/services/services/get-home';
 import { Button } from '~/components';
 import { IntroductionSection } from '~/components/views/about-us';
 
-export default function Home() {
+function HomeRouter() {
   const seo = createAsync(() => getSeoSettings());
   const data = createAsync(() => getHome());
 
@@ -37,3 +37,5 @@ export default function Home() {
     </main>
   );
 }
+
+export default HomeRouter;
