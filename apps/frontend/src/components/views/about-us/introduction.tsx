@@ -1,7 +1,7 @@
 import { PortableText } from '@portabletext/solid';
 import { Image } from '@unpic/solid';
 import clsx from 'clsx';
-import { For, Show, type ValidComponent } from 'solid-js';
+import { For, type JSX, Show, children } from 'solid-js';
 import { components } from '~/cms/components';
 import { urlFor } from '~/cms/utils';
 import { Stat } from '~/components/cards';
@@ -13,10 +13,12 @@ type Props = NonNullable<AboutUs['aboutUs']> & {
   /**
    * Additional button.
    */
-  button?: ValidComponent;
+  children?: JSX.Element;
 };
 
 function IntroductionSection(props: Props) {
+  const resolved = children(() => props.children);
+
   return (
     <section class="py-4 md:py-16">
       <div
@@ -41,14 +43,14 @@ function IntroductionSection(props: Props) {
             <ul
               class={cn([
                 'grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4 lg:grid-cols-3 lg:gap-6',
-                { 'mb-4': !!props.button },
+                { 'mb-4': resolved() },
               ])}
             >
               <For each={props.stats}>{(stat) => <Stat {...stat} />}</For>
             </ul>
           </Show>
 
-          <Show when={props.button}>{props.button}</Show>
+          <Show when={resolved()}>{resolved()}</Show>
         </section>
         <Show when={props.thumbnail} keyed={true}>
           {(thumbnail) => (

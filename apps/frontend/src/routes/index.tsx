@@ -21,17 +21,20 @@ function HomeRouter() {
         </div>
       </header>
 
-      <Show when={data()?.aboutUs} keyed={true}>
-        {(aboutUs) => (
-          <IntroductionSection
-            {...aboutUs}
-            button={
-              <Button as="a" href="/sobre-nos" class="gap-2">
-                Conheça-nos melhor!
-                <i class="ph ph-arrow-right" />
-              </Button>
-            }
-          />
+      <Show when={data()} keyed={true}>
+        {(page) => (
+          <>
+            <Show when={page.aboutUs} keyed={true}>
+              {(aboutUs) => (
+                <IntroductionSection {...aboutUs}>
+                  <Button as="a" href="/sobre-nos" class="gap-2">
+                    Conheça-nos melhor!
+                    <i class="ph ph-arrow-right text-xs leading-none" />
+                  </Button>
+                </IntroductionSection>
+              )}
+            </Show>
+          </>
         )}
       </Show>
     </main>
