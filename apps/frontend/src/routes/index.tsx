@@ -1,9 +1,13 @@
 import { createAsync } from '@solidjs/router';
 import { Show } from 'solid-js';
 import { getSeoSettings } from '~/cms/services';
+import { getHome } from '~/cms/services/services/get-home';
+import { Button } from '~/components';
+import { IntroductionSection } from '~/components/views/about-us';
 
 export default function Home() {
   const seo = createAsync(() => getSeoSettings());
+  const data = createAsync(() => getHome());
 
   return (
     <main>
@@ -16,6 +20,20 @@ export default function Home() {
           </Show>
         </div>
       </header>
+
+      <Show when={data()?.aboutUs} keyed={true}>
+        {(aboutUs) => (
+          <IntroductionSection
+            {...aboutUs}
+            button={
+              <Button as="a" href="/sobre-nos" class="gap-2">
+                Conheça-nos melhor!
+                <i class="ph ph-arrow-right" />
+              </Button>
+            }
+          />
+        )}
+      </Show>
     </main>
   );
 }
