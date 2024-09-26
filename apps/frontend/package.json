@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "@portabletext/types": "^2.0.13",
-    "@solidjs/start": "^1.0.6",
+    "@solidjs/start": "^1.0.7",
     "@types/nodemailer": "^6.4.16",
     "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.0",
