@@ -27,7 +27,7 @@ function HomeRouter() {
             <Show when={page.aboutUs} keyed={true}>
               {(aboutUs) => (
                 <IntroductionSection {...aboutUs}>
-                  <Button as="a" href="/sobre-nos" class="gap-2">
+                  <Button as="a" variant="ghost" href="/sobre-nos" class="gap-2">
                     Conheça-nos melhor!
                     <i class="ph ph-arrow-right text-xs leading-none" />
                   </Button>

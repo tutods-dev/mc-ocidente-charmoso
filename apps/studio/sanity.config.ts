@@ -1,4 +1,4 @@
-import { CogIcon, EnvelopeIcon, InfoOutlineIcon } from '@sanity/icons';
+import { CogIcon, EnvelopeIcon, HomeIcon, InfoOutlineIcon } from '@sanity/icons';
 import { ptPTLocale } from '@sanity/locale-pt-pt';
 import { visionTool } from '@sanity/vision';
 import { defineConfig } from 'sanity';
@@ -38,15 +38,10 @@ export default defineConfig({
           .items([
             // Singletons
             S.listItem()
-              .title('Definições do Website')
-              .id('settings')
-              .icon(CogIcon)
-              .child(S.document().schemaType('settings').documentId('settings')),
-            S.listItem()
-              .title('Listagens')
-              .id('archives')
-              .icon(CogIcon)
-              .child(S.document().schemaType('archives').documentId('archives')),
+              .title('Página inicial')
+              .id('home')
+              .icon(HomeIcon)
+              .child(S.document().schemaType('home').documentId('home')),
             S.listItem()
               .title('Página de Contactos')
               .id('contacts')
@@ -57,6 +52,16 @@ export default defineConfig({
               .id('about-us')
               .icon(InfoOutlineIcon)
               .child(S.document().schemaType('about-us').documentId('about-us')),
+            S.listItem()
+              .title('Listagens')
+              .id('archives')
+              .icon(CogIcon)
+              .child(S.document().schemaType('archives').documentId('archives')),
+            S.listItem()
+              .title('Definições do Website')
+              .id('settings')
+              .icon(CogIcon)
+              .child(S.document().schemaType('settings').documentId('settings')),
 
             S.divider(),
 
