@@ -1,5 +1,5 @@
 /**
- * Query to retrieveve related
+ * Query to retrieve related
  * @param `$slug` Project slug to exclude from the search
  * @param `$serviceSlugs` List of service slugs
  * @param `$start` Offset (how many results should skip)

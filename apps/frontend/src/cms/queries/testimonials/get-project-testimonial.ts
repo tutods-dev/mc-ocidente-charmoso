@@ -7,6 +7,10 @@ const getProjectTestimonialQuery = `
       client,
       content,
       "url": coalesce(url, null),
+      "project": coalesce(project->{
+        title,
+        "slug": slug.current,
+      }, null), 
       _createdAt,
       _updatedAt
     }
