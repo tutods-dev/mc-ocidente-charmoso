@@ -106,8 +106,8 @@ importers:
         specifier: ^2.0.13
         version: 2.0.13
       '@solidjs/start':
-        specifier: ^1.0.7
-        version: 1.0.7(solid-js@1.9.1)(vinxi@0.4.3(@types/node@22.5.5)(ioredis@5.4.1)(terser@5.33.0))(vite@4.5.5(@types/node@22.5.5)(terser@5.33.0))
+        specifier: ^1.0.8
+        version: 1.0.8(solid-js@1.9.1)(vinxi@0.4.3(@types/node@22.5.5)(ioredis@5.4.1)(terser@5.33.0))(vite@4.5.5(@types/node@22.5.5)(terser@5.33.0))
       '@types/nodemailer':
         specifier: ^6.4.16
         version: 6.4.16
@@ -2150,8 +2150,8 @@ packages:
     peerDependencies:
       solid-js: ^1.8.6
 
-  '@solidjs/start@1.0.7':
-    resolution: {integrity: sha512-eRhFCL/1vLkED/+8V4weDH5yuLnn8AWUmStqxK4nbtxUrPioZTy0kwMg1XaKuV76IyJua0CJ74QbVW78yfdLtg==}
+  '@solidjs/start@1.0.8':
+    resolution: {integrity: sha512-5JfIa305L898GkUxVDtxqujLYqCjuekJvXDl9uysZmPqtfFMcDmJyfnfkmoIOgGRyswKcyEWySYru8ZRYCIBuw==}
 
   '@swc/helpers@0.5.13':
     resolution: {integrity: sha512-UoKGxQ3r5kYI9dALKJapMmuK+1zWM/H17Z1+iwnNmzcJRnfFuevZs375TA5rW31pu4BS4NoSy1fRsexDXfWn5w==}
@@ -8384,7 +8384,7 @@ snapshots:
     dependencies:
       solid-js: 1.9.1
 
-  '@solidjs/start@1.0.7(solid-js@1.9.1)(vinxi@0.4.3(@types/node@22.5.5)(ioredis@5.4.1)(terser@5.33.0))(vite@4.5.5(@types/node@22.5.5)(terser@5.33.0))':
+  '@solidjs/start@1.0.8(solid-js@1.9.1)(vinxi@0.4.3(@types/node@22.5.5)(ioredis@5.4.1)(terser@5.33.0))(vite@4.5.5(@types/node@22.5.5)(terser@5.33.0))':
     dependencies:
       '@vinxi/plugin-directives': 0.4.3(vinxi@0.4.3(@types/node@22.5.5)(ioredis@5.4.1)(terser@5.33.0))
       '@vinxi/server-components': 0.4.3(vinxi@0.4.3(@types/node@22.5.5)(ioredis@5.4.1)(terser@5.33.0))
