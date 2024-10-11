@@ -4,6 +4,8 @@ import { getSeoSettings } from '~/cms/services';
 import { getHome } from '~/cms/services';
 import { Button } from '~/components';
 import { IntroductionSection } from '~/components/views/about-us';
+import { ProjectsSection } from '~/components/views/home';
+import type { Home } from '~/shared/types';
 
 function HomeRouter() {
   const seo = createAsync(() => getSeoSettings());
@@ -33,6 +35,10 @@ function HomeRouter() {
                   </Button>
                 </IntroductionSection>
               )}
+            </Show>
+
+            <Show when={page.projects && !!page.projects?.data.length}>
+              <ProjectsSection {...(page.projects as NonNullable<Home['projects']>)} />
             </Show>
           </>
         )}
