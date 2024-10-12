@@ -110,7 +110,7 @@ function ImageWithPreview(rawProps: ImageWithPreviewProps) {
             alt={imageProps.alt}
             src={imageProps.src}
             class={twMerge([
-              'h-[75vh] w-full min-w-[85vw] max-w-[85vw]',
+              'h-[75vh] w-full min-w-[85vw] max-w-[85vw] md:h-[unset] md:min-h-[50vh] md:min-w-[unset]',
               'rounded-lg',
               'object-cover object-center',
             ])}
