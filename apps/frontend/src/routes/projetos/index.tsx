@@ -48,6 +48,7 @@ function Projects() {
         data,
         total,
         currentPage,
+        numberOfPages: Math.ceil(total / DEFAULT_PAGINATION_OFFSET),
       };
     }
 
@@ -60,6 +61,7 @@ function Projects() {
       data,
       total,
       currentPage,
+      numberOfPages: Math.ceil(total / DEFAULT_PAGINATION_OFFSET),
     };
   });
 
@@ -127,7 +129,7 @@ function Projects() {
 
         <Show when={data()?.data.length}>
           <section class="py-4 md:py-8 lg:py-16">
-            <div class="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="container grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
               <For each={data()?.data}>
                 {(project) => (
                   <ProjectCard
@@ -143,12 +145,12 @@ function Projects() {
           </section>
         </Show>
 
-        <Show when={data()?.total} keyed={true}>
-          {(total) => (
+        <Show when={data()?.numberOfPages} keyed={true}>
+          {(numberOfPages) => (
             <section class="py-2">
               <div class="container flex justify-end">
                 <Pagination
-                  count={total}
+                  count={numberOfPages}
                   defaultPage={1}
                   fixedItems={true}
                   onPageChange={handlePageChange}

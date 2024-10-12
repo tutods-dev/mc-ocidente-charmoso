@@ -22,7 +22,7 @@ function ProjectDetailsSection({ local, date, services }: Props) {
               {(service, index) => (
                 <>
                   <a
-                    href={`/servicos/${service.slug}`}
+                    href={`/projetos?service=${service.slug}`}
                     class={
                       'border-b-2 border-b-transparent font-medium transition-all duration-300 ease-in-out hover:border-b-zinc-900 hover:text-zinc-900'
                     }

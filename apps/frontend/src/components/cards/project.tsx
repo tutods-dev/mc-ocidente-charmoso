@@ -41,7 +41,11 @@ function ProjectCard(rawProps: Props) {
         />
 
         <section class="flex size-full flex-col justify-end bg-gradient-to-b from-50% from-transparent to-foreground px-6 py-8 text-zinc-50 transition-colors duration-300 ease-in-out hover:from-0% group-hover:to-foreground">
-          <h3 class="font-semibold text-white">{projectProps.title}</h3>
+          <h3
+            class={cn(['font-semibold text-white', { 'mb-4': !projectProps.headline }])}
+          >
+            {projectProps.title}
+          </h3>
 
           <Show when={projectProps.headline}>
             <p class="mt-0.5 mb-4 line-clamp-3 text-md">{projectProps.headline}</p>
