@@ -4,7 +4,13 @@ import type { TestimonialCard as TestimonialCardType } from '~/shared/types/port
 import { cn } from '~/shared/utils';
 
 type Props = NonNullable<TestimonialCardType> &
-  Pick<JSX.BlockquoteHTMLAttributes<HTMLElement>, 'class'>;
+  Pick<JSX.BlockquoteHTMLAttributes<HTMLElement>, 'class'> & {
+    /**
+     * Indicates if should display or not the link for the project details.
+     * @default false
+     */
+    showProjectButton?: boolean;
+  };
 
 function TestimonialCard(rawProps: Props) {
   const props = mergeProps(rawProps, {
@@ -12,7 +18,7 @@ function TestimonialCard(rawProps: Props) {
   });
   const [testimonialProps, styleProps] = splitProps(
     props,
-    ['client', 'content', 'url'],
+    ['client', 'content', 'url', 'showProjectButton', 'project'],
     ['class'],
   );
 
@@ -51,6 +57,16 @@ function TestimonialCard(rawProps: Props) {
               Ver feedback no Google
             </Button>
           )}
+        </Show>
+        <Show when={testimonialProps.showProjectButton && testimonialProps.project}>
+          <Button
+            variant="link"
+            as="a"
+            href={`/projetos/${testimonialProps.project?.slug}`}
+            class="w-fit px-0 text-zinc-100"
+          >
+            Ver projeto
+          </Button>
         </Show>
       </footer>
     </blockquote>

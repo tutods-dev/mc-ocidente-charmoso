@@ -4,7 +4,7 @@ import { getSeoSettings } from '~/cms/services';
 import { getHome } from '~/cms/services';
 import { Button } from '~/components';
 import { IntroductionSection } from '~/components/views/about-us';
-import { ProjectsSection } from '~/components/views/home';
+import { ProjectsSection, TestimonialsSection } from '~/components/views/home';
 import type { Home } from '~/shared/types';
 
 function HomeRouter() {
@@ -39,6 +39,12 @@ function HomeRouter() {
 
             <Show when={page.projects && !!page.projects?.data.length}>
               <ProjectsSection {...(page.projects as NonNullable<Home['projects']>)} />
+            </Show>
+
+            <Show when={page.testimonials && !!page.testimonials?.data.length}>
+              <TestimonialsSection
+                {...(page.testimonials as NonNullable<Home['testimonials']>)}
+              />
             </Show>
           </>
         )}

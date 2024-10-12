@@ -20,6 +20,21 @@ const getHomeQuery = `
             }, []),
         }
     }),
+    "testimonials": select(defined(testimonials) => {
+        ...testimonials,
+        "data": *[_type == "testimonial"] | order(_createdAt asc) [0...6] {
+            _id,
+            client,
+            content,
+            "url": coalesce(url, null),
+            "project": coalesce(project->{
+              title,
+              "slug": slug.current,
+            }, null), 
+            _createdAt,
+            _updatedAt
+        }
+    }),
     "aboutUs": *[_type == "about-us"][0].aboutUs
   }
 `;
