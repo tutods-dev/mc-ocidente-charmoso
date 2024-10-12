@@ -33,7 +33,7 @@ function Stat(rawProps: Props) {
         {props.value}
         <small>{!props.isPrefix && props.extra}</small>
       </p>
-      <h3 class="font-serif text-[18px]">{props.label}</h3>
+      <h3 class="font-semibold font-serif text-[18px]">{props.label}</h3>
     </div>
   );
 }

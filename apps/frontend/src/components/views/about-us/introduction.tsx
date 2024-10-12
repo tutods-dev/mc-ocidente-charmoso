@@ -25,7 +25,7 @@ function IntroductionSection(props: Props) {
         class={cn([
           'container grid grid-cols-1 items-center gap-8',
           {
-            'sm:grid-cols-2': props?.thumbnail,
+            'lg:grid-cols-2': props?.thumbnail,
           },
         ])}
       >
@@ -42,8 +42,8 @@ function IntroductionSection(props: Props) {
           <Show when={props.stats}>
             <ul
               class={cn([
-                'grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4 lg:grid-cols-3 lg:gap-6',
-                { 'mb-4': resolved() },
+                'grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6',
+                { 'mb-6': resolved() },
               ])}
             >
               <For each={props.stats}>{(stat) => <Stat {...stat} />}</For>

@@ -88,7 +88,7 @@ function Projects() {
         keywords={[listSettings()?.title.toLowerCase() ?? 'projetos']}
       />
       <main>
-        <header class="flex flex-col items-center justify-center gap-2 py-4 md:gap-4 md:py-16">
+        <header class="flex flex-col items-center justify-center gap-2 py-4 md:gap-4 md:py-8 lg:py-16">
           <div class="container flex flex-col items-center justify-center gap-2 text-center">
             <h1 class="font-bold">{listSettings()?.title ?? 'Projetos'}</h1>
 
@@ -126,7 +126,7 @@ function Projects() {
         </header>
 
         <Show when={data()?.data.length}>
-          <section class="py-4 md:py-16">
+          <section class="py-4 md:py-8 lg:py-16">
             <div class="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
               <For each={data()?.data}>
                 {(project) => (

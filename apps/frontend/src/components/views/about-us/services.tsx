@@ -33,7 +33,7 @@ function ServicesSection(props: NonNullable<AboutUs['services']>) {
                 {(service) => (
                   <CarouselItem
                     class={cn([
-                      'md:basis-1/2',
+                      'lg:basis-1/2',
                       { 'md:basis-full': services()?.length === 1 },
                     ])}
                   >
@@ -42,8 +42,8 @@ function ServicesSection(props: NonNullable<AboutUs['services']>) {
                 )}
               </For>
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious variant="secondary" />
+            <CarouselNext variant="secondary" />
           </Carousel>
         </section>
 

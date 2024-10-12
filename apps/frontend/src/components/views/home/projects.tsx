@@ -46,14 +46,14 @@ function ProjectsSection(props: Props) {
           <CarouselContent>
             <For each={props.data}>
               {(project) => (
-                <CarouselItem class={cn(['md:basis-1/3'])}>
+                <CarouselItem class={cn(['md:basis-1/2 lg:basis-1/3'])}>
                   <ProjectCard {...project} />
                 </CarouselItem>
               )}
             </For>
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious variant="secondary" />
+          <CarouselNext variant="secondary" />
         </Carousel>
       </div>
     </section>

@@ -12,7 +12,7 @@ function ProcessSection(props: NonNullable<AboutUs['process']>) {
       <div
         class={cn([
           'container grid grid-cols-1 gap-4',
-          { 'md:grid-cols-2 md:gap-8 lg:gap-12': props.thumbnail },
+          { 'lg:grid-cols-2 lg:gap-12': props.thumbnail },
         ])}
       >
         <section class="md:py-8">
@@ -24,7 +24,7 @@ function ProcessSection(props: NonNullable<AboutUs['process']>) {
         </section>
         <Show when={props.thumbnail} keyed={true}>
           {(thumbnail) => (
-            <section class="relative overflow-hidden rounded-sm">
+            <figure class="relative min-h-72 overflow-hidden rounded-sm">
               <Image
                 alt={thumbnail.alt}
                 layout="fullWidth"
@@ -37,7 +37,7 @@ function ProcessSection(props: NonNullable<AboutUs['process']>) {
                   .quality(80)
                   .url()}
               />
-            </section>
+            </figure>
           )}
         </Show>
       </div>

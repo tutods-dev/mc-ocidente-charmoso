@@ -49,8 +49,8 @@ function FactorySection(props: NonNullable<AboutUs['factory']>) {
               )}
             </For>
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious variant="secondary" />
+          <CarouselNext variant="secondary" />
         </Carousel>
       </div>
     </section>
