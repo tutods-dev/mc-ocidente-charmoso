@@ -19,7 +19,7 @@ function DefaultSeo() {
       <Meta property="og:type" content="website" />
 
       {/* Favicon */}
-      <Link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+      <Link rel="icon" href="/logo.svg" type="image/svg+xml" />
 
       {/* Robots */}
       <Meta name="robots" content="index, follow" />

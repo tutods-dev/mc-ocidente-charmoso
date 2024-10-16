@@ -2,7 +2,7 @@ import { MetaProvider } from '@solidjs/meta';
 import { Router } from '@solidjs/router';
 import { FileRoutes } from '@solidjs/start/router';
 import { Suspense } from 'solid-js';
-import { CtaSection, Header } from '~/components';
+import { CtaSection, Footer, Header } from '~/components';
 import '~/styles/app.css';
 
 import '@fontsource/spectral/200.css';
@@ -35,6 +35,8 @@ function App() {
             {props.children}
 
             <CtaSection />
+
+            <Footer />
           </MetaProvider>
         </Suspense>
       )}

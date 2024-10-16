@@ -1,76 +1,16 @@
-import { useWindowScrollPosition } from '@solid-primitives/scroll';
-import { useLocation } from '@solidjs/router';
-import { Match, Switch, createMemo } from 'solid-js';
-import { twMerge } from 'tailwind-merge';
-import { headerContainerVariants, headerVariants } from '~/components/header/styles';
-import { SOLID_HEADER_PATHS } from '~/shared/constants/header';
-import { useDeviceType } from '~/shared/hooks/use-device-type';
-import { MobileNavigation, Navigation } from './partials/navigation';
+import { createAsync } from '@solidjs/router';
+import { For, Show } from 'solid-js';
+import { getSocialNetworksAndContacts } from '~/cms/services';
+import { getSocialNetworkIcon } from '~/shared/utils';
+import 'boxicons/css/boxicons.min.css';
 
-type HeaderProps = {
-  /**
-   * Indicates the mode of the navigation been used.
-   * @description When the `mode` is `transparent`, this indicates that the header will be rendered without any backgroud.
-   * Otherwise, the header will contain background.
-   * @default 'transparent'
-   */
-  mode?: 'transparent' | 'solid';
-
-  /**
-   * Custom styles for header.
-   * @default ''
-   */
-  className?: string;
-};
-
-function Header({ mode = 'transparent', className = '' }: HeaderProps) {
-  /**
-   * Hooks
-   */
-  const scroll = useWindowScrollPosition();
-  const deviceType = useDeviceType();
-  const location = useLocation();
-
-  /**
-   * The current pathname.
-   */
-  const pathname = createMemo(() => location.pathname);
-
-  /**
-   * Header mode to be used.
-   * @description If the current `pathname` is included on the `SOLID_HEADER_PATHS` constant, use the mode `solid` instead of the mode received by property.
-   */
-  const headerMode = createMemo(() => {
-    // If the current `pathname` is on the `SOLID_HEADER_PATHS` constant.
-    if (SOLID_HEADER_PATHS.includes(pathname())) {
-      return 'solid';
-    }
-
-    // Otherwise, return the `mode` received by property
-    return mode ?? 'transparent';
-  });
-
-  /**
-   * Constant to store if the header is sticky or not.
-   */
-  const isSticky = createMemo(() => scroll.y > 50);
+function Footer() {
+  const listOfContacts = createAsync(() => getSocialNetworksAndContacts());
 
   return (
-    <header
-      class={twMerge(
-        headerVariants({
-          mode: headerMode(),
-          isSticky: isSticky(),
-          class: className,
-        }),
-      )}
-    >
-      <div
-        class={twMerge(
-          headerContainerVariants({ mode: headerMode(), isSticky: isSticky() }),
-        )}
-      >
-        <a href="/">
+    <footer class="border-t border-t-zinc-200 bg-zinc-100 py-4 md:py-8">
+      <div class="container grid grid-cols-1 gap-4 md:grid-cols-2 lg:gap-8">
+        <a href="/" class="inline-flex items-center justify-center md:justify-start">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-auto w-full max-w-20"
@@ -120,18 +60,29 @@ function Header({ mode = 'transparent', className = '' }: HeaderProps) {
           </svg>
         </a>
 
-        <Switch>
-          <Match when={deviceType() === 'desktop'}>
-            <Navigation mode={headerMode()} isSticky={isSticky()} />
-          </Match>
-
-          <Match when={['mobile', 'tablet'].includes(deviceType())}>
-            <MobileNavigation mode={headerMode()} isSticky={isSticky()} />
-          </Match>
-        </Switch>
+        <Show keyed={true} when={listOfContacts()?.social}>
+          {(social) => (
+            <ul class="flex items-center justify-center gap-2 md:justify-end">
+              <For each={social}>
+                {(item) => (
+                  <li>
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex size-8 shrink-0 items-center justify-center rounded bg-zinc-800 text-lg text-white shadow-sm transition-colors duration-300 ease-in-out hover:bg-zinc-300 hover:text-zinc-900"
+                    >
+                      <i class={getSocialNetworkIcon(item.network)} />
+                    </a>
+                  </li>
+                )}
+              </For>
+            </ul>
+          )}
+        </Show>
       </div>
-    </header>
+    </footer>
   );
 }
 
-export { Header };
+export { Footer };

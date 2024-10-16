@@ -62,8 +62,7 @@ function MobileNavigation(props: MobileNavigationProps) {
                 }),
               )}
             >
-              <header class={'flex items-center justify-between gap-4 p-4'}>
-                <p>MC Ocidente charmoso</p>
+              <header class={'flex items-center justify-end p-4'}>
                 <Drawer.Close
                   class={
                     'size-7 rounded bg-transparent transition-colors duration-300 ease-in-out enabled:cursor-pointer enabled:hover:bg-zinc-100/50 disabled:cursor-not-allowed disabled:opacity-70'

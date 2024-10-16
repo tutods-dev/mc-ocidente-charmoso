@@ -25,7 +25,12 @@ function ProjectCard(rawProps: Props) {
       class={cn(['group shadow transition duration-300 ease-in-out', styleProps.class])}
     >
       <article
-        class={cn(['relative isolate', 'overflow-hidden', 'h-[500px] rounded-lg'])}
+        class={cn([
+          'relative isolate',
+          'h-96 md:h-[500px]',
+          'rounded-lg',
+          'overflow-hidden',
+        ])}
       >
         <Image
           loading="lazy"
