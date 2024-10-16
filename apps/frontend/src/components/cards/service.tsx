@@ -29,7 +29,7 @@ function ServiceCard(props: ServiceCardType) {
             'flex flex-col justify-end',
             'px-6 pb-8',
             'transition-all duration-300 ease-in-out',
-            'bg-gradient-to-b from-zinc-500/0 via-foreground/50 to-foreground/70 text-zinc-100',
+            'bg-gradient-to-b from-transparent to-75% to-foreground/70 text-zinc-100',
             'group-hover:from-zinc-900/30 group-hover:to-foreground/90',
           ])}
         >

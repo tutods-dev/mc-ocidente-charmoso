@@ -42,8 +42,10 @@ function ServicesSection(props: NonNullable<AboutUs['services']>) {
                 )}
               </For>
             </CarouselContent>
-            <CarouselPrevious variant="secondary" />
-            <CarouselNext variant="secondary" />
+            <div class="mt-2 flex items-center justify-end gap-4">
+              <CarouselPrevious variant="secondary" class="static translate-y-0" />
+              <CarouselNext variant="secondary" class="static translate-y-0" />
+            </div>
           </Carousel>
         </section>
 

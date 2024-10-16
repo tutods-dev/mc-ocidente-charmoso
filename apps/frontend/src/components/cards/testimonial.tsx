@@ -40,34 +40,36 @@ function TestimonialCard(rawProps: Props) {
       <p class={'text-xl italic leading-normal'}>{testimonialProps.content}</p>
 
       <footer class="mt-6 flex flex-col items-end text-right">
-        <strong class={'font-semibold font-serif text-lg'}>
+        <strong class="mb-2 font-semibold font-serif text-lg">
           {testimonialProps.client}
         </strong>
 
-        <Show when={testimonialProps.url} keyed={true}>
-          {(googleUrl) => (
+        <section class="flex flex-col items-end gap-2 text-right">
+          <Show when={testimonialProps.showProjectButton && testimonialProps.project}>
             <Button
               variant="link"
               as="a"
-              href={googleUrl}
-              target="_blank"
-              rel="noreferrer nofollow"
-              class="w-fit px-0 text-zinc-100"
+              href={`/projetos/${testimonialProps.project?.slug}`}
+              class="h-fit w-fit p-0 text-zinc-100"
             >
-              Ver feedback no Google
+              Ver projeto
             </Button>
-          )}
-        </Show>
-        <Show when={testimonialProps.showProjectButton && testimonialProps.project}>
-          <Button
-            variant="link"
-            as="a"
-            href={`/projetos/${testimonialProps.project?.slug}`}
-            class="w-fit px-0 text-zinc-100"
-          >
-            Ver projeto
-          </Button>
-        </Show>
+          </Show>
+          <Show when={testimonialProps.url} keyed={true}>
+            {(googleUrl) => (
+              <Button
+                variant="link"
+                as="a"
+                href={googleUrl}
+                target="_blank"
+                rel="noreferrer nofollow"
+                class="h-fit w-fit p-0 text-zinc-100"
+              >
+                Ver feedback no Google
+              </Button>
+            )}
+          </Show>
+        </section>
       </footer>
     </blockquote>
   );
