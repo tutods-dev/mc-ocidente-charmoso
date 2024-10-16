@@ -53,7 +53,7 @@ function ProjectCard(rawProps: Props) {
           </h3>
 
           <Show when={projectProps.headline}>
-            <p class="mt-0.5 mb-4 line-clamp-3 text-md">{projectProps.headline}</p>
+            <p class="mt-0.5 mb-4 line-clamp-6 text-md">{projectProps.headline}</p>
           </Show>
 
           <Show when={projectProps.services.length}>

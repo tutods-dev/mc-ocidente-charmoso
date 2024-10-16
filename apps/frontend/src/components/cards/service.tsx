@@ -18,7 +18,7 @@ function ServiceCard(props: ServiceCardType) {
             .quality(80)
             .url()}
           layout="fullWidth"
-          class="absolute inset-0 size-full object-cover object-center"
+          class="absolute inset-0 size-full object-cover object-center transition-all duration-300 ease-in-out group-hover:scale-105"
           background={getBlurHashImage(props.thumbnail)}
           alt={props.title}
         />
@@ -29,13 +29,17 @@ function ServiceCard(props: ServiceCardType) {
             'flex flex-col justify-end',
             'px-6 pb-8',
             'transition-all duration-300 ease-in-out',
-            'bg-gradient-to-b from-zinc-500/0 to-foreground/50 text-zinc-100',
-            'group-hover:from-zinc-500/30 group-hover:to-foreground/90',
+            'bg-gradient-to-b from-zinc-500/0 via-foreground/50 to-foreground/70 text-zinc-100',
+            'group-hover:from-zinc-900/30 group-hover:to-foreground/90',
           ])}
         >
-          <h3 class={cn({ 'mb-1': !props.description })}>{props.title}</h3>
+          <h3 class={cn('text-white', { 'mb-1': !props.description })}>
+            {props.title}
+          </h3>
           <Show when={props.description} keyed={true}>
-            {(description) => <p class="mt-1 mb-2">{description}</p>}
+            {(description) => (
+              <p class="mt-1 mb-2 line-clamp-6 text-sm">{description}</p>
+            )}
           </Show>
 
           <Button
