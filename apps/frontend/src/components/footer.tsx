@@ -8,7 +8,7 @@ function Footer() {
   const listOfContacts = createAsync(() => getSocialNetworksAndContacts());
 
   return (
-    <footer class="border-t border-t-zinc-200 bg-zinc-100 py-4 md:py-8">
+    <footer class="flex flex-col gap-3 border-t border-t-zinc-200 bg-zinc-100 py-4 md:py-8">
       <div class="container grid grid-cols-1 gap-4 md:grid-cols-2 lg:gap-8">
         <a href="/" class="inline-flex items-center justify-center md:justify-start">
           <svg
@@ -80,6 +80,12 @@ function Footer() {
             </ul>
           )}
         </Show>
+      </div>
+      <div class="container grid grid-cols-1 gap-4 border-t border-t-zinc-100 md:grid-cols-2 lg:gap-8">
+        <p class="text-xs">
+          Copyright© {new Date().getFullYear()} - <strong>MC Ocidente Charmoso</strong>.
+          Todos os direitos reservados
+        </p>
       </div>
     </footer>
   );
