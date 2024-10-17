@@ -66,8 +66,8 @@ importers:
         specifier: ^0.14.9
         version: 0.14.9(solid-js@1.9.2)
       '@tanstack/solid-form':
-        specifier: ^0.33.0
-        version: 0.33.0(solid-js@1.9.2)
+        specifier: ^0.34.0
+        version: 0.34.0(solid-js@1.9.2)
       '@tanstack/zod-form-adapter':
         specifier: ^0.33.0
         version: 0.33.0(zod@3.23.8)
@@ -2159,6 +2159,9 @@ packages:
   '@tanstack/form-core@0.33.0':
     resolution: {integrity: sha512-ouu1JVwLZgfPkIdIq3TWIZs++KpLOo8Bx4tXYOc/1KwA9qUQ0Iv/+Y6GfiC4wMcUzGCtLKOww84eZ8Qdge3ZmQ==}
 
+  '@tanstack/form-core@0.34.0':
+    resolution: {integrity: sha512-t7vuE72DauKP7vYh4TObmLJzqHEqsocNbM8XvTAeH2odb78QLMVIVy3JwAEJw4EpOMMZPkEqtdgxCk+XGO3oWQ==}
+
   '@tanstack/react-table@8.20.5':
     resolution: {integrity: sha512-WEHopKw3znbUZ61s9i0+i9g8drmDo6asTWbrQh8Us63DAk/M0FkmIqERew6P71HI75ksZ2Pxyuf4vvKh9rAkiA==}
     engines: {node: '>=12'}
@@ -2171,8 +2174,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@tanstack/solid-form@0.33.0':
-    resolution: {integrity: sha512-GoO084rrM26NHQBqfIuCprGoBcjeCQmvj6bDolnN5R9Xaczz5fOAsYdKPWRhrPKZlmn8ieWlsgXrQ3QbNNNxEQ==}
+  '@tanstack/solid-form@0.34.0':
+    resolution: {integrity: sha512-Nufc91sTumdHoTUyzeVAjHqP2jnmvcMa7Siv554FO8h7g1fM5ZQBohJb/gc2XCfLHWWNdTH1hF67IH2i3VycnQ==}
     peerDependencies:
       solid-js: ^1.6.0
 
@@ -8903,6 +8906,10 @@ snapshots:
     dependencies:
       '@tanstack/store': 0.5.5
 
+  '@tanstack/form-core@0.34.0':
+    dependencies:
+      '@tanstack/store': 0.5.5
+
   '@tanstack/react-table@8.20.5(react-dom@18.3.1(react@16.14.0))(react@16.14.0)':
     dependencies:
       '@tanstack/table-core': 8.20.5
@@ -8925,9 +8932,9 @@ snapshots:
       '@tanstack/virtual-core': 3.0.0-beta.54
       react: 18.3.1
 
-  '@tanstack/solid-form@0.33.0(solid-js@1.9.2)':
+  '@tanstack/solid-form@0.34.0(solid-js@1.9.2)':
     dependencies:
-      '@tanstack/form-core': 0.33.0
+      '@tanstack/form-core': 0.34.0
       '@tanstack/solid-store': 0.5.5(solid-js@1.9.2)
       solid-js: 1.9.2
 
