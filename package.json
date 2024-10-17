@@ -21,7 +21,7 @@
     "tidy": "biome check --write --formatter-enabled=true --linter-enabled=true --organize-imports-enabled=true --no-errors-on-unmatched ."
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.3",
+    "@biomejs/biome": "1.9.4",
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "lefthook": "^1.7.21"
