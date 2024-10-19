@@ -20,14 +20,14 @@ import '@fontsource/montserrat/900.css';
 
 import '@phosphor-icons/web/regular/style.css';
 import { DefaultSeo } from '~/components/seo';
+import { LoadingScreen } from '~/components/views/loading';
 
 function App() {
   return (
     <Router
       preload={true}
       root={(props) => (
-        <Suspense fallback={'Loading...'}>
-          {/*TODO: fallback*/}
+        <Suspense fallback={<LoadingScreen />}>
           <MetaProvider>
             <DefaultSeo />
             <Header mode="solid" />
