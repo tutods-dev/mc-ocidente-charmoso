@@ -1,4 +1,4 @@
-import { createAsync } from '@solidjs/router';
+import { type RouteDefinition, createAsync } from '@solidjs/router';
 import { Show } from 'solid-js';
 import { getAboutUs } from '~/cms/services';
 import { PageSeo } from '~/components/seo';
@@ -8,6 +8,10 @@ import {
   ProcessSection,
   ServicesSection,
 } from '~/components/views/about-us';
+
+export const route: RouteDefinition = {
+  preload: () => getAboutUs(),
+};
 
 function AboutUsRoute() {
   const data = createAsync(() => getAboutUs());

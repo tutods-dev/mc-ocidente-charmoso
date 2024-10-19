@@ -1,4 +1,4 @@
-import { createAsync } from '@solidjs/router';
+import { type RouteDefinition, createAsync } from '@solidjs/router';
 import { Show } from 'solid-js';
 import { getSeoSettings } from '~/cms/services';
 import { getHome } from '~/cms/services';
@@ -6,6 +6,10 @@ import { Button } from '~/components';
 import { IntroductionSection } from '~/components/views/about-us';
 import { ProjectsSection, TestimonialsSection } from '~/components/views/home';
 import type { Home } from '~/shared/types';
+
+export const route: RouteDefinition = {
+  preload: () => Promise.all([getSeoSettings(), getHome()]),
+};
 
 function HomeRouter() {
   const seo = createAsync(() => getSeoSettings());

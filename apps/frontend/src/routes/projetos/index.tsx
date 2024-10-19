@@ -1,4 +1,4 @@
-import { createAsync, useSearchParams } from '@solidjs/router';
+import { type RouteDefinition, createAsync, useSearchParams } from '@solidjs/router';
 import { For, Show } from 'solid-js';
 import { getAvailableServices } from '~/cms/services';
 import {
@@ -20,6 +20,21 @@ import {
   PaginationPrevious,
 } from '~/components/ui';
 import { DEFAULT_PAGINATION_OFFSET } from '~/shared/constants';
+
+export const route: RouteDefinition = {
+  preload: async ({ location }) => {
+    return Promise.all([
+      getProjectsArchive(),
+      location.query.services
+        ? getPaginatedProjectsByService(
+            location.query.service,
+            1,
+            DEFAULT_PAGINATION_OFFSET,
+          )
+        : getPaginatedProjects(1, DEFAULT_PAGINATION_OFFSET),
+    ]);
+  },
+};
 
 function Projects() {
   const [searchParams, setSearchParams] = useSearchParams();

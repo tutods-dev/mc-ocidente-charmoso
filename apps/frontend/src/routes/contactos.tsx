@@ -1,10 +1,16 @@
-import { createAsync } from '@solidjs/router';
+import { type RouteDefinition, createAsync } from '@solidjs/router';
 import { Show } from 'solid-js';
 import { getContacts, getSocialNetworksAndContacts } from '~/cms/services';
 import { PageSeo } from '~/components/seo';
 import { ContactForm, ContactsList, Faq } from '~/components/views/contacts';
 import { cn } from '~/libs/cn';
 import 'boxicons/css/boxicons.min.css';
+
+export const route: RouteDefinition = {
+  preload: async () => {
+    return Promise.all([getContacts(), getSocialNetworksAndContacts()]);
+  },
+};
 
 function ContactsRouter() {
   const data = createAsync(() => getContacts());

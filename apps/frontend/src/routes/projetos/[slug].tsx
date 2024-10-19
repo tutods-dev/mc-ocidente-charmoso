@@ -1,4 +1,4 @@
-import { createAsync, useParams } from '@solidjs/router';
+import { type RouteDefinition, createAsync, useParams } from '@solidjs/router';
 import { For, Show } from 'solid-js';
 
 import { PortableText } from '@portabletext/solid';
@@ -11,6 +11,10 @@ import { ProjectTestimonialSection } from '~/components/views/project';
 import { ProjectDetailsSection } from '~/components/views/project/details';
 import { cn, getTruncatedStringWithEllipsis } from '~/shared/utils';
 import { getBlurHashImage } from '~/shared/utils/images';
+
+export const route: RouteDefinition = {
+  preload: ({ params }) => getProject(params.slug),
+};
 
 function ProjectDetails() {
   // Hooks
