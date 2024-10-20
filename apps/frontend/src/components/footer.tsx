@@ -1,7 +1,7 @@
 import { createAsync } from '@solidjs/router';
 import { For, Show } from 'solid-js';
 import { getSocialNetworksAndContacts } from '~/cms/services';
-import { getSocialNetworkIcon } from '~/shared/utils';
+import { getSocialNetworkIcon, getSocialNetworkLabel } from '~/shared/utils';
 import 'boxicons/css/boxicons.min.css';
 import { Logo } from './common';
 
@@ -22,6 +22,7 @@ function Footer() {
                 {(item) => (
                   <li>
                     <a
+                      aria-label={getSocialNetworkLabel(item.network)}
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"

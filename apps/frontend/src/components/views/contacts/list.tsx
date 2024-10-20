@@ -5,6 +5,7 @@ import {
   getContactUrl,
   getFormattedPhone,
   getSocialNetworkIcon,
+  getSocialNetworkLabel,
 } from '~/shared/utils';
 
 type Props = {
@@ -79,6 +80,7 @@ function ContactsList(props: Props) {
                 {(item) => (
                   <li>
                     <a
+                      aria-label={getSocialNetworkLabel(item.network)}
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
