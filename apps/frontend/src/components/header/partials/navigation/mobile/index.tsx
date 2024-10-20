@@ -41,6 +41,7 @@ function MobileNavigation(props: MobileNavigationProps) {
               { 'text-zinc-50 hover:text-white': props.mode === 'transparent' },
               { 'text-zinc-800': props.isSticky },
             ])}
+            aria-label="Abrir menu"
           >
             <i class="ph ph-list text-2xl" />
           </Drawer.Trigger>
