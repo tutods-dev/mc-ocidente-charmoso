@@ -27,7 +27,7 @@ export const route: RouteDefinition = {
       getProjectsArchive(),
       location.query.services
         ? getPaginatedProjectsByService(
-            location.query.service,
+            location.query.service as string,
             1,
             DEFAULT_PAGINATION_OFFSET,
           )
