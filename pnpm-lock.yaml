@@ -69,8 +69,8 @@ importers:
         specifier: ^0.34.0
         version: 0.34.0(solid-js@1.9.3)
       '@tanstack/zod-form-adapter':
-        specifier: ^0.34.0
-        version: 0.34.0(zod@3.23.8)
+        specifier: ^0.34.1
+        version: 0.34.1(zod@3.23.8)
       '@unpic/solid':
         specifier: ^0.0.49
         version: 0.0.49(solid-js@1.9.3)
@@ -2159,6 +2159,9 @@ packages:
   '@tanstack/form-core@0.34.0':
     resolution: {integrity: sha512-t7vuE72DauKP7vYh4TObmLJzqHEqsocNbM8XvTAeH2odb78QLMVIVy3JwAEJw4EpOMMZPkEqtdgxCk+XGO3oWQ==}
 
+  '@tanstack/form-core@0.34.1':
+    resolution: {integrity: sha512-W8xRWcvlK5oek9V/JPblUyBf/cRb06nxqJTdEf7wZ6HxPnB0V9nNwZlWxvSfkMrbSkV+/H972Evy3cVc6WBB7g==}
+
   '@tanstack/react-table@8.20.5':
     resolution: {integrity: sha512-WEHopKw3znbUZ61s9i0+i9g8drmDo6asTWbrQh8Us63DAk/M0FkmIqERew6P71HI75ksZ2Pxyuf4vvKh9rAkiA==}
     engines: {node: '>=12'}
@@ -2191,8 +2194,8 @@ packages:
   '@tanstack/virtual-core@3.0.0-beta.54':
     resolution: {integrity: sha512-jtkwqdP2rY2iCCDVAFuaNBH3fiEi29aTn2RhtIoky8DTTiCdc48plpHHreLwmv1PICJ4AJUUESaq3xa8fZH8+g==}
 
-  '@tanstack/zod-form-adapter@0.34.0':
-    resolution: {integrity: sha512-QBRVVUATmbvJkouuEXnck9pIt+ZLtNhwq4/ENN5qsh6TSdXYQ2Hz6ziisbwog1c5hoel547UK4HTeLIfbMWNsA==}
+  '@tanstack/zod-form-adapter@0.34.1':
+    resolution: {integrity: sha512-BVLzOXMgQqSS3gROyxP2PdmhRLzfWRThdTDMtqdg9Oi8Mv+DlMJ5nSwvOFBzVPra+DyUVzNySnsR3DDNDVXzKA==}
     peerDependencies:
       zod: ^3.x
 
@@ -8899,6 +8902,10 @@ snapshots:
     dependencies:
       '@tanstack/store': 0.5.5
 
+  '@tanstack/form-core@0.34.1':
+    dependencies:
+      '@tanstack/store': 0.5.5
+
   '@tanstack/react-table@8.20.5(react-dom@18.3.1(react@16.14.0))(react@16.14.0)':
     dependencies:
       '@tanstack/table-core': 8.20.5
@@ -8938,9 +8945,9 @@ snapshots:
 
   '@tanstack/virtual-core@3.0.0-beta.54': {}
 
-  '@tanstack/zod-form-adapter@0.34.0(zod@3.23.8)':
+  '@tanstack/zod-form-adapter@0.34.1(zod@3.23.8)':
     dependencies:
-      '@tanstack/form-core': 0.34.0
+      '@tanstack/form-core': 0.34.1
       zod: 3.23.8
 
   '@types/babel__core@7.20.5':
