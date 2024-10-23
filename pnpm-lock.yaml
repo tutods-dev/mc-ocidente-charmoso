@@ -66,8 +66,8 @@ importers:
         specifier: ^0.14.10
         version: 0.14.10(solid-js@1.9.3)
       '@tanstack/solid-form':
-        specifier: ^0.34.0
-        version: 0.34.0(solid-js@1.9.3)
+        specifier: ^0.34.1
+        version: 0.34.1(solid-js@1.9.3)
       '@tanstack/zod-form-adapter':
         specifier: ^0.34.1
         version: 0.34.1(zod@3.23.8)
@@ -2160,9 +2160,6 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@tanstack/form-core@0.34.0':
-    resolution: {integrity: sha512-t7vuE72DauKP7vYh4TObmLJzqHEqsocNbM8XvTAeH2odb78QLMVIVy3JwAEJw4EpOMMZPkEqtdgxCk+XGO3oWQ==}
-
   '@tanstack/form-core@0.34.1':
     resolution: {integrity: sha512-W8xRWcvlK5oek9V/JPblUyBf/cRb06nxqJTdEf7wZ6HxPnB0V9nNwZlWxvSfkMrbSkV+/H972Evy3cVc6WBB7g==}
 
@@ -2178,8 +2175,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@tanstack/solid-form@0.34.0':
-    resolution: {integrity: sha512-Nufc91sTumdHoTUyzeVAjHqP2jnmvcMa7Siv554FO8h7g1fM5ZQBohJb/gc2XCfLHWWNdTH1hF67IH2i3VycnQ==}
+  '@tanstack/solid-form@0.34.1':
+    resolution: {integrity: sha512-sZBc8HbFI0oaf7wZzkeMFNEj7CUbU0lU4I3ufQ/ovlTMXcjXPRJ+rgfu/nrq83/DzRlfSbIoPv1efeMUKUx3cQ==}
     peerDependencies:
       solid-js: ^1.6.0
 
@@ -8925,10 +8922,6 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@tanstack/form-core@0.34.0':
-    dependencies:
-      '@tanstack/store': 0.5.5
-
   '@tanstack/form-core@0.34.1':
     dependencies:
       '@tanstack/store': 0.5.5
@@ -8955,9 +8948,9 @@ snapshots:
       '@tanstack/virtual-core': 3.0.0-beta.54
       react: 18.3.1
 
-  '@tanstack/solid-form@0.34.0(solid-js@1.9.3)':
+  '@tanstack/solid-form@0.34.1(solid-js@1.9.3)':
     dependencies:
-      '@tanstack/form-core': 0.34.0
+      '@tanstack/form-core': 0.34.1
       '@tanstack/solid-store': 0.5.6(solid-js@1.9.3)
       solid-js: 1.9.3
 
