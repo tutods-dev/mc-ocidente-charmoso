@@ -1,171 +1,35 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-  "vcs": {
-    "clientKind": "git",
-    "enabled": true,
-    "useIgnoreFile": true,
-    "defaultBranch": "main"
-  },
-  "files": {
-    "ignore": [
-      ".github",
-      ".git",
-      ".husky",
-      ".vitest-preview",
-      "build",
-      "dist",
-      "out",
-      "node_modules",
-      ".env",
-      ".env.*",
-      ".env.*.*",
-      ".envrc",
-      "package-lock.json",
-      "pnpm-lock.yaml",
-      "sanity.types.ts"
-    ],
-    "include": [
-      "*.ts",
-      "*.tsx",
-      "*.js",
-      "*.jsx",
-      "*.yaml",
-      "*.json",
-      "*.md",
-      "*.mdx",
-      "*.css",
-      ".idea",
-      ".vscode",
-      "public",
-      "src",
-      "biome.json",
-      "commitlint.config.js",
-      "postcss.config.js",
-      "README.md",
-      "tsconfig.json",
-      "tsconfig.*.json",
-      "vite.config.ts",
-      "vitest.setup.ts"
-    ]
-  },
-  "formatter": {
-    "enabled": true,
-    "formatWithErrors": false,
-    "indentStyle": "space",
-    "indentWidth": 2,
-    "lineEnding": "lf",
-    "lineWidth": 88,
-    "attributePosition": "auto"
-  },
-  "organizeImports": {
-    "enabled": true
-  },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "recommended": true,
-      "complexity": {
-        "noUselessConstructor": "error",
-        "noForEach": "off"
-      },
-      "correctness": {
-        "useExhaustiveDependencies": "error",
-        "useHookAtTopLevel": "error",
-        "noUnusedImports": {
-          "level": "error",
-          "fix": "safe"
-        }
-      },
-      "style": {
-        "useExportType": "error",
-        "useBlockStatements": "error",
-        "useSingleCaseStatement": "error"
-      },
-      "suspicious": {
-        "noConsoleLog": "error",
-        "noDuplicateClassMembers": "error",
-        "noEmptyBlockStatements": "error",
-        "noImportAssign": "error",
-        "useAwait": "off",
-        "noReactSpecificProps": "error"
-      },
-      "performance": {
-        "recommended": true
-      },
-      "a11y": {
-        "recommended": true,
-        "useKeyWithClickEvents": "off",
-        "noSvgWithoutTitle": "off"
-      },
-      "security": {
-        "recommended": true
-      },
-      "nursery": {
-        "useSortedClasses": {
-          "level": "error",
-          "fix": "safe",
-          "options": {
-            "attributes": ["classList", "classNames", "className", "class"],
-            "functions": ["clsx", "cva", "tw"]
-          }
-        }
-      }
-    }
-  },
-  "javascript": {
-    "formatter": {
-      "arrowParentheses": "always",
-      "attributePosition": "auto",
-      "bracketSameLine": false,
-      "bracketSpacing": true,
-      "jsxQuoteStyle": "double",
-      "quoteProperties": "preserve",
-      "quoteStyle": "single",
-      "semicolons": "always"
-    }
-  },
-  "overrides": [
-    {
-      "include": ["*.cts", "*.mts", "*.ts", "*.tsx"],
-      "linter": {
-        "rules": {
-          "complexity": {
-            "useOptionalChain": "error"
-          },
-          "correctness": {
-            "noUnusedVariables": "off",
-            "noVoidTypeReturn": "error"
-          },
-          "style": {
-            "useAsConstAssertion": "error",
-            "useEnumInitializers": "error",
-            "useExportType": "error",
-            "useImportType": "error",
-            "noNamespace": "error",
-            "useNamingConvention": "off",
-            "noNonNullAssertion": "off"
-          },
-          "suspicious": {
-            "noExplicitAny": "error"
-          }
-        }
-      }
-    },
-    {
-      "include": ["*.jsx", "*.tsx"],
-      "linter": {
-        "rules": {
-          "style": {
-            "noImplicitBoolean": "error"
-          },
-          "suspicious": {
-            "noReactSpecificProps": "error"
-          },
-          "complexity": {
-            "noUselessFragments": "error"
-          }
-        }
-      }
-    }
-  ]
+	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+	"vcs": {
+		"clientKind": "git",
+		"enabled": true,
+		"useIgnoreFile": true,
+		"defaultBranch": "main"
+	},
+	"files": {
+		"ignore": ["sanity.types.ts"]
+	},
+	"extends": ["@tutods/biome-config/solidjs"],
+	"overrides": [
+		{
+			"include": ["apps/frontend/src/components/ui"],
+			"linter": {
+				"rules": {
+					"style": {
+						"noNonNullAssertion": "warn"
+					}
+				}
+			}
+		},
+		{
+			"include": ["apps/studio"],
+			"linter": {
+				"rules": {
+					"suspicious": {
+						"noReactSpecificProps": "off"
+					}
+				}
+			}
+		}
+	]
 }

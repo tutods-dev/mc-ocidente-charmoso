@@ -17,6 +17,9 @@ importers:
       '@commitlint/config-conventional':
         specifier: ^19.5.0
         version: 19.5.0
+      '@tutods/biome-config':
+        specifier: ^1.1.2
+        version: 1.1.2(@biomejs/biome@1.9.4)
       lefthook:
         specifier: ^1.8.0
         version: 1.8.0
@@ -2199,6 +2202,11 @@ packages:
     resolution: {integrity: sha512-BVLzOXMgQqSS3gROyxP2PdmhRLzfWRThdTDMtqdg9Oi8Mv+DlMJ5nSwvOFBzVPra+DyUVzNySnsR3DDNDVXzKA==}
     peerDependencies:
       zod: ^3.x
+
+  '@tutods/biome-config@1.1.2':
+    resolution: {integrity: sha512-VgHVzvWPrwYU/XABmjJoxdTsL60hdbKtQWZnr+dPgislzTCaABfxuzWMzxlwLWArid+yt1lJXABnvAbPvjrLLw==, tarball: https://npm.pkg.github.com/download/@tutods/biome-config/1.1.2/c0973fc4d72d2fc221b4f7132ac5feb4e0b2f5d6}
+    peerDependencies:
+      '@biomejs/biome': '>=1.9.4'
 
   '@types/babel__core@7.20.5':
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
@@ -8969,6 +8977,10 @@ snapshots:
     dependencies:
       '@tanstack/form-core': 0.34.1
       zod: 3.23.8
+
+  '@tutods/biome-config@1.1.2(@biomejs/biome@1.9.4)':
+    dependencies:
+      '@biomejs/biome': 1.9.4
 
   '@types/babel__core@7.20.5':
     dependencies:
