@@ -23,7 +23,8 @@
 	"hostRules": [
 		{
 			"matchHost": "https://npm.pkg.github.com/",
-			"hostType": "npm"
+			"hostType": "npm",
+			"token": "{{ secrets.GITHUB_TOKEN }}"
 		}
 	],
 	"npmrc": "@tutods:registry=https://npm.pkg.github.com/"
