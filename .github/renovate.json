@@ -1,26 +1,30 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["customManagers:biomeVersions", "config:base"],
-  "platformAutomerge": true,
-  "prCreation": "immediate",
-  "updateInternalDeps": true,
-  "rangeStrategy": "bump",
-  "automerge": true,
-  "automergeType": "pr",
-  "timezone": "Europe/Lisbon",
-  "schedule": [
-    "after 3pm every day",
-    "before 5am every day"
-  ],
-  "lockFileMaintenance": {
-    "enabled": true,
-    "automerge": true
-  },
-  "packageRules": [
-    {
-      "description": "Automerge non-major updates",
-      "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true
-    }
-  ]
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": ["customManagers:biomeVersions", "config:base"],
+	"platformAutomerge": true,
+	"prCreation": "immediate",
+	"updateInternalDeps": true,
+	"rangeStrategy": "bump",
+	"automerge": true,
+	"automergeType": "pr",
+	"timezone": "Europe/Lisbon",
+	"schedule": ["after 3pm every day", "before 5am every day"],
+	"lockFileMaintenance": {
+		"enabled": true,
+		"automerge": true
+	},
+	"packageRules": [
+		{
+			"description": "Automerge non-major updates",
+			"matchUpdateTypes": ["minor", "patch"],
+			"automerge": true
+		}
+	],
+	"hostRules": [
+		{
+			"matchHost": "https://npm.pkg.github.com/",
+			"hostType": "npm"
+		}
+	],
+	"npmrc": "@tutods:registry=https://npm.pkg.github.com/"
 }
