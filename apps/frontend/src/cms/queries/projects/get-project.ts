@@ -3,24 +3,24 @@
  * @param `$slug` Project slug
  */
 const getProjectQuery = `
-    *[_type == "project" && slug.current == $slug] [0] {
+  *[_type == "project" && slug.current == $slug] [0] {
+    ...,
+    "description": pt::text(content),
+    "slug": slug.current,
+    "thumbnail": {
+        ...thumbnail,
+        "asset": thumbnail.asset->
+    },
+    "services": coalesce(services[]->{
+        _id,
+        title,
+        'slug': slug.current
+    }, []),
+    "gallery": coalesce(gallery[]{
       ...,
-      "description": pt::text(content),
-      "slug": slug.current,
-      "thumbnail": {
-          ...thumbnail,
-          "asset": thumbnail.asset->
-      },
-      "services": coalesce(services[]->{
-          _id,
-          title,
-          'slug': slug.current
-      }, []),
-      "gallery": coalesce(gallery[]{
-        ...,
-        "asset": asset->
-      }, null)
-    }
+      "asset": asset->
+    }, null)
+  }
 `;
 
 export { getProjectQuery };

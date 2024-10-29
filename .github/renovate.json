@@ -1,6 +1,6 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["customManagers:biomeVersions", "config:base"],
+	"extends": ["customManagers:biomeVersions", "config:recommended"],
 	"platformAutomerge": true,
 	"prCreation": "immediate",
 	"updateInternalDeps": true,
@@ -8,7 +8,7 @@
 	"automerge": true,
 	"automergeType": "pr",
 	"timezone": "Europe/Lisbon",
-	"schedule": ["after 3pm every day", "before 5am every day"],
+	"schedule": ["after 3pm", "before 5am"],
 	"lockFileMaintenance": {
 		"enabled": true,
 		"automerge": true
@@ -16,8 +16,12 @@
 	"packageRules": [
 		{
 			"description": "Automerge non-major updates",
-			"matchUpdateTypes": ["minor", "patch"],
+			"matchUpdateTypes": ["minor", "patch", "lockFileMaintenance"],
 			"automerge": true
+		},
+		{
+			"description": "Open major updates",
+			"matchUpdateTypes": ["major", "bump"]
 		}
 	],
 	"hostRules": [
