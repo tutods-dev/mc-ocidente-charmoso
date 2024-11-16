@@ -19,10 +19,10 @@
 	"dependencies": {
 		"@sanity/icons": "^3.4.0",
 		"@sanity/locale-pt-pt": "^1.1.11",
-		"@sanity/vision": "^3.63.0",
+		"@sanity/vision": "^3.64.1",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
-		"sanity": "^3.63.0",
+		"sanity": "^3.64.1",
 		"sanity-plugin-media": "^2.3.2",
 		"styled-components": "^6.1.13"
 	},
