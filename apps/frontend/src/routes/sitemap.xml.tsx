@@ -1,20 +1,19 @@
 import type { APIEvent } from '@solidjs/start/server';
-import { getPaginatedProjects } from '~/cms/services';
+import { getPaginatedServices } from '~/cms/services';
 import { DEFAULT_PAGINATION_OFFSET } from '~/shared/constants';
 
 export async function GET({ request }: APIEvent) {
   const baseUrl = new URL(request.url).origin;
-  const projects = await getPaginatedProjects(1, 10000);
+  const services = await getPaginatedServices(1, 10000);
 
   const routes = [
     '/',
     '/sobre-nos',
-    '/projetos',
-    ...Array.from(
-      { length: Math.ceil(projects.total / DEFAULT_PAGINATION_OFFSET) },
-      (_, index) => index + 1,
-    ).map((page) => `/projetos?page=${page}`),
-    ...projects.data.map((project) => `/projetos/${project.slug}`),
+    '/servicos',
+    ...Array.from({ length: Math.ceil(services.total / DEFAULT_PAGINATION_OFFSET) }, (_, index) => index + 1).map(
+      (page) => `/servicos?page=${page}`,
+    ),
+    ...services.data.map((service) => `/servicos/${service.slug}`),
     '/contactos',
   ];
 

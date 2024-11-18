@@ -1,6 +1,7 @@
 import { createAsync } from '@solidjs/router';
-import { Show } from 'solid-js';
-import { getProjectTestimonial } from '~/cms/services/testimonials/get-project-testimonial';
+import { For, Show } from 'solid-js';
+import { getServiceTestimonial } from '~/cms/services/testimonials/get-service-testimonial';
+import { Carousel, CarouselContent, CarouselItem } from '~/components';
 import { TestimonialCard } from '~/components/cards';
 
 type Props = {
@@ -11,11 +12,23 @@ type Props = {
 };
 
 function ProjectTestimonialSection({ slug }: Props) {
-  const data = createAsync(() => getProjectTestimonial(slug));
+  const data = createAsync(() => getServiceTestimonial(slug));
 
   return (
     <Show when={data()} keyed={true}>
-      {(testimonial) => <TestimonialCard {...testimonial} />}
+      {(testimonials) => (
+        <Carousel>
+          <CarouselContent>
+            <For each={testimonials}>
+              {(testimonial) => (
+                <CarouselItem>
+                  <TestimonialCard {...testimonial} />
+                </CarouselItem>
+              )}
+            </For>
+          </CarouselContent>
+        </Carousel>
+      )}
     </Show>
   );
 }

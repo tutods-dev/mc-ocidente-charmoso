@@ -1,2 +1,2 @@
-export * from './get-project-testimonial';
+export * from './get-service-testimonials';
 export * from './get-testimonials';

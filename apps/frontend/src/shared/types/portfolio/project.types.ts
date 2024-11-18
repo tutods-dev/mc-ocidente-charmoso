@@ -1,29 +1,16 @@
-import type {
-  Gallery,
-  Image,
-  PaginatedResults,
-  ServiceCard,
-  VideoUrlWithCover,
-} from '~/shared/types';
-import type { Project as ProjectSchema } from '~/shared/types/sanity.types';
+import type { Gallery, Image, PaginatedResults, VideoUrlWithCover } from '~/shared/types';
+import type { Service as ServiceSchema } from '~/shared/types/sanity.types';
 
-type Project = Omit<
-  ProjectSchema,
-  'thumbnail' | 'gallery' | 'video' | 'services' | 'slug'
-> & {
+type Service = Omit<ServiceSchema, 'thumbnail' | 'gallery' | 'slug'> & {
   slug: string;
   description?: string;
   thumbnail: Image;
   gallery: Gallery;
   video?: VideoUrlWithCover;
-  services: ServiceCard[];
 };
 
-type ProjectCard = Pick<
-  Project,
-  'title' | 'headline' | 'slug' | 'thumbnail' | 'services'
->;
+type ServiceCard = Pick<Service, 'title' | 'headline' | 'slug' | 'thumbnail'>;
 
-type PaginatedProjects = PaginatedResults<ProjectCard[]>;
+type PaginatedServices = PaginatedResults<ServiceCard[]>;
 
-export type { Project, ProjectCard, PaginatedProjects };
+export type { Service, ServiceCard, PaginatedServices };

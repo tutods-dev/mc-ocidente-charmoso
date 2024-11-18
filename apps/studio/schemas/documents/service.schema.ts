@@ -1,9 +1,5 @@
 import { defineField, defineType } from 'sanity';
-import {
-  isFileRequired,
-  isSlugRequired,
-  isTextRequired,
-} from '../../shared/validations';
+import { isFileRequired, isSlugRequired, isTextRequired } from '../../shared/validations';
 
 const serviceSchema = defineType({
   title: 'Serviços',
@@ -14,7 +10,7 @@ const serviceSchema = defineType({
       title: 'Título',
       name: 'title',
       type: 'string',
-      validation: (Rule) => [...isTextRequired(Rule, 'título')],
+      validation: (Rule) => isTextRequired(Rule, 'título'),
     }),
     defineField({
       title: 'Slug',
@@ -27,7 +23,20 @@ const serviceSchema = defineType({
       validation: (Rule) => isSlugRequired(Rule, 'slug'),
     }),
     defineField({
-      title: 'Imagem',
+      description: 'A breve descrição é especialmente utilizada para melhorar o SEO da página.',
+      name: 'headline',
+      rows: 3,
+      title: 'Breve descrição',
+      type: 'text',
+      validation: (Rule) => [
+        Rule.required().warning('A breve descrição não é obrigatória, porém poderá ajudar a melhorar o SEO da página!'),
+        Rule.max(160).warning(
+          'Atenção! Descrições longas podem ser cortadas pelos motores de pesquisa a quando da sua visualização.',
+        ),
+      ],
+    }),
+    defineField({
+      title: 'Imagem principal',
       name: 'thumbnail',
       type: 'image',
       options: {
@@ -37,20 +46,35 @@ const serviceSchema = defineType({
       validation: (Rule) => isFileRequired(Rule, 'imagem'),
     }),
     defineField({
-      title: 'Breve descrição',
-      name: 'description',
-      type: 'text',
-      initialValue: undefined,
-      rows: 3,
-      validation: (Rule) => [
-        Rule.required().warning(
-          'O campo descrição não é obrigatório, porém ajuda a melhorar a pontuação da página a nível de SEO.',
-        ),
-        Rule.min(50).warning('Uma boa descrição deverá ter entre 50 a 160 caracteres.'),
-        Rule.max(160).warning(
-          'Atenção! Uma descrição demasiado longa poderá ser cortada durante a visualização nos motores de pesquisa (como Google).',
-        ),
-      ],
+      title: 'Conteúdo',
+      name: 'content',
+      type: 'blockContent',
+      options: { spellCheck: true },
+      // TODO: add validation
+      // validation: Rule => [
+      //     Rule.
+      // ]
+    }),
+    defineField({
+      title: 'Galeria',
+      name: 'gallery',
+      type: 'gallery',
+    }),
+    defineField({
+      title: 'Mostrar testemunho(s)?',
+      name: 'showTestimonials',
+      type: 'boolean',
+      description:
+        'Se esta opção estiver marcada e existir testemunho(s) associado a este serviço, na página do seriço serão apresentados o(s) testemunho(s).',
+      initialValue: true,
+    }),
+    defineField({
+      title: 'Serviço em destaque?',
+      name: 'isHighlighted',
+      type: 'boolean',
+      initialValue: false,
+      description:
+        'Se esta opção estiver marcada, o serviço será marcado como destaque, o que indica que o mesmo será apresentado em páginas onde apenas são apresentados alguns serviços.',
     }),
   ],
 });

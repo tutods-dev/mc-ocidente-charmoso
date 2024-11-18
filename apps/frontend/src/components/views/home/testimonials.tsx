@@ -1,12 +1,5 @@
 import { For, Show } from 'solid-js';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-  TestimonialCard,
-} from '~/components';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, TestimonialCard } from '~/components';
 import type { Home } from '~/shared/types';
 
 type Props = NonNullable<Home['testimonials']>;
@@ -34,7 +27,7 @@ function TestimonialsSection(props: Props) {
             <For each={props.data}>
               {(testimonial) => (
                 <CarouselItem>
-                  <TestimonialCard showProjectButton={true} {...testimonial} />
+                  <TestimonialCard {...testimonial} />
                 </CarouselItem>
               )}
             </For>

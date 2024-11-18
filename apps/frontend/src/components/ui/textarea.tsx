@@ -5,16 +5,14 @@ import type { ValidComponent, VoidProps } from 'solid-js';
 import { splitProps } from 'solid-js';
 import { cn } from '~/libs/cn';
 
-type textAreaProps<T extends ValidComponent = 'textarea'> = VoidProps<
+type TextAreaProps<T extends ValidComponent = 'textarea'> = VoidProps<
   TextFieldTextAreaProps<T> & {
     class?: string;
   }
 >;
 
-export const TextArea = <T extends ValidComponent = 'textarea'>(
-  props: PolymorphicProps<T, textAreaProps<T>>,
-) => {
-  const [local, rest] = splitProps(props as textAreaProps, ['class']);
+export const TextArea = <T extends ValidComponent = 'textarea'>(props: PolymorphicProps<T, TextAreaProps<T>>) => {
+  const [local, rest] = splitProps(props as TextAreaProps, ['class']);
 
   return (
     <TextFieldPrimitive

@@ -1,13 +1,13 @@
 /**
  * Query to retrieve a testimonial from a specific project.
  */
-const getProjectTestimonialQuery = `
-    *[_type == "testimonial" && project->slug.current == $slug] [0] {
+const getServiceTestimonialQuery = `
+    *[_type == "testimonial" && service->slug.current == $slug] {
       _id,
       client,
       content,
       "url": coalesce(url, null),
-      "project": coalesce(project->{
+      "service": coalesce(service->{
         title,
         "slug": slug.current,
       }, null), 
@@ -16,4 +16,4 @@ const getProjectTestimonialQuery = `
     }
 `;
 
-export { getProjectTestimonialQuery };
+export { getServiceTestimonialQuery };

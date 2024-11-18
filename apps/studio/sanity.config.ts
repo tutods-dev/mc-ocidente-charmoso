@@ -7,6 +7,7 @@ import { structureTool } from 'sanity/structure';
 import { schemaTypes } from './schemas';
 import { singletonTypes, singletonsActions } from './shared';
 
+// biome-ignore lint/style/noDefaultExport: configurations needs to be a default export
 export default defineConfig({
   name: 'default',
   title: 'MC Ocidente Charmoso',
@@ -18,8 +19,7 @@ export default defineConfig({
     types: schemaTypes,
 
     // Filter out singleton types from the global “New document” menu options
-    templates: (templates) =>
-      templates.filter(({ schemaType }) => !singletonTypes.has(schemaType)),
+    templates: (templates) => templates.filter(({ schemaType }) => !singletonTypes.has(schemaType)),
   },
 
   document: {
@@ -67,7 +67,6 @@ export default defineConfig({
             S.divider(),
 
             // Regular document types
-            S.documentTypeListItem('project'),
             S.documentTypeListItem('service'),
             S.documentTypeListItem('testimonial'),
           ]),

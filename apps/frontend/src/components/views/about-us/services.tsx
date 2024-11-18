@@ -2,22 +2,15 @@ import { PortableText } from '@portabletext/solid';
 import { createAsync } from '@solidjs/router';
 import { For, Show } from 'solid-js';
 import { components } from '~/cms/components';
-import { getServices } from '~/cms/services';
+import { getHighlightedServices } from '~/cms/services';
 import { ServiceCard } from '~/components/cards';
-import {
-  Button,
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '~/components/ui';
+import { Button, Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '~/components/ui';
 import { cn } from '~/lib/utils';
 import type { AboutUs } from '~/shared/types';
 
 function ServicesSection(props: NonNullable<AboutUs['services']>) {
   // Fetch services
-  const services = createAsync(() => getServices());
+  const services = createAsync(() => getHighlightedServices());
 
   return (
     <section class="py-4 md:py-16">
@@ -31,12 +24,7 @@ function ServicesSection(props: NonNullable<AboutUs['services']>) {
             <CarouselContent>
               <For each={services() ?? []}>
                 {(service) => (
-                  <CarouselItem
-                    class={cn([
-                      'lg:basis-1/2',
-                      { 'md:basis-full': services()?.length === 1 },
-                    ])}
-                  >
+                  <CarouselItem class={cn(['lg:basis-1/2', { 'md:basis-full': services()?.length === 1 }])}>
                     <ServiceCard {...service} />
                   </CarouselItem>
                 )}
@@ -67,12 +55,7 @@ function ServicesSection(props: NonNullable<AboutUs['services']>) {
             )}
           </Show>
 
-          <Button
-            as="a"
-            href="/projetos"
-            variant="ghost"
-            class="inline-flex items-center"
-          >
+          <Button as="a" href="/servicos" variant="ghost" class="inline-flex items-center">
             Ver projetos&nbsp;
             <i class="ph ph-arrow-right" />
           </Button>

@@ -16,7 +16,7 @@ function transporter() {
   });
 
   // verify connection configuration
-  localTransporter.verify((error, success) => {
+  localTransporter.verify((error) => {
     if (env.isProduction) {
       return;
     }

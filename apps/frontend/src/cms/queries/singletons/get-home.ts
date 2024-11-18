@@ -3,9 +3,9 @@
  */
 const getHomeQuery = `
   *[_type == "home"] [0] {
-    "projects": select(defined(projects) => {
-        ...projects,
-        "data": *[_type == "project" && isHighlighted == true] | order(_createdAt desc) [0...6] {
+    "services": select(defined(services) => {
+        ...services,
+        "data": *[_type == "service" && isHighlighted == true] | order(_createdAt desc) [0...6] {
             title,
             headline,
             "slug": slug.current,
@@ -13,11 +13,6 @@ const getHomeQuery = `
                 ...thumbnail,
                 "asset": thumbnail.asset->
             },
-            "services": coalesce(services[]->{
-                _id,
-                title,
-                'slug': slug.current
-            }, []),
         }
     }),
     "testimonials": select(defined(testimonials) => {
@@ -27,10 +22,6 @@ const getHomeQuery = `
             client,
             content,
             "url": coalesce(url, null),
-            "project": coalesce(project->{
-              title,
-              "slug": slug.current,
-            }, null), 
             _createdAt,
             _updatedAt
         }

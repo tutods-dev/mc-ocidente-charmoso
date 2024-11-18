@@ -2,8 +2,8 @@
  * Query to treive a specific project by slug.
  * @param `$slug` Project slug
  */
-const getProjectQuery = `
-  *[_type == "project" && slug.current == $slug] [0] {
+const getServiceQuery = `
+  *[_type == "service" && slug.current == $slug] [0] {
     ...,
     "description": pt::text(content),
     "slug": slug.current,
@@ -11,11 +11,6 @@ const getProjectQuery = `
         ...thumbnail,
         "asset": thumbnail.asset->
     },
-    "services": coalesce(services[]->{
-        _id,
-        title,
-        'slug': slug.current
-    }, []),
     "gallery": coalesce(gallery[]{
       ...,
       "asset": asset->
@@ -23,4 +18,4 @@ const getProjectQuery = `
   }
 `;
 
-export { getProjectQuery };
+export { getServiceQuery };

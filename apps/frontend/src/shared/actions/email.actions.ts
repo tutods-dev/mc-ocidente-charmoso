@@ -26,7 +26,7 @@ const sendEmailAction = action<[data: FormData]>(async (data) => {
         title: 'Impulsionar',
       }),
     });
-  } catch (error) {
+  } catch {
     // TODO: treat error
   }
 });

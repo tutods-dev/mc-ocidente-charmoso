@@ -1,9 +1,4 @@
-import type {
-  ContentProps,
-  DescriptionProps,
-  DynamicProps,
-  LabelProps,
-} from '@corvu/drawer';
+import type { ContentProps, DescriptionProps, DynamicProps, LabelProps } from '@corvu/drawer';
 import DrawerPrimitive from '@corvu/drawer';
 import type { ComponentProps, ParentProps, ValidComponent } from 'solid-js';
 import { splitProps } from 'solid-js';
@@ -13,16 +8,14 @@ export const Drawer = DrawerPrimitive;
 export const DrawerTrigger = DrawerPrimitive.Trigger;
 export const DrawerClose = DrawerPrimitive.Close;
 
-type drawerContentProps<T extends ValidComponent = 'div'> = ParentProps<
+type DrawerContentProps<T extends ValidComponent = 'div'> = ParentProps<
   ContentProps<T> & {
     class?: string;
   }
 >;
 
-export const DrawerContent = <T extends ValidComponent = 'div'>(
-  props: DynamicProps<T, drawerContentProps<T>>,
-) => {
-  const [local, rest] = splitProps(props as drawerContentProps, ['class', 'children']);
+export const DrawerContent = <T extends ValidComponent = 'div'>(props: DynamicProps<T, DrawerContentProps<T>>) => {
+  const [local, rest] = splitProps(props as DrawerContentProps, ['class', 'children']);
   const ctx = DrawerPrimitive.useContext();
 
   return (
@@ -50,12 +43,7 @@ export const DrawerContent = <T extends ValidComponent = 'div'>(
 export const DrawerHeader = (props: ComponentProps<'div'>) => {
   const [local, rest] = splitProps(props, ['class']);
 
-  return (
-    <div
-      class={cn('grid gap-1.5 p-4 text-center sm:text-left', local.class)}
-      {...rest}
-    />
-  );
+  return <div class={cn('grid gap-1.5 p-4 text-center sm:text-left', local.class)} {...rest} />;
 };
 
 export const DrawerFooter = (props: ComponentProps<'div'>) => {
@@ -68,16 +56,11 @@ type DrawerLabelProps = LabelProps & {
   class?: string;
 };
 
-export const DrawerLabel = <T extends ValidComponent = 'h2'>(
-  props: DynamicProps<T, DrawerLabelProps>,
-) => {
+export const DrawerLabel = <T extends ValidComponent = 'h2'>(props: DynamicProps<T, DrawerLabelProps>) => {
   const [local, rest] = splitProps(props as DrawerLabelProps, ['class']);
 
   return (
-    <DrawerPrimitive.Label
-      class={cn('font-semibold text-lg leading-none tracking-tight', local.class)}
-      {...rest}
-    />
+    <DrawerPrimitive.Label class={cn('font-semibold text-lg leading-none tracking-tight', local.class)} {...rest} />
   );
 };
 
@@ -85,15 +68,8 @@ type DrawerDescriptionProps = DescriptionProps & {
   class?: string;
 };
 
-export const DrawerDescription = <T extends ValidComponent = 'p'>(
-  props: DynamicProps<T, DrawerDescriptionProps>,
-) => {
+export const DrawerDescription = <T extends ValidComponent = 'p'>(props: DynamicProps<T, DrawerDescriptionProps>) => {
   const [local, rest] = splitProps(props as DrawerDescriptionProps, ['class']);
 
-  return (
-    <DrawerPrimitive.Description
-      class={cn('text-muted-foreground text-sm', local.class)}
-      {...rest}
-    />
-  );
+  return <DrawerPrimitive.Description class={cn('text-muted-foreground text-sm', local.class)} {...rest} />;
 };

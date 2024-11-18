@@ -1,55 +1,45 @@
 import { Image } from '@unpic/solid';
-import { Show } from 'solid-js';
+import { type ComponentProps, Show, mergeProps, splitProps } from 'solid-js';
 import { urlFor } from '~/cms/utils';
-import { Button } from '~/components/ui';
-import { cn } from '~/lib/utils';
 import type { ServiceCard as ServiceCardType } from '~/shared/types';
+import { cn } from '~/shared/utils';
 import { getBlurHashImage } from '~/shared/utils/images';
 
-function ServiceCard(props: ServiceCardType) {
+type Props = ServiceCardType & Pick<ComponentProps<'a'>, 'class'>;
+
+function ServiceCard(rawProps: Props) {
+  const props = mergeProps(rawProps, {
+    class: '',
+  });
+  const [projectProps, styleProps, otherProps] = splitProps(
+    props,
+    ['thumbnail', 'slug', 'headline', 'title'],
+    ['class'],
+  );
+
   return (
-    <a class="group" href={`/projetos?service=${props.slug}`}>
-      <article class="relative isolate min-h-[400px] overflow-hidden rounded-sm">
+    <a
+      {...otherProps}
+      href={`/servicos/${projectProps.slug}`}
+      class={cn(['group shadow transition duration-300 ease-in-out', styleProps.class])}
+    >
+      <article class={cn(['relative isolate', 'h-96 md:h-[500px]', 'rounded-lg', 'overflow-hidden'])}>
         <Image
-          src={urlFor(props.thumbnail)
-            .auto('format')
-            .width(800)
-            .height(800)
-            .quality(80)
-            .url()}
+          loading="lazy"
           layout="fullWidth"
-          class="absolute inset-0 size-full object-cover object-center transition-all duration-300 ease-in-out group-hover:scale-105"
-          background={getBlurHashImage(props.thumbnail)}
-          alt={props.title}
+          src={urlFor(projectProps.thumbnail).auto('format').quality(80).width(600).url()}
+          alt={projectProps.title}
+          background={getBlurHashImage(projectProps.thumbnail)}
+          class="-z-10 absolute inset-0 size-full object-cover object-center transition-transform duration-300 ease-in-out group-hover:scale-105"
         />
 
-        <div
-          class={cn([
-            'absolute inset-0',
-            'flex flex-col justify-end',
-            'px-6 pb-8',
-            'transition-all duration-300 ease-in-out',
-            'bg-gradient-to-b from-transparent to-75% to-foreground/70 text-zinc-100',
-            'group-hover:from-zinc-900/30 group-hover:to-foreground/90',
-          ])}
-        >
-          <h3 class={cn('text-white', { 'mb-1': !props.description })}>
-            {props.title}
-          </h3>
-          <Show when={props.description} keyed={true}>
-            {(description) => (
-              <p class="mt-1 mb-2 line-clamp-6 text-sm">{description}</p>
-            )}
-          </Show>
+        <section class="flex size-full flex-col justify-end bg-gradient-to-b from-50% from-transparent to-foreground px-6 py-8 text-zinc-50 transition-colors duration-300 ease-in-out hover:from-0% group-hover:to-foreground">
+          <h3 class={cn(['font-semibold text-white', { 'mb-4': !projectProps.headline }])}>{projectProps.title}</h3>
 
-          <Button
-            class="inline-flex w-fit items-center px-0 text-zinc-100"
-            variant="link"
-          >
-            Ver projetos&nbsp;
-            <i class="ph ph-arrow-right text-xs leading-none" />
-          </Button>
-        </div>
+          <Show when={projectProps.headline}>
+            <p class="mt-0.5 mb-4 line-clamp-6 text-md">{projectProps.headline}</p>
+          </Show>
+        </section>
       </article>
     </a>
   );

@@ -11,7 +11,7 @@ const headerVariants = tv({
       solid: '',
     },
     isSticky: {
-      true: ['bg-zinc-50', 'shadow-lg', 'sticky top-0 inset-x-0'],
+      true: ['bg-zinc-50', 'shadow-lg', 'sticky inset-x-0 top-0'],
       false: [],
     },
   },

@@ -50,12 +50,12 @@ const testimonialSchema = defineType({
       ],
     }),
     defineField({
-      name: 'project',
-      title: 'Projeto',
-      description: 'Indique qual o projeto a que se refere este testemunho',
+      name: 'service',
+      title: 'Service',
+      description: 'Indique qual o serviço a que se refere este testemunho',
       type: 'reference',
       to: {
-        type: 'project',
+        type: 'service',
       },
     }),
   ],

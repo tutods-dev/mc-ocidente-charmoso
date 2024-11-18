@@ -1,11 +1,7 @@
 import { defineField, defineType } from 'sanity';
-import {
-  isFileRequired,
-  isSlugRequired,
-  isTextRequired,
-} from '../../shared/validations';
+import { isFileRequired, isSlugRequired, isTextRequired } from '../../shared/validations';
 
-const projectSchema = defineType({
+const project_oldSchema = defineType({
   title: 'Projetos',
   name: 'project',
   type: 'document',
@@ -27,16 +23,13 @@ const projectSchema = defineType({
       validation: (Rule) => isSlugRequired(Rule, 'slug'),
     }),
     defineField({
-      description:
-        'A breve descrição é especialmente utilizada para melhorar o SEO da página.',
+      description: 'A breve descrição é especialmente utilizada para melhorar o SEO da página.',
       name: 'headline',
       rows: 3,
       title: 'Breve descrição',
       type: 'text',
       validation: (Rule) => [
-        Rule.required().warning(
-          'A breve descrição não é obrigatória, porém poderá ajudar a melhorar o SEO da página!',
-        ),
+        Rule.required().warning('A breve descrição não é obrigatória, porém poderá ajudar a melhorar o SEO da página!'),
         Rule.max(160).warning(
           'Atenção! Descrições longas podem ser cortadas pelos motores de pesquisa a quando da sua visualização.',
         ),
@@ -93,19 +86,9 @@ const projectSchema = defineType({
       type: 'boolean',
       initialValue: false,
       description:
-        'Se esta opção estiver marcada, o projeto será marcado como destaque, o que indica que o mesmo será apresentado em páginas onde apenas são apresentados alguns projetos (no caso os projetos em destaque).',
-    }),
-    defineField({
-      title: 'Serviços',
-      name: 'services',
-      type: 'array',
-      of: [{ to: { type: 'service' }, type: 'reference' }],
-      validation: (Rule) => [
-        Rule.required().error('Por favor, selecione pelo menos um serviço!'),
-        Rule.min(1).error('Por favor, selecione pelo menos um serviço!'),
-      ],
+        'Se esta opção estiver marcada, o projeto será marcado como destaque, o que indica que o mesmo será apresentado em páginas onde apenas são apresentados alguns servicos (no caso os servicos em destaque).',
     }),
   ],
 });
 
-export { projectSchema };
+export { project_oldSchema };

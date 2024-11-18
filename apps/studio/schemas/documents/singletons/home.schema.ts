@@ -12,8 +12,8 @@ const homeSchema = defineType({
   },
   fields: [
     defineField({
-      name: 'projects',
-      title: 'Secção de Projetos',
+      name: 'services',
+      title: 'Secção de Serviços',
       type: 'object',
       fields: [
         defineField({
@@ -23,8 +23,7 @@ const homeSchema = defineType({
           validation: (Rule) => isTextRequired(Rule, 'título'),
         }),
         defineField({
-          description:
-            'A breve descrição é especialmente utilizada para melhorar o SEO da página.',
+          description: 'A breve descrição é especialmente utilizada para melhorar o SEO da página.',
           name: 'headline',
           rows: 3,
           title: 'Breve descrição',
@@ -52,16 +51,13 @@ const homeSchema = defineType({
           validation: (Rule) => isTextRequired(Rule, 'título'),
         }),
         defineField({
-          description:
-            'A breve descrição é especialmente utilizada para melhorar o SEO da página.',
+          description: 'A breve descrição é especialmente utilizada para melhorar o SEO da página.',
           name: 'headline',
           rows: 3,
           title: 'Breve descrição',
           type: 'text',
           validation: (Rule) => [
-            Rule.min(0).warning(
-              'A breve descrição não é obrigatória, porém poderá ajudar a melhorar o SEO da página!',
-            ),
+            Rule.min(0).warning('A breve descrição não é obrigatória, porém poderá ajudar a melhorar o SEO da página!'),
             Rule.max(160).warning(
               'Atenção! Descrições longas podem ser cortadas pelos motores de pesquisa a quando da sua visualização.',
             ),

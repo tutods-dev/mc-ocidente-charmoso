@@ -9,7 +9,7 @@ const getTestimonialsQuery = `
       client,
       content,
       "url": coalesce(url, null),
-      "project": coalesce(project->{
+      "service": coalesce(service->{
         title,
         "slug": slug.current,
       }, null), 
