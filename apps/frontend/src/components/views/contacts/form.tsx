@@ -3,7 +3,7 @@ import { createForm } from '@tanstack/solid-form';
 import { zodValidator } from '@tanstack/zod-form-adapter';
 import { Show, createSignal } from 'solid-js';
 import { z } from 'zod';
-import { Button } from '~/components';
+import { Button } from '~/components/ui';
 import { cn } from '~/lib/utils';
 import { sendEmailAction } from '~/shared/actions';
 import { BaseInput, BaseTextArea } from './partials';

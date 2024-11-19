@@ -1,13 +1,6 @@
 import { For, Show } from 'solid-js';
-import {
-  Button,
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-  ServiceCard,
-} from '~/components';
+import { ServiceCard } from '~/components/cards';
+import { Button, Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '~/components/ui';
 import { cn } from '~/lib/utils';
 import type { Home } from '~/shared/types';
 

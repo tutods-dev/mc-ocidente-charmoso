@@ -1,5 +1,6 @@
 import { For, Show } from 'solid-js';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, TestimonialCard } from '~/components';
+import { TestimonialCard } from '~/components/cards';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '~/components/ui';
 import type { Home } from '~/shared/types';
 
 type Props = NonNullable<Home['testimonials']>;

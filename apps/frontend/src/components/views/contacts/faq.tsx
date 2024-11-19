@@ -1,10 +1,5 @@
 import { For } from 'solid-js';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '~/components';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '~/components/ui';
 import type { ContactsSingleton } from '~/shared/types';
 
 type Props = Pick<NonNullable<ContactsSingleton['faq']>, 'questions'>;

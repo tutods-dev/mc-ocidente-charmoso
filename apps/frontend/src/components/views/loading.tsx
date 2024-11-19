@@ -1,4 +1,4 @@
-import { Logo } from '~/components';
+import { Logo } from '~/components/common';
 
 function LoadingScreen() {
   return (
@@ -9,9 +9,7 @@ function LoadingScreen() {
         MC Ocidente Charmoso
       </h1>
 
-      <p class="text-center text-xs text-zinc-700">
-        A carregar, por favor aguarde um momento!
-      </p>
+      <p class="text-center text-xs text-zinc-700">A carregar, por favor aguarde um momento!</p>
     </div>
   );
 }

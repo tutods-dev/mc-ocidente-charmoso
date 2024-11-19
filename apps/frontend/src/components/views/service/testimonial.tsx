@@ -1,8 +1,8 @@
 import { createAsync } from '@solidjs/router';
 import { For, Show } from 'solid-js';
 import { getServiceTestimonial } from '~/cms/services/testimonials/get-service-testimonial';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '~/components';
 import { TestimonialCard } from '~/components/cards';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '~/components/ui';
 
 type Props = {
   /**
