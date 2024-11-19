@@ -12,6 +12,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from '~/components/ui';
+import { cn } from '~/libs/cn';
 import { DEFAULT_PAGINATION_OFFSET } from '~/shared/constants';
 
 export const route: RouteDefinition = {
@@ -89,7 +90,7 @@ function Services() {
 
         <Show when={data()?.numberOfPages} keyed={true}>
           {(numberOfPages) => (
-            <section class="py-2">
+            <section class={cn('py-2', { hidden: numberOfPages === 1 })}>
               <div class="container flex justify-end">
                 <Pagination
                   count={numberOfPages}
