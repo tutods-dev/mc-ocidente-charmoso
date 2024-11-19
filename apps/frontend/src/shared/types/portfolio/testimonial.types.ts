@@ -1,4 +1,4 @@
-import type { ServiceCard } from '~/shared/types/portfolio/project.types';
+import type { ServiceCard } from '~/shared/types/portfolio/service.types';
 import type { Testimonial as TestimonialType } from '~/shared/types/sanity.types';
 
 type Testimonial = TestimonialType & {
