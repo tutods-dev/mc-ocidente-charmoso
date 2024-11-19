@@ -7,7 +7,6 @@ import { structureTool } from 'sanity/structure';
 import { schemaTypes } from './schemas';
 import { singletonTypes, singletonsActions } from './shared';
 
-// biome-ignore lint/style/noDefaultExport: configurations needs to be a default export
 export default defineConfig({
   name: 'default',
   title: 'MC Ocidente Charmoso',
