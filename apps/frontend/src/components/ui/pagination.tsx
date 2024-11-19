@@ -14,14 +14,12 @@ import { buttonVariants } from './button';
 
 export const PaginationItems = PaginationPrimitive.Items;
 
-type paginationProps<T extends ValidComponent = 'nav'> = PaginationRootProps<T> & {
+type PaginationProps<T extends ValidComponent = 'nav'> = PaginationRootProps<T> & {
   class?: string;
 };
 
-export const Pagination = <T extends ValidComponent = 'nav'>(
-  props: PolymorphicProps<T, paginationProps<T>>,
-) => {
-  const [local, rest] = splitProps(props as paginationProps, ['class']);
+export const Pagination = <T extends ValidComponent = 'nav'>(props: PolymorphicProps<T, PaginationProps<T>>) => {
+  const [local, rest] = splitProps(props as PaginationProps, ['class']);
 
   return (
     <PaginationPrimitive
@@ -73,10 +71,7 @@ export const PaginationEllipsis = <T extends ValidComponent = 'div'>(
   const [local, rest] = splitProps(props as paginationEllipsisProps, ['class']);
 
   return (
-    <PaginationPrimitive.Ellipsis
-      class={cn('flex h-9 w-9 items-center justify-center', local.class)}
-      {...rest}
-    >
+    <PaginationPrimitive.Ellipsis class={cn('flex h-9 w-9 items-center justify-center', local.class)} {...rest}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4">
         <path
           fill="none"
@@ -92,11 +87,10 @@ export const PaginationEllipsis = <T extends ValidComponent = 'div'>(
   );
 };
 
-type paginationPreviousProps<T extends ValidComponent = 'button'> =
-  PaginationPreviousProps<T> &
-    Pick<VariantProps<typeof buttonVariants>, 'size'> & {
-      class?: string;
-    };
+type paginationPreviousProps<T extends ValidComponent = 'button'> = PaginationPreviousProps<T> &
+  Pick<VariantProps<typeof buttonVariants>, 'size'> & {
+    class?: string;
+  };
 
 export const PaginationPrevious = <T extends ValidComponent = 'button'>(
   props: PolymorphicProps<T, paginationPreviousProps<T>>,
@@ -121,14 +115,13 @@ export const PaginationPrevious = <T extends ValidComponent = 'button'>(
   );
 };
 
-type paginationNextProps<T extends ValidComponent = 'button'> =
-  paginationPreviousProps<T>;
+type PaginationNextProps<T extends ValidComponent = 'button'> = paginationPreviousProps<T>;
 
 export const PaginationNext = <T extends ValidComponent = 'button'>(
-  props: PolymorphicProps<T, paginationNextProps<T>>,
+  props: PolymorphicProps<T, PaginationNextProps<T>>,
 ) => {
-  const merge = mergeProps<paginationNextProps<T>[]>({ size: 'icon' }, props);
-  const [local, rest] = splitProps(merge as paginationNextProps, ['class', 'size']);
+  const merge = mergeProps<PaginationNextProps<T>[]>({ size: 'icon' }, props);
+  const [local, rest] = splitProps(merge as PaginationNextProps, ['class', 'size']);
 
   return (
     <PaginationPrimitive.Next

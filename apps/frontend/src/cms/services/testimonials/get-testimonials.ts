@@ -1,14 +1,14 @@
-import { cache } from '@solidjs/router';
+import { query } from '@solidjs/router';
 import { client } from '~/cms';
 import { getTestimonialsQuery } from '~/cms/queries';
 import { getPagination } from '~/cms/utils';
 import type { TestimonialCard } from '~/shared/types';
 
 /**
- * Service to retrieve a list of projects.
+ * Service to retrieve a list of services.
  * @param page Current page
  */
-const getTestimonials = cache(async (page = 1): Promise<TestimonialCard[]> => {
+const getTestimonials = query(async (page = 1): Promise<TestimonialCard[]> => {
   'use server';
 
   try {
@@ -18,6 +18,6 @@ const getTestimonials = cache(async (page = 1): Promise<TestimonialCard[]> => {
   } catch {
     return [];
   }
-}, 'projects');
+}, 'testimonials');
 
 export { getTestimonials };

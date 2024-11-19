@@ -1,26 +1,38 @@
 /**
- * Query to retrieve available services.
+ * Query to retrieve the total of services.
  */
-const getServicesQuery = `
-  *[_type == "service"] | order(_createdAt desc) {
-    title,
-    description,
-    "slug": slug.current,
-    "thumbnail": select(defined(thumbnail) => {
-        ...thumbnail,
-        "asset": thumbnail.asset->
-      })
-  }
+const getTotalOfServicesQuery = `
+  count(*[_type == 'service'])
 `;
 
 /**
- * Query to retrieve title and slug of available services.
+ * Query to retrieve a list of services.
+ * @param `$start` Offset (how many results should skip).
+ * @param `$end` Limit (how much results retrieve)
  */
-const getAvailableServicesQuery = `
-  *[_type == "service" && count(*[_type == 'project' && ^._id in services[]->_id]) > 0] | order(_createdAt desc) {
-    title,
-    "slug": slug.current
+const getServicesQuery = `
+    *[_type == "service"] | order(_createdAt desc) [$start...$end] {
+      _id,
+      title,
+      "slug": slug.current,
+      headline,
+      "thumbnail": {
+          ...thumbnail,
+          "asset": thumbnail.asset->
+      },
+    }
+`;
+
+/**
+ * Query to retrieve paginated services, with the number of services available.
+ * @param `$start` Offset (how many results should skip)
+ * @param `$end` Limit
+ */
+const getPaginatedServicesQuery = `
+  {
+    "total": ${getTotalOfServicesQuery},
+    "data": ${getServicesQuery}
   }
 `;
 
-export { getServicesQuery, getAvailableServicesQuery };
+export { getServicesQuery, getPaginatedServicesQuery, getTotalOfServicesQuery };

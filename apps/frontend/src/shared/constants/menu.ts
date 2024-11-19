@@ -13,9 +13,9 @@ const MENU_ITEMS = [
     href: '/sobre-nos',
   },
   {
-    key: 'projects',
-    label: 'Projetos',
-    href: '/projetos',
+    key: 'services',
+    label: 'Serviços',
+    href: '/servicos',
   },
   {
     key: 'contacts',

@@ -23,15 +23,9 @@ const aboutUsSchema = defineType({
       title: 'Breve descrição',
       type: 'text',
       validation: (Rule) => [
-        Rule.min(0).warning(
-          'A descrição não é obrigatória, porém pode ajudar a melhorar o SEO da página',
-        ),
-        Rule.min(50).warning(
-          'Para uma descrição curta é recomendado entre 50 a 160 caracteres.',
-        ),
-        Rule.max(160).warning(
-          'Para uma descrição curta é recomendado entre 50 a 160 caracteres.',
-        ),
+        Rule.min(0).warning('A descrição não é obrigatória, porém pode ajudar a melhorar o SEO da página'),
+        Rule.min(50).warning('Para uma descrição curta é recomendado entre 50 a 160 caracteres.'),
+        Rule.max(160).warning('Para uma descrição curta é recomendado entre 50 a 160 caracteres.'),
       ],
     }),
     defineField({
@@ -131,8 +125,7 @@ const aboutUsSchema = defineType({
     defineField({
       name: 'process',
       title: 'Como funciona',
-      description:
-        'Esta secção destina-se a explicar quais os passos da elaboração de um projeto',
+      description: 'Esta secção destina-se a explicar quais os passos da elaboração de um projeto',
       type: 'object',
       fields: [
         defineField({
@@ -176,7 +169,7 @@ const aboutUsSchema = defineType({
     defineField({
       name: 'services',
       title: 'Serviços',
-      description: 'Esta secção desitna-se a apresentar os serviços realizados.',
+      description: 'Esta secção destina-se a apresentar os serviços realizados.',
       type: 'object',
       fields: [
         defineField({

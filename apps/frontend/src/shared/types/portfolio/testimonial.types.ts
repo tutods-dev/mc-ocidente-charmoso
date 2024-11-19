@@ -1,10 +1,10 @@
-import type { ProjectCard } from '~/shared/types/portfolio/project.types';
+import type { ServiceCard } from '~/shared/types/portfolio/service.types';
 import type { Testimonial as TestimonialType } from '~/shared/types/sanity.types';
 
-type Testimonial = Omit<TestimonialType, 'project'> & {
-  project?: ProjectCard;
+type Testimonial = TestimonialType & {
+  service?: ServiceCard;
 };
 
-type TestimonialCard = Pick<Testimonial, 'client' | 'content' | 'url' | 'project'>;
+type TestimonialCard = Pick<Testimonial, 'client' | 'content' | 'url'>;
 
 export type { Testimonial, TestimonialCard };

@@ -234,10 +234,6 @@ export type Archives = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  projects?: {
-    title: string;
-    headline?: string;
-  };
   services?: {
     title: string;
     headline?: string;
@@ -304,7 +300,7 @@ export type Home = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  projects?: {
+  services?: {
     title: string;
     headline: string;
   };
@@ -323,17 +319,17 @@ export type Testimonial = {
   client: string;
   content: string;
   url: string;
-  project?: {
+  service?: {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "project";
+    [internalGroqTypeReferenceTo]?: "service";
   };
 };
 
-export type Project = {
+export type Service = {
   _id: string;
-  _type: "project";
+  _type: "service";
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
@@ -353,39 +349,8 @@ export type Project = {
   };
   content?: BlockContent;
   gallery?: Gallery;
-  showTestimonial?: boolean;
-  date?: string;
-  local?: string;
+  showTestimonials?: boolean;
   isHighlighted?: boolean;
-  services: Array<{
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    _key: string;
-    [internalGroqTypeReferenceTo]?: "service";
-  }>;
-};
-
-export type Service = {
-  _id: string;
-  _type: "service";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  title: string;
-  slug: Slug;
-  thumbnail: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    _type: "image";
-  };
-  description: string;
 };
 
 export type SanityImageCrop = {
@@ -460,5 +425,5 @@ export type Slug = {
   source?: string;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | VideoUrlWithCover | Gallery | ImageWithAltAndCaption | BlockContent | AboutUs | Contacts | Archives | Settings | ImageWithAlt | Home | Testimonial | Project | Service | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | MediaTag | Slug;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | VideoUrlWithCover | Gallery | ImageWithAltAndCaption | BlockContent | AboutUs | Contacts | Archives | Settings | ImageWithAlt | Home | Testimonial | Service | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | MediaTag | Slug;
 export declare const internalGroqTypeReferenceTo: unique symbol;
