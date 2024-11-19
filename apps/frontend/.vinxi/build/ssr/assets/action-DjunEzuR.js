@@ -1,0 +1,104 @@
+import { onCleanup as R, createSignal as S, getOwner as y } from 'solid-js';
+import { isServer as p } from 'solid-js/web';
+import { i as F, m as v } from './routing-KofvCWNq.js';
+import { u as A, w as B, t as O, v as X } from './styles-2TqKWpP5.js';
+const m = new Map();
+function x(t) {
+  const e = F();
+  return (...n) => t.apply({ r: e }, n);
+}
+function E(t, e) {
+  function n(...r) {
+    const a = this.r,
+      c = this.f,
+      o = (a.singleFlight && t.withOptions ? t.withOptions({ headers: { 'X-Single-Flight': 'true' } }) : t)(...r),
+      [l, f] = S();
+    let g;
+    function u(d) {
+      return async (h) => {
+        const s = await K(h, d, a.navigatorFactory());
+        if (!s) {
+          return g.clear();
+        }
+        if ((f(s), s.error && !c)) {
+          throw s.error;
+        }
+        return s.data;
+      };
+    }
+    return (
+      a.submissions[1]((d) => [
+        ...d,
+        (g = {
+          input: r,
+          url: i,
+          get result() {
+            return l()?.data;
+          },
+          get error() {
+            return l()?.error;
+          },
+          get pending() {
+            return !l();
+          },
+          clear() {
+            a.submissions[1]((h) => h.filter((s) => s.input !== r));
+          },
+          retry() {
+            return f(void 0), t(...r).then(u(), u(!0));
+          },
+        }),
+      ]),
+      o.then(u(), u(!0))
+    );
+  }
+  const i = t.url || e || (p ? '' : `https://action/${C(t.toString())}`);
+  return w(n, i);
+}
+function w(t, e) {
+  return (
+    (t.toString = () => {
+      if (!e) {
+        throw new Error('Client Actions need explicit names if server rendered');
+      }
+      return e;
+    }),
+    (t.with = (...n) => {
+      const i = function (...a) {
+          return t.call(this, ...n, ...a);
+        },
+        r = new URL(e, v);
+      return (
+        r.searchParams.set('args', O(n)), w(i, (r.origin === 'https://action' ? r.origin : '') + r.pathname + r.search)
+      );
+    }),
+    (t.url = e),
+    p || (m.set(e, t), y() && R(() => m.delete(e))),
+    t
+  );
+}
+const C = (t) => t.split('').reduce((e, n) => ((e << 5) - e + n.charCodeAt(0)) | 0, 0);
+async function K(t, e, n) {
+  let i, r, a, c;
+  if (t instanceof Response) {
+    if (
+      (t.headers.has('X-Revalidate') && (a = t.headers.get('X-Revalidate').split(',')),
+      t.customBody &&
+        ((i = r = await t.customBody()),
+        t.headers.has('X-Single-Flight') && ((i = i._$value), delete r._$value, (c = Object.keys(r)))),
+      t.headers.has('Location'))
+    ) {
+      const o = t.headers.get('Location') || '/';
+      o.startsWith('http') ? (window.location.href = o) : n(o);
+    }
+  } else {
+    if (e) {
+      return { error: t };
+    }
+    i = t;
+  }
+  return (
+    A(a, (o) => (o[0] = 0)), c && c.forEach((o) => X.set(o, r[o])), await B(a, !1), i != null ? { data: i } : void 0
+  );
+}
+export { m as a, E as b, x as u };

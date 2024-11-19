@@ -1,0 +1,1 @@
+import{createClient as t}from"@sanity/client";import{e}from"./env.mjs";const a=t({projectId:e.sanity.projectId,dataset:e.sanity.dataset,useCdn:e.isProduction,apiVersion:e.sanity.apiVersion,perspective:"published"});export{a as c};
