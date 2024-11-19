@@ -2,7 +2,10 @@ import { MetaProvider } from '@solidjs/meta';
 import { Router } from '@solidjs/router';
 import { FileRoutes } from '@solidjs/start/router';
 import { Suspense } from 'solid-js';
-import { CtaSection, Footer, Header } from '~/components';
+import { CtaSection } from '~/components/cta';
+import { Footer } from '~/components/footer';
+import { Header } from '~/components/header';
+import { LoadingScreen } from '~/components/views/loading';
 import '~/styles/app.css';
 
 import '@fontsource/spectral/200.css';
@@ -19,7 +22,6 @@ import '@fontsource/montserrat/700.css';
 import '@fontsource/montserrat/900.css';
 
 import '@phosphor-icons/web/regular/style.css';
-import { LoadingScreen } from '~/components/views/loading';
 
 function App() {
   return (

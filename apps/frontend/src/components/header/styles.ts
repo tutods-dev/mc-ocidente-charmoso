@@ -1,10 +1,9 @@
-import { tv } from 'tailwind-variants';
+import { cva } from 'class-variance-authority';
 
 /**
  * Styles for `header` element
  */
-const headerVariants = tv({
-  base: ['py-2', 'z-50', 'transition duration-300 ease-in-out'],
+const headerVariants = cva(['py-2', 'z-50', 'transition duration-300 ease-in-out'], {
   variants: {
     mode: {
       transparent: 'fixed top-0 right-0 left-0',
@@ -23,8 +22,7 @@ const headerVariants = tv({
 /**
  * Styles for the header container.
  */
-const headerContainerVariants = tv({
-  base: ['container h-full', 'flex items-center justify-between gap-4', 'mx-auto px-4'],
+const headerContainerVariants = cva(['container h-full', 'flex items-center justify-between gap-4', 'mx-auto px-4'], {
   variants: {
     mode: {
       transparent: ['text-white'],
