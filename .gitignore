@@ -529,3 +529,7 @@ $RECYCLE.BIN/
 
 # Generated schema.json from Sanity
 apps/studio/schema.json
+
+# Solid Start
+apps/frontend/.vinxi/
+apps/frontend/.output/
