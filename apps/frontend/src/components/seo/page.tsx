@@ -1,7 +1,7 @@
 import { Link, Meta, Title } from '@solidjs/meta';
 import { createAsync } from '@solidjs/router';
 import { type JSXElement, Match, Show, Switch, mergeProps } from 'solid-js';
-import { getSeoSettings } from '~/cms/services';
+import { getSeoSettings } from '~/cms/services/singletons/settings';
 import { urlFor } from '~/cms/utils';
 import type { ImageWithAlt } from '~/shared/types';
 

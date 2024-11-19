@@ -2,8 +2,8 @@ import Drawer from '@corvu/drawer';
 import { useLocation } from '@solidjs/router';
 import { For } from 'solid-js';
 import { twMerge } from 'tailwind-merge';
+import { cn } from '~/lib/utils';
 import { MENU_ITEMS } from '~/shared/constants/menu';
-import { cn } from '~/shared/utils';
 import { drawerContentVariants, navigationItemVariants } from './styles';
 
 type MobileNavigationProps = {

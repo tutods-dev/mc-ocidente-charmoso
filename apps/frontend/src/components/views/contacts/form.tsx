@@ -4,7 +4,7 @@ import { zodValidator } from '@tanstack/zod-form-adapter';
 import { Show, createSignal } from 'solid-js';
 import { z } from 'zod';
 import { Button } from '~/components';
-import { cn } from '~/libs/cn';
+import { cn } from '~/lib/utils';
 import { sendEmailAction } from '~/shared/actions';
 import { BaseInput, BaseTextArea } from './partials';
 
@@ -56,18 +56,10 @@ function ContactForm() {
       <Show when={isSent()}>
         <div
           data-aos={'fade-down'}
-          class={cn([
-            'px-2 py-3',
-            'rounded border border-green-500',
-            'bg-green-50/20',
-            'text-sm',
-          ])}
+          class={cn(['px-2 py-3', 'rounded border border-green-500', 'bg-green-50/20', 'text-sm'])}
         >
           <h4 class="font-semibold text-lg">Obrigado!</h4>
-          <p>
-            A sua mensagem foi enviada com sucesso, iremos responder o mais breve
-            possível.
-          </p>
+          <p>A sua mensagem foi enviada com sucesso, iremos responder o mais breve possível.</p>
         </div>
       </Show>
 

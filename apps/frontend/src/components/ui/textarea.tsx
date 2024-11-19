@@ -3,7 +3,7 @@ import type { TextFieldTextAreaProps } from '@kobalte/core/text-field';
 import { TextArea as TextFieldPrimitive } from '@kobalte/core/text-field';
 import type { ValidComponent, VoidProps } from 'solid-js';
 import { splitProps } from 'solid-js';
-import { cn } from '~/libs/cn';
+import { cn } from '~/lib/utils';
 
 type TextAreaProps<T extends ValidComponent = 'textarea'> = VoidProps<
   TextFieldTextAreaProps<T> & {

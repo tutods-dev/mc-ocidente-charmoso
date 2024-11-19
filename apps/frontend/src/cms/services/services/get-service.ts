@@ -1,6 +1,6 @@
 import { query, redirect } from '@solidjs/router';
 import { client } from '~/cms';
-import { getServiceQuery } from '~/cms/queries/services/get-service';
+import { getServiceQuery } from '~/cms/queries/services';
 import type { Service } from '~/shared/types';
 
 /**

@@ -1,9 +1,10 @@
 import { type RouteDefinition, createAsync } from '@solidjs/router';
 import { Show } from 'solid-js';
-import { getContacts, getSocialNetworksAndContacts } from '~/cms/services';
+import { getContacts } from '~/cms/services/singletons';
+import { getSocialNetworksAndContacts } from '~/cms/services/singletons/settings';
 import { PageSeo } from '~/components/seo';
 import { ContactForm, ContactsList, Faq } from '~/components/views/contacts';
-import { cn } from '~/libs/cn';
+import { cn } from '~/lib/utils';
 import 'boxicons/css/boxicons.min.css';
 
 export const route: RouteDefinition = {
@@ -36,12 +37,7 @@ function ContactsRouter() {
 
         <section class="py-8 md:py-12">
           <div class="container grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-8 lg:grid-cols-[0.5fr_1fr]">
-            <Show
-              when={
-                !!listOfContacts()?.contacts?.length ||
-                !!listOfContacts()?.social?.length
-              }
-            >
+            <Show when={!!listOfContacts()?.contacts?.length || !!listOfContacts()?.social?.length}>
               <ContactsList
                 title={data()?.list?.title}
                 headline={data()?.list?.headline}
@@ -52,16 +48,7 @@ function ContactsRouter() {
 
             <section>
               <Show when={data()?.form?.title} keyed={true}>
-                {(title) => (
-                  <h2
-                    class={cn([
-                      'mb-1 font-semibold',
-                      { 'mb-6': !data()?.form?.headline },
-                    ])}
-                  >
-                    {title}
-                  </h2>
-                )}
+                {(title) => <h2 class={cn(['mb-1 font-semibold', { 'mb-6': !data()?.form?.headline }])}>{title}</h2>}
               </Show>
 
               <Show when={data()?.form?.headline} keyed={true}>
@@ -78,14 +65,7 @@ function ContactsRouter() {
               <div class="container">
                 <Show when={faq.title} keyed={true}>
                   {(title) => (
-                    <h2
-                      class={cn([
-                        'mb-2 text-center font-semibold',
-                        { 'mb-6': !faq.headline },
-                      ])}
-                    >
-                      {title}
-                    </h2>
+                    <h2 class={cn(['mb-2 text-center font-semibold', { 'mb-6': !faq.headline }])}>{title}</h2>
                   )}
                 </Show>
 

@@ -1,7 +1,7 @@
 import { type JSX, Show, mergeProps, splitProps } from 'solid-js';
 import { Button } from '~/components/ui';
+import { cn } from '~/lib/utils';
 import type { TestimonialCard as TestimonialCardType } from '~/shared/types/portfolio/testimonial.types';
-import { cn } from '~/shared/utils';
 
 type Props = NonNullable<TestimonialCardType> & Pick<JSX.BlockquoteHTMLAttributes<HTMLElement>, 'class'>;
 

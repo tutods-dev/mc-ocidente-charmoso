@@ -1,6 +1,6 @@
 import { query } from '@solidjs/router';
 import { client } from '~/cms';
-import { getSocialNetworksAndContactsQuery } from '~/cms/queries';
+import { getSocialNetworksAndContactsQuery } from '~/cms/queries/singletons';
 import type { SocialNetworksAndContacts } from '~/shared/types';
 
 /**

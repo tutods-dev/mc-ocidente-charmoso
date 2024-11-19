@@ -1,6 +1,6 @@
 import { query } from '@solidjs/router';
 import { client } from '~/cms';
-import { getCtaSettingsQuery } from '~/cms/queries';
+import { getCtaSettingsQuery } from '~/cms/queries/singletons';
 import type { CtaSettings } from '~/shared/types/singletons/settings.types';
 
 /**

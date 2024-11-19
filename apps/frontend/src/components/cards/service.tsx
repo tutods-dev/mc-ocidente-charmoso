@@ -1,8 +1,8 @@
 import { Image } from '@unpic/solid';
 import { type ComponentProps, Show, mergeProps, splitProps } from 'solid-js';
 import { urlFor } from '~/cms/utils';
+import { cn } from '~/lib/utils';
 import type { ServiceCard as ServiceCardType } from '~/shared/types';
-import { cn } from '~/shared/utils';
 import { getBlurHashImage } from '~/shared/utils/images';
 
 type Props = ServiceCardType & Pick<ComponentProps<'a'>, 'class'>;

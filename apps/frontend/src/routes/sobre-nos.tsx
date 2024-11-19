@@ -1,13 +1,8 @@
 import { type RouteDefinition, createAsync } from '@solidjs/router';
 import { Show } from 'solid-js';
-import { getAboutUs } from '~/cms/services';
+import { getAboutUs } from '~/cms/services/singletons';
 import { PageSeo } from '~/components/seo';
-import {
-  FactorySection,
-  IntroductionSection,
-  ProcessSection,
-  ServicesSection,
-} from '~/components/views/about-us';
+import { FactorySection, IntroductionSection, ProcessSection, ServicesSection } from '~/components/views/about-us';
 
 export const route: RouteDefinition = {
   preload: () => getAboutUs(),
@@ -42,10 +37,7 @@ function AboutUsRoute() {
           {(process) => <ProcessSection {...process} />}
         </Show>
 
-        <ServicesSection
-          {...data()?.services}
-          title={data()?.services?.title ?? 'O que fazemos?'}
-        />
+        <ServicesSection {...data()?.services} title={data()?.services?.title ?? 'O que fazemos?'} />
       </main>
     </>
   );

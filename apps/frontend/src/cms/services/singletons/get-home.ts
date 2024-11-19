@@ -1,6 +1,6 @@
 import { query } from '@solidjs/router';
 import { client } from '~/cms';
-import { getHomeQuery } from '~/cms/queries';
+import { getHomeQuery } from '~/cms/queries/singletons';
 import type { Home } from '~/shared/types';
 
 /**

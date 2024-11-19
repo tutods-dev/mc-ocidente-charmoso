@@ -8,7 +8,7 @@ import {
   CarouselPrevious,
   ServiceCard,
 } from '~/components';
-import { cn } from '~/libs/cn';
+import { cn } from '~/lib/utils';
 import type { Home } from '~/shared/types';
 
 type Props = NonNullable<Home['services']>;
