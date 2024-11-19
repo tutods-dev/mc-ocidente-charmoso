@@ -145,7 +145,7 @@ dist
 
 # Gatsby files
 .cache/
-# Comment in the public line in if your project uses Gatsby and not Next.js
+# Comment in the public line in if your service uses Gatsby and not Next.js
 # https://nextjs.org/blog/next-9-1#public-directory-support
 # public
 
@@ -200,7 +200,7 @@ dist
 
 # Project files should be checked into the repository, unless a significant
 # proportion of contributors will probably not be using Sublime Text
-# *.sublime-project
+# *.sublime-service
 
 # SFTP configuration file
 sftp-config.json
@@ -290,7 +290,7 @@ cmake-build-*/
 # Mongo Explorer plugin
 .idea/**/mongoSettings.xml
 
-# File-based project format
+# File-based service format
 *.iws
 
 # IntelliJ
@@ -385,7 +385,7 @@ fabric.properties
 
 # Mongo Explorer plugin
 
-# File-based project format
+# File-based service format
 
 # IntelliJ
 
@@ -443,7 +443,7 @@ fabric.properties
 
 # Mongo Explorer plugin
 
-# File-based project format
+# File-based service format
 
 # IntelliJ
 

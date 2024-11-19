@@ -1,14 +1,14 @@
-import { cache } from '@solidjs/router';
+import { query } from '@solidjs/router';
 import { client } from '~/cms';
 import { getServiceTestimonialQuery } from '~/cms/queries';
 import type { Testimonial } from '~/shared/types';
 
 // TODO: type
 /**
- * Service to retrieve the testimonial for a specific project.
- * @param slug Project slug
+ * Service to retrieve the testimonial for a specific service.
+ * @param slug Service slug
  */
-const getServiceTestimonial = cache(async (slug: string) => {
+const getServiceTestimonial = query(async (slug: string) => {
   'use server';
 
   return client.fetch<Testimonial[]>(getServiceTestimonialQuery, {

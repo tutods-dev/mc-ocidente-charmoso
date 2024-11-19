@@ -7,7 +7,7 @@ import { getService } from '~/cms/services';
 import { urlFor } from '~/cms/utils';
 import { ImageWithPreview } from '~/components/common';
 import { PageSeo } from '~/components/seo';
-import { ProjectTestimonialSection } from '~/components/views/project';
+import { ServiceTestimonialsSection } from '~/components/views/service';
 import { cn, getTruncatedStringWithEllipsis } from '~/shared/utils';
 import { getBlurHashImage } from '~/shared/utils/images';
 
@@ -21,18 +21,18 @@ function ProjectDetails() {
 
   // Data fetching
   const data = createAsync(() => getService(params.slug), {
-    name: `project-${params.slug}`,
+    name: `service-${params.slug}`,
   });
 
   return (
     <Show when={data()} keyed={true}>
-      {(project) => (
+      {(service) => (
         <>
           <PageSeo
-            title={project.title}
-            keywords={[project.title.toLowerCase()]}
-            description={project.description ? getTruncatedStringWithEllipsis(project.description) : undefined}
-            image={urlFor(project.thumbnail).width(800).height(600).auto('format').url()}
+            title={service.title}
+            keywords={[service.title.toLowerCase()]}
+            description={service.description ? getTruncatedStringWithEllipsis(service.description) : undefined}
+            image={urlFor(service.thumbnail).width(800).height(600).auto('format').url()}
           />
           <main>
             <section class="flex items-center justify-center pt-12 pb-10 md:py-12">
@@ -40,12 +40,12 @@ function ProjectDetails() {
                 class={cn([
                   'container relative grid grid-cols-1 gap-8',
                   {
-                    'md:grid-cols-2 lg:grid-cols-[1fr_0.75fr]': !!project.gallery,
+                    'md:grid-cols-2 lg:grid-cols-[1fr_0.75fr]': !!service.gallery,
                   },
                 ])}
               >
                 <section class={'flex flex-col gap-6'}>
-                  <For each={project.gallery}>
+                  <For each={service.gallery}>
                     {(image) => (
                       <ImageWithPreview
                         src={urlFor(image).url()}
@@ -62,9 +62,9 @@ function ProjectDetails() {
                   </For>
                 </section>
                 <section class={'order-first md:sticky md:top-10 md:right-0 md:order-last md:h-fit md:py-10 lg:top-24'}>
-                  <h1 class="tracking-wide">{project.title}</h1>
+                  <h1 class="tracking-wide">{service.title}</h1>
 
-                  <Show when={project.content} keyed={true}>
+                  <Show when={service.content} keyed={true}>
                     {(content) => (
                       <div class={cn(['relative my-4', 'overflow-y-hidden', 'transition duration-300 ease-in-out'])}>
                         <PortableText components={components} value={content} />
@@ -72,8 +72,8 @@ function ProjectDetails() {
                     )}
                   </Show>
 
-                  <Show keyed={true} when={project.showTestimonials}>
-                    <ProjectTestimonialSection slug={project.slug} />
+                  <Show keyed={true} when={service.showTestimonials}>
+                    <ServiceTestimonialsSection slug={service.slug} />
                   </Show>
                 </section>
               </section>

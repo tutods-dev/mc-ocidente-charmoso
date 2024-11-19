@@ -1,13 +1,13 @@
-import { cache, redirect } from '@solidjs/router';
+import { query, redirect } from '@solidjs/router';
 import { client } from '~/cms';
 import { getServiceQuery } from '~/cms/queries/services/get-service';
 import type { Service } from '~/shared/types';
 
 /**
- * Service to retrieve a specific project.
- * @param slug Project slug
+ * Service to retrieve a specific service.
+ * @param slug Service slug
  */
-const getService = cache(async (slug: string): Promise<undefined | Service> => {
+const getService = query(async (slug: string): Promise<undefined | Service> => {
   'use server';
 
   try {

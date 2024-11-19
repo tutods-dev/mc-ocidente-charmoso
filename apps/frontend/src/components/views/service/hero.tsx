@@ -5,7 +5,7 @@ import { cn } from '~/shared/utils';
 
 type Props = Pick<NonNullable<Service>, 'title' | 'headline' | 'thumbnail'>;
 
-function ProjectHeroSection({ title, headline, thumbnail }: Props) {
+function ServiceHeroSection({ title, headline, thumbnail }: Props) {
   const thumbnailImg = urlFor(thumbnail).url();
 
   return (
@@ -44,4 +44,4 @@ function ProjectHeroSection({ title, headline, thumbnail }: Props) {
   );
 }
 
-export { ProjectHeroSection };
+export { ServiceHeroSection };

@@ -1,7 +1,7 @@
 import { type RouteDefinition, createAsync, useSearchParams } from '@solidjs/router';
 import { For, Show } from 'solid-js';
 import { getPaginatedServices } from '~/cms/services/services/get-services';
-import { getProjectsArchive } from '~/cms/services/singletons/get-archives';
+import { getServicesArchive } from '~/cms/services/singletons/get-archives';
 import { ServiceCard } from '~/components/cards';
 import { PageSeo } from '~/components/seo';
 import {
@@ -16,14 +16,14 @@ import { DEFAULT_PAGINATION_OFFSET } from '~/shared/constants';
 
 export const route: RouteDefinition = {
   preload: async () => {
-    return Promise.all([getProjectsArchive(), getPaginatedServices(1, DEFAULT_PAGINATION_OFFSET)]);
+    return Promise.all([getServicesArchive(), getPaginatedServices(1, DEFAULT_PAGINATION_OFFSET)]);
   },
 };
 
 function Services() {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const listSettings = createAsync(() => getProjectsArchive());
+  const listSettings = createAsync(() => getServicesArchive());
   const data = createAsync(async () => {
     let currentPage = searchParams.page ? Number(searchParams.page) : 1;
 
@@ -74,12 +74,12 @@ function Services() {
           <section class="py-4 md:py-8 lg:py-16">
             <div class="container grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
               <For each={data()?.data}>
-                {(project) => (
+                {(service) => (
                   <ServiceCard
-                    title={project.title}
-                    headline={project.headline}
-                    thumbnail={project.thumbnail}
-                    slug={project.slug}
+                    title={service.title}
+                    headline={service.headline}
+                    thumbnail={service.thumbnail}
+                    slug={service.slug}
                   />
                 )}
               </For>

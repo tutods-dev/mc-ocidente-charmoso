@@ -1,6 +1,6 @@
 /**
- * Query to treive a specific project by slug.
- * @param `$slug` Project slug
+ * Query to treive a specific service by slug.
+ * @param `$slug` Service slug
  */
 const getServiceQuery = `
   *[_type == "service" && slug.current == $slug] [0] {

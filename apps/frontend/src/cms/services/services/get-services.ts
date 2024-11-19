@@ -1,4 +1,4 @@
-import { cache } from '@solidjs/router';
+import { query } from '@solidjs/router';
 import { client } from '~/cms';
 import { getHighlightedServicesQuery, getPaginatedServicesQuery, getTotalOfServicesQuery } from '~/cms/queries';
 import { getPagination } from '~/cms/utils';
@@ -8,7 +8,7 @@ import type { PaginatedServices, ServiceCard } from '~/shared/types';
 /**
  * Service to retrieve the highlighted services.
  */
-const getHighlightedServices = cache<(page?: number, offset?: number) => Promise<ServiceCard[]>>(
+const getHighlightedServices = query<(page?: number, offset?: number) => Promise<ServiceCard[]>>(
   async (page = 1, offset = DEFAULT_PAGINATION_OFFSET) => {
     'use server';
 
@@ -29,7 +29,7 @@ const getHighlightedServices = cache<(page?: number, offset?: number) => Promise
 /**
  * Service to retrieve the total of services.
  */
-const getTotalOfServices = cache(async (): Promise<number> => {
+const getTotalOfServices = query(async (): Promise<number> => {
   try {
     const total = await client.fetch<number>(getTotalOfServicesQuery);
 
@@ -44,7 +44,7 @@ const getTotalOfServices = cache(async (): Promise<number> => {
  * @param page Page number
  * @param offset Number of results per page
  */
-const getPaginatedServices = cache<(page?: number, offset?: number) => Promise<PaginatedServices>>(
+const getPaginatedServices = query<(page?: number, offset?: number) => Promise<PaginatedServices>>(
   async (page = 1, offset = DEFAULT_PAGINATION_OFFSET) => {
     'use server';
 

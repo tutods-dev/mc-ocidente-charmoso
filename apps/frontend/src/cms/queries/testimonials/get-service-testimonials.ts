@@ -1,5 +1,5 @@
 /**
- * Query to retrieve a testimonial from a specific project.
+ * Query to retrieve a testimonial from a specific service.
  */
 const getServiceTestimonialQuery = `
     *[_type == "testimonial" && service->slug.current == $slug] {

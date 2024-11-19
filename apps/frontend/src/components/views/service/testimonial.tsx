@@ -1,23 +1,27 @@
 import { createAsync } from '@solidjs/router';
 import { For, Show } from 'solid-js';
 import { getServiceTestimonial } from '~/cms/services/testimonials/get-service-testimonial';
-import { Carousel, CarouselContent, CarouselItem } from '~/components';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '~/components';
 import { TestimonialCard } from '~/components/cards';
 
 type Props = {
   /**
-   * Project slug.
+   * Service slug.
    */
   slug: string;
 };
 
-function ProjectTestimonialSection({ slug }: Props) {
+function ServiceTestimonialsSection({ slug }: Props) {
   const data = createAsync(() => getServiceTestimonial(slug));
 
   return (
     <Show when={data()} keyed={true}>
       {(testimonials) => (
-        <Carousel>
+        <Carousel
+          opts={{
+            loop: true,
+          }}
+        >
           <CarouselContent>
             <For each={testimonials}>
               {(testimonial) => (
@@ -27,10 +31,14 @@ function ProjectTestimonialSection({ slug }: Props) {
               )}
             </For>
           </CarouselContent>
+          <div class="mt-2 flex items-center justify-end gap-4">
+            <CarouselPrevious variant="secondary" class="static translate-y-0" />
+            <CarouselNext variant="secondary" class="static translate-y-0" />
+          </div>
         </Carousel>
       )}
     </Show>
   );
 }
 
-export { ProjectTestimonialSection };
+export { ServiceTestimonialsSection };

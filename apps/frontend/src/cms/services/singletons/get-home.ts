@@ -1,4 +1,4 @@
-import { cache } from '@solidjs/router';
+import { query } from '@solidjs/router';
 import { client } from '~/cms';
 import { getHomeQuery } from '~/cms/queries';
 import type { Home } from '~/shared/types';
@@ -6,7 +6,7 @@ import type { Home } from '~/shared/types';
 /**
  * Service to retrieve the data for the homepage.
  */
-const getHome = cache<() => Promise<Home | undefined>>(async () => {
+const getHome = query<() => Promise<Home | undefined>>(async () => {
   'use server';
 
   try {

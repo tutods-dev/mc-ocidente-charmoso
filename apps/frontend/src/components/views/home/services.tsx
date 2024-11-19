@@ -13,7 +13,7 @@ import type { Home } from '~/shared/types';
 
 type Props = NonNullable<Home['services']>;
 
-function ProjectsSection(props: Props) {
+function ServicesSection(props: Props) {
   return (
     <section class="py-4 md:py-16">
       <div class="container flex flex-col justify-center">
@@ -36,9 +36,9 @@ function ProjectsSection(props: Props) {
         >
           <CarouselContent>
             <For each={props.data}>
-              {(project) => (
+              {(service) => (
                 <CarouselItem class={cn(['md:basis-1/2 lg:basis-1/3'])}>
-                  <ServiceCard {...project} />
+                  <ServiceCard {...service} />
                 </CarouselItem>
               )}
             </For>
@@ -51,4 +51,4 @@ function ProjectsSection(props: Props) {
   );
 }
 
-export { ProjectsSection };
+export { ServicesSection };

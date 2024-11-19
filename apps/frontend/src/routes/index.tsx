@@ -5,7 +5,7 @@ import { getHome } from '~/cms/services';
 import { Button } from '~/components';
 import { PageSeo } from '~/components/seo';
 import { IntroductionSection } from '~/components/views/about-us';
-import { ProjectsSection, TestimonialsSection } from '~/components/views/home';
+import { ServicesSection, TestimonialsSection } from '~/components/views/home';
 import type { Home } from '~/shared/types';
 
 export const route: RouteDefinition = {
@@ -45,7 +45,7 @@ function HomeRouter() {
               </Show>
 
               <Show when={page.services && !!page.services?.data.length}>
-                <ProjectsSection {...(page.services as NonNullable<Home['services']>)} />
+                <ServicesSection {...(page.services as NonNullable<Home['services']>)} />
               </Show>
 
               <Show when={page.testimonials && !!page.testimonials?.data.length}>

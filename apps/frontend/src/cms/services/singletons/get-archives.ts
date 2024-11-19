@@ -1,25 +1,12 @@
-import { cache } from '@solidjs/router';
+import { query } from '@solidjs/router';
 import { client } from '~/cms';
-import { getProjectsArchiveQuery, getServicesArchiveQuery } from '~/cms/queries';
+import { getServicesArchiveQuery } from '~/cms/queries';
 import type { Archives } from '~/shared/types';
 
 /**
  * Service to retrieve the services archive settings.
  */
-const getProjectsArchive = cache<() => Promise<Archives['projects'] | undefined>>(async () => {
-  'use server';
-
-  try {
-    return client.fetch<Archives['projects']>(getProjectsArchiveQuery);
-  } catch {
-    return;
-  }
-}, 'services-archive');
-
-/**
- * Service to retrieve the services archive settings.
- */
-const getServicesArchive = cache<() => Promise<Archives['services'] | undefined>>(async () => {
+const getServicesArchive = query<() => Promise<Archives['services'] | undefined>>(async () => {
   'use server';
 
   try {
@@ -29,4 +16,4 @@ const getServicesArchive = cache<() => Promise<Archives['services'] | undefined>
   }
 }, 'services-archive');
 
-export { getProjectsArchive, getServicesArchive };
+export { getServicesArchive };
