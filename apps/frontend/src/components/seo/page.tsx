@@ -37,19 +37,16 @@ function PageSeo(rawProps: Props) {
     deferStream: true,
   });
 
-  const props = mergeProps(
-    {
-      keywords: seoSettings()?.keywords ?? ['design de interiores', 'móveis'],
-      description: seoSettings()?.description,
-      image: seoSettings()?.thumbnail
-        ? urlFor(seoSettings()?.thumbnail as ImageWithAlt)
-            .width(800)
-            .height(600)
-            .url()
-        : undefined,
-    },
-    rawProps,
-  );
+  const props = mergeProps(rawProps, {
+    keywords: seoSettings()?.keywords ?? ['design de interiores', 'móveis'],
+    description: seoSettings()?.description,
+    image: seoSettings()?.thumbnail
+      ? urlFor(seoSettings()?.thumbnail as ImageWithAlt)
+          .width(800)
+          .height(600)
+          .url()
+      : undefined,
+  });
 
   return (
     <>
@@ -81,7 +78,7 @@ function PageSeo(rawProps: Props) {
       {/* Robots */}
       <Meta name="robots" content="index, follow" />
 
-      <Meta name="description" content={props.description} />
+      <Meta name="description" content={props.description ?? seoSettings()?.description} />
       <Meta name="keywords" content={[seoSettings()?.keywords, props.keywords].flat().join(', ')} />
 
       {/* Social tags */}
