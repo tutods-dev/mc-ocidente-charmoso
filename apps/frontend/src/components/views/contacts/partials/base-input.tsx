@@ -1,14 +1,5 @@
 import type { FieldApi } from '@tanstack/solid-form';
-import {
-  type ComponentProps,
-  For,
-  type JSXElement,
-  Match,
-  Show,
-  Switch,
-  mergeProps,
-  splitProps,
-} from 'solid-js';
+import { type ComponentProps, For, type JSXElement, Match, Show, Switch, mergeProps, splitProps } from 'solid-js';
 import {
   TextField,
   TextFieldDescription,
@@ -16,7 +7,7 @@ import {
   TextFieldInput,
   TextFieldLabel,
 } from '~/components/ui';
-import { cn } from '~/libs/cn';
+import { cn } from '~/lib/utils';
 
 type Props = Omit<ComponentProps<typeof TextFieldInput>, 'onChange'> &
   Pick<ComponentProps<typeof TextField>, 'onChange'> & {
@@ -54,8 +45,7 @@ function BaseInput(rawProps: Props) {
         class={cn([
           commonProps.class,
           {
-            'border-destructive text-destructive':
-              commonProps.field.state.meta.errors.length,
+            'border-destructive text-destructive': commonProps.field.state.meta.errors.length,
           },
         ])}
         aria-invalid={commonProps.field.state.meta.errors.length ? 'true' : 'false'}

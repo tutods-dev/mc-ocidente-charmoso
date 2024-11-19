@@ -1,14 +1,5 @@
 import type { FieldApi } from '@tanstack/solid-form';
-import {
-  type ComponentProps,
-  For,
-  type JSXElement,
-  Match,
-  Show,
-  Switch,
-  mergeProps,
-  splitProps,
-} from 'solid-js';
+import { type ComponentProps, For, type JSXElement, Match, Show, Switch, mergeProps, splitProps } from 'solid-js';
 import {
   TextField,
   TextFieldDescription,
@@ -16,7 +7,7 @@ import {
   TextFieldLabel,
   TextFieldTextArea,
 } from '~/components/ui';
-import { cn } from '~/libs/cn';
+import { cn } from '~/lib/utils';
 
 type Props = Omit<ComponentProps<typeof TextFieldTextArea>, 'onChange'> &
   Pick<ComponentProps<typeof TextField>, 'onChange'> & {
@@ -55,19 +46,14 @@ function BaseTextArea(rawProps: Props) {
         class={cn([
           commonProps.class,
           {
-            'border-destructive text-destructive':
-              commonProps.field.state.meta.errors.length,
+            'border-destructive text-destructive': commonProps.field.state.meta.errors.length,
           },
         ])}
       />
 
       <Switch>
         <Match when={commonProps.field.state.meta.errors} keyed={true}>
-          {(errors) => (
-            <For each={errors}>
-              {(error) => <TextFieldErrorMessage>{error}</TextFieldErrorMessage>}
-            </For>
-          )}
+          {(errors) => <For each={errors}>{(error) => <TextFieldErrorMessage>{error}</TextFieldErrorMessage>}</For>}
         </Match>
 
         <Match when={commonProps.helpMessage}>

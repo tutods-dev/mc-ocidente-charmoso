@@ -1,5 +1,5 @@
 import type { APIEvent } from '@solidjs/start/server';
-import { getPaginatedServices } from '~/cms/services';
+import { getPaginatedServices } from '~/cms/services/services';
 import { DEFAULT_PAGINATION_OFFSET } from '~/shared/constants';
 
 export async function GET({ request }: APIEvent) {

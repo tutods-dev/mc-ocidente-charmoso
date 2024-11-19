@@ -1,7 +1,7 @@
 import { Show } from 'solid-js';
 import { urlFor } from '~/cms/utils';
+import { cn } from '~/lib/utils';
 import type { Service } from '~/shared/types';
-import { cn } from '~/shared/utils';
 
 type Props = Pick<NonNullable<Service>, 'title' | 'headline' | 'thumbnail'>;
 

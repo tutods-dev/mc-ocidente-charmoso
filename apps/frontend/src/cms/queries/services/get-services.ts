@@ -11,7 +11,7 @@ const getTotalOfServicesQuery = `
  * @param `$end` Limit (how much results retrieve)
  */
 const getServicesQuery = `
-    *[_type == "service"] | order(_createdAt desc) [$start...$end] {
+    *[_type == "service"] | order(_createdAt asc) [$start...$end] {
       _id,
       title,
       "slug": slug.current,

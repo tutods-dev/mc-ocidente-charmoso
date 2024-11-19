@@ -12,7 +12,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from '~/components/ui';
-import { cn } from '~/libs/cn';
+import { cn } from '~/lib/utils';
 import { DEFAULT_PAGINATION_OFFSET } from '~/shared/constants';
 
 export const route: RouteDefinition = {

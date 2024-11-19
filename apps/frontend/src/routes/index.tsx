@@ -1,7 +1,7 @@
 import { type RouteDefinition, createAsync } from '@solidjs/router';
 import { Show } from 'solid-js';
-import { getSeoSettings } from '~/cms/services';
-import { getHome } from '~/cms/services';
+import { getHome } from '~/cms/services/singletons';
+import { getSeoSettings } from '~/cms/services/singletons/settings';
 import { Button } from '~/components';
 import { PageSeo } from '~/components/seo';
 import { IntroductionSection } from '~/components/views/about-us';

@@ -1,6 +1,6 @@
 import { query } from '@solidjs/router';
 import { client } from '~/cms';
-import { getServiceTestimonialQuery } from '~/cms/queries';
+import { getServiceTestimonialQuery } from '~/cms/queries/testimonials';
 import type { Testimonial } from '~/shared/types';
 
 // TODO: type

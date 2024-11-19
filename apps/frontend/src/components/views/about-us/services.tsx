@@ -2,7 +2,7 @@ import { PortableText } from '@portabletext/solid';
 import { createAsync } from '@solidjs/router';
 import { For, Show } from 'solid-js';
 import { components } from '~/cms/components';
-import { getHighlightedServices } from '~/cms/services';
+import { getHighlightedServices } from '~/cms/services/services';
 import { ServiceCard } from '~/components/cards';
 import { Button, Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '~/components/ui';
 import { cn } from '~/lib/utils';

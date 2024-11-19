@@ -3,12 +3,13 @@ import { For, Show } from 'solid-js';
 
 import { PortableText } from '@portabletext/solid';
 import { components } from '~/cms/components';
-import { getService } from '~/cms/services';
+import { getService } from '~/cms/services/services';
 import { urlFor } from '~/cms/utils';
 import { ImageWithPreview } from '~/components/common';
 import { PageSeo } from '~/components/seo';
 import { ServiceTestimonialsSection } from '~/components/views/service';
-import { cn, getTruncatedStringWithEllipsis } from '~/shared/utils';
+import { cn } from '~/lib/utils';
+import { getTruncatedStringWithEllipsis } from '~/shared/utils';
 import { getBlurHashImage } from '~/shared/utils/images';
 
 export const route: RouteDefinition = {

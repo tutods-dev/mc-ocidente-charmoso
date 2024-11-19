@@ -1,7 +1,7 @@
 import { Link, Meta, Title } from '@solidjs/meta';
 import { createAsync } from '@solidjs/router';
 import { Show } from 'solid-js';
-import { getSeoSettings } from '~/cms/services';
+import { getSeoSettings } from '~/cms/services/singletons/settings';
 import { urlFor } from '~/cms/utils';
 
 function DefaultSeo() {
@@ -41,14 +41,7 @@ function DefaultSeo() {
 
             <Show when={seo.thumbnail} keyed={true}>
               {(thumbnail) => (
-                <Meta
-                  property="og:image"
-                  content={urlFor(thumbnail)
-                    .width(800)
-                    .height(600)
-                    .auto('format')
-                    .url()}
-                />
+                <Meta property="og:image" content={urlFor(thumbnail).width(800).height(600).auto('format').url()} />
               )}
             </Show>
           </>

@@ -1,6 +1,10 @@
 import { query } from '@solidjs/router';
 import { client } from '~/cms';
-import { getHighlightedServicesQuery, getPaginatedServicesQuery, getTotalOfServicesQuery } from '~/cms/queries';
+import {
+  getHighlightedServicesQuery,
+  getPaginatedServicesQuery,
+  getTotalOfServicesQuery,
+} from '~/cms/queries/services';
 import { getPagination } from '~/cms/utils';
 import { DEFAULT_PAGINATION_OFFSET } from '~/shared/constants';
 import type { PaginatedServices, ServiceCard } from '~/shared/types';
