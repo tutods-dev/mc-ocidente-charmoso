@@ -5,7 +5,6 @@ import { create, defineMigration } from 'sanity/migrate';
  * @description Previously, the `gallery` is an object containing an array of images. But now, the gallery is only an array of images.
  * This migration handles the transition of all the images from the object to the new array.
  */
-// biome-ignore lint/style/noDefaultExport: <explanation>
 export default defineMigration({
   title: 'Rename services to services',
   documentTypes: ['project'],

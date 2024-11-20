@@ -17,6 +17,9 @@ importers:
       '@commitlint/config-conventional':
         specifier: ^19.6.0
         version: 19.6.0
+      '@tutods/biome-config':
+        specifier: ^1.1.4
+        version: 1.1.4(@biomejs/biome@1.9.4)
       lefthook:
         specifier: ^1.8.4
         version: 1.8.4
@@ -2367,6 +2370,11 @@ packages:
   '@trysound/sax@0.2.0':
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
     engines: {node: '>=10.13.0'}
+
+  '@tutods/biome-config@1.1.4':
+    resolution: {integrity: sha512-WJkApcqmpwEwe2jALSZPhH9oHOYiZBnMbgeE0HraapLWqlDWVBDlOo9WXGAZJ2mM2dza2e8EUQxpXPWKjUwVTw==, tarball: https://npm.pkg.github.com/download/@tutods/biome-config/1.1.4/636495100f0a14e58883318f732586f4a73dad4c}
+    peerDependencies:
+      '@biomejs/biome': '>=1.9.4'
 
   '@types/babel__core@7.20.5':
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
@@ -9508,6 +9516,10 @@ snapshots:
       zod: 3.23.8
 
   '@trysound/sax@0.2.0': {}
+
+  '@tutods/biome-config@1.1.4(@biomejs/biome@1.9.4)':
+    dependencies:
+      '@biomejs/biome': 1.9.4
 
   '@types/babel__core@7.20.5':
     dependencies:
