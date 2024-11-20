@@ -1,7 +1,7 @@
 {
   "name": "mc-ocidente-charmoso-fe",
   "type": "module",
-  "packageManager": "pnpm@9.13.2",
+  "packageManager": "pnpm@9.14.1",
   "scripts": {
     "dev": "vinxi dev",
     "build": "vinxi build",

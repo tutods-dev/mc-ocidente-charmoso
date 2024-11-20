@@ -7,7 +7,7 @@
 		"url": "https://github.com/tutods"
 	},
 	"license": "UNLICENSED",
-	"packageManager": "pnpm@9.13.2",
+	"packageManager": "pnpm@9.14.1",
 	"scripts": {
 		"dev": "doppler run -- sanity dev",
 		"start": "doppler run -- sanity start",
