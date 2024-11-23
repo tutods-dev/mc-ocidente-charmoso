@@ -39,6 +39,7 @@ function App() {
             {/* Default social tags */}
             <Meta property="og:locale" content="Portuguese" />
             <Meta property="og:type" content="website" />
+            <Meta property="og:update_time" content={new Date().toISOString()} />
 
             {/* Favicon */}
             <Link rel="icon" href="/logo.svg" type="image/svg+xml" />
