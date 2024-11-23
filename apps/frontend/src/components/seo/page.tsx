@@ -51,7 +51,7 @@ function PageSeo(props: Props) {
         <Match when={!props.title}>
           <Title>{seoSettings()?.title}</Title>
           <Meta property="og:title" content={seoSettings()?.title} />
-          <Meta property="og:image:alt" content={props.title ?? seoSettings()?.title} />
+          <Meta property="og:image:alt" content={seoSettings()?.title} />
         </Match>
       </Switch>
 
