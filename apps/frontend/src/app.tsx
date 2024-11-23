@@ -1,4 +1,4 @@
-import { Link, Meta, MetaProvider } from '@solidjs/meta';
+import { Meta, MetaProvider } from '@solidjs/meta';
 import { Router } from '@solidjs/router';
 import { FileRoutes } from '@solidjs/start/router';
 import { Suspense } from 'solid-js';
@@ -42,7 +42,7 @@ function App() {
             <Meta property="og:update_time" content={new Date().toISOString()} />
 
             {/* Favicon */}
-            <Link rel="icon" href="/logo.svg" type="image/svg+xml" />
+            {/* <Link rel="icon" href="/logo.svg" type="image/svg+xml" /> */}
 
             {/* Robots */}
             <Meta name="robots" content="index, follow" />
