@@ -79,8 +79,8 @@ function PageSeo(props: Props) {
           <Meta
             property="og:image"
             content={urlFor(seoSettings()?.thumbnail as ImageWithAlt)
-              .width(800)
-              .height(600)
+              .width(1200)
+              .height(630)
               .url()}
           />
         </Match>
