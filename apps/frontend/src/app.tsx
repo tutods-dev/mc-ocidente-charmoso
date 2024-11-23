@@ -31,8 +31,8 @@ function App() {
         <Suspense fallback={<LoadingScreen />}>
           <MetaProvider>
             {/* Default meta tags */}
-            <Meta charset="UTF-8" />
-            <Meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            {/* <Meta charset="UTF-8" />
+            <Meta name="viewport" content="width=device-width, initial-scale=1.0" /> */}
             <Meta http-equiv="content-language" content="Portuguese" />
             <Meta name="language" content="Portuguese" />
 
